@@ -1,0 +1,10 @@
+.se dog = cat
+:p.&dog.
+.se end = '.qu'
+:p.&end.
+.se sentence = 'This is a sentence'
+:p.&sentence.
+.se title1 = 'Mrs. O''Grady''s Cat'
+:p.&title1.
+.se title2 'Mrs. O'Grady's Cat'
+:p.&title2.

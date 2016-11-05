@@ -1,0 +1,29 @@
+:rdef id=more cwidths='1i * * *'
+      hp ='0 1 2' align='l c r jus'
+      valign='top bottom top center' concat ='yes no yes'.
+:table refid=more column.
+.* jx16sv73 .-ps -1
+:row.
+:c.This cell uses highlight level 0.
+Concatenation is on in this cell. All the lines are left
+aligned, and the cell contents are aligned to the top
+of the cell.
+:c.Highlight
+level 1;
+text lines
+centered and
+not
+concatenated
+bottom vertical
+alignment is used.
+:c.This cell uses highlight level 2.
+Concatenation is on in this cell. All the lines are right
+aligned, and the cell contents are aligned to the top
+of the cell.
+:c.The HP attribute contains 3 values, so
+the fourth cell uses the highlight level from the
+previous cell.
+Input lines are joined, and space is added between words to
+make the left and right edges even.
+The text is centered vertically.
+:etable.

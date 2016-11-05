@@ -1,0 +1,24 @@
+:sdoc.
+:fronts.
+:report.cughj27
+:issue.2
+:title.Graphical Data Manipulation
+:author.C Williams (Flt/CW)
+:tel.47372
+:summary.
+This program has three major functions :-
+:ol.
+:li.To create/modify the list of graphs associated with a particular
+Experiment Identity.
+:li.To create/modify the list of graphs associated with a particular
+Engine Type and User Key.
+:li.To import graphs from the Mainframe R280 Database onto the
+Experiment Analyser (EA) Database. This may be done either one graph
+at a time, or several graphs at a time by specifying a Graph
+Identifier Table (GIDT).
+:eol.
+:circ.Vn/LDM
+:dept.4365
+:date.14 June 1993
+:efronts.
+:esdoc

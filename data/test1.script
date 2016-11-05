@@ -1,0 +1,20 @@
+:h1 id=hed1.Car Names
+A short simple list is shown following this piece
+of text. A number of car names is listed,
+the list is expanded in :hdref refid=hed2.
+and shows car makes as well.
+:sl.
+:li.Granada
+:li.Golf
+:li.Astra
+:esl.
+:h2 id=hed2.Expanded List
+The following list expands the list in :hdref refid=hed1..
+:dl tsize=12.
+:dt.Granada
+:dd.Ford
+:dt.Golf
+:dd.Volkswaggon
+:dt.Astra
+:dd.Vauxhall
+:edl.

@@ -1,0 +1,2 @@
+.* jx16opts -l 4 -r 60 -pi 2 -number_headers no -process jx16
+.* jx16opts -title_page left -index no

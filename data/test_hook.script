@@ -1,0 +1,2 @@
+:h1.Test Hook
+:p.:hook id=system data='echo "--Display is $DISPLAY--"' text='$DISPLAY'..

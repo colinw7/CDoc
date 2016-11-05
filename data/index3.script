@@ -1,0 +1,7 @@
+:ih1.sauces
+:ih2 id=mayo.mayonnaise
+:ih2.hallondaise
+:i3 refid=mayo.manual method
+:i3 refid=mayo.blender method
+:i3 refid=mayo.food-processor method
+:index

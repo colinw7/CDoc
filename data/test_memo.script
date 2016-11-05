@@ -1,0 +1,32 @@
+:memo
+:mh.
+:from.Colin Williams
+:ref.Vn/CW (CW#D0015)
+:date.9 February 1993
+:tel.47372
+:location.T2 'A' Site - DERBY
+:function.Engineering Computing
+:to.Flt,Gle/TJM
+:c.Vn,Wan
+:emh.
+:title.Space Usage of R280 Books
+:p.When an R280 verse is read from the Mainframe onto a Workstation,
+a file is created in the '.r280/<r280 book>' directory in the user's
+home directory.
+:p.These R280 verses are used to speed up Mainframe access as they
+are read in preference to those on the Mainframe if the Mainframe R280
+verse has not been modified since the last read.
+:p.A number of problems occur due to this system :-
+:ul.
+:li.The R280 verses are never deleted from the Workstation and so
+use up precious file server space.
+:li.An R280 verse can be available on the Workstation when it has
+been deleted from the Mainframe.
+:li.The files are hidden from the user (stored in a directory stating
+with the dot character) and the actual file names give little indication
+of the data held within.
+:eul.
+:p.I would recommend that a program is run every weekend which deletes any
+R280 verses which have not been used for some period of time (say 8 weeks)
+or have been deleted from the mainframe.
+:sig.

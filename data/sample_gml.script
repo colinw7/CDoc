@@ -1,0 +1,167 @@
+:gdoc sec='Company Confidential' language=english.
+:frontm.
+:titlep.
+:title stitle='A Short GML Document'.
+A Short GML Document Demonstrating the Document Composition Facility
+:date.
+:author.C. H. Scott
+:address.
+:aline.77 Cattle Drive
+:aline.Boulder, Colorado
+:eaddress.
+:etitlep.
+:toc.
+:figlist.
+:tlist.
+:body.
+:h1.Introduction to the Generalized Markup Language
+:ih1 id=gml.Generalized Markup Language
+:i2.introduction to
+:ih1 seeid=gml.GML
+:p.The practice of generalized markup of source documents
+has significant benefits not only for SCRIPT/VS processing, but also
+facilitates many other applications.
+:h2.What is Generalized Markup?
+:p.To mark up a source document is to add information to it that
+:ih1 id=mark.markup
+:i2.definition of
+enables a person or system to process it in some way.
+The added information or markup can be instructions called
+control words, or indicators, or descriptions of some kind.
+Document markup is the primary means of instructing a
+computerizes text processing system, such as SCRIPT/VS,
+how a document is to be processed.
+:p.A document can be marked up in two ways:
+:ol.
+:li.With specific markup, which limits text processing
+:i2.specific
+to a particular application.
+:li.With generalized markup, which describes the contents
+:i2.generalized
+of a source document, without regard to particular processing.
+The language used for generalized markup (GML, for Generalized
+Markup Language) is descriptive; it provides the syntax and
+usage rules for developing your own vocabulary of tags
+for :hp2.describing:ehp2.
+:i1.tags :i2 refid=gml.tags
+the parts of the document.
+:fn.
+A starter set of GML tags is provided with
+the Document Composition Facility to allow the user to get going.
+:efn.
+:eol.
+:p.A GML tage identifies the associated text as a
+particular document elemeny.
+For example:
+:ul.
+:li.A book might have the major divisions:
+:ul.
+:li.front matter
+:li.body
+:li.back matter
+:eul.
+:p.Within those divisions we can have paragraphs,
+examples, figures, list items, and so on.
+:li.A memo might have document elements of addressee,
+date, sender, address, subject, and reference, as well as
+other types similar to those of a book.
+:eul.
+:p.You might ask, :q.Why use generalized markup instead of
+specific markup:eq.?
+Well, thinking in terms of the content or purpose of
+the parts of a document is easier than thinking in terms of how
+the parts should be processed or how they should appear when
+printed.
+A person doing generalized markup can concentrate on the
+text, without thinking about the format.
+:p.There are benefits of generalized markup when your only
+application will be text processing with SCRIPT/VS and others
+when you anticipate additional applications.
+:fig id='abc' width='4i' depth='10p6' frame='box'.
+I've just drawn a little figure here
+where I've left 10 picas and 6 points of
+space before the text of the figure
+started. I've set my width to four
+inches -- if I print out my
+document with a column width of
+four inches or larger, my figure
+will be column width, if I print
+out my document with a column width
+of less than four inches, my figure
+will extend the width of the page
+dimension.
+:figcap.A Sample Figure
+:figdesc.This figure also gives you a little bit of information
+on how the WIDTH attribute of the FIG tag works.
+:i1.figure example
+:i2 refid=mark.of a figure
+:efig.
+:h3.Potential Benefits of GML for SCRIPT/VS Text Processing
+:p.Here are some potential benefits in using GML when you intend
+to use SCRIPT/VS only for text processing:
+:ul.
+:li.Alternative GML interpretation.
+A GML tag need not be limited to a single SCRIPT/VS
+interpretation.
+For example, a tag might indicate that a group of
+words in the text is a title.
+For one application, you might want titles to be enclosed
+in quotation marks.
+But for another application, you might want titles
+to be underlined or set in italics.
+Each application could be satisfied by alternative GML
+interpretations, :hp1.with no change:ehp1. to
+the source
+document or to the markup of titles.
+:i2 refid=gml.potential benefits of
+As described in a later section in this chapter, you
+have control over the way GML is interpreted.
+:li.Ease of markup
+It is easy to remember GML tags because they can
+consist of terms and abbreviations commonly
+used to descibe a document.
+GML generally requires fewer characters to be entered
+for markup than a corresponding complex sequence of
+control words.
+The result is faster markup and keying of the document.
+Changes to the markup are also faster and may even be
+eliminated with GML, because you can control how GML
+is interpreted.
+:li.Ease of Text update.
+It's easy to update text marked up with GML.
+With GML, such things as the numbering of items in a
+numbered list is left to the formatter, which numbers
+the items automatically.
+Thus, when you insert or delete an item, you don`t
+have to renumber subsequent items, as you would have to
+if the numbers were part of the source text.
+:eul.
+:rdef id=corptbl cwidths='1i * * * * *'
+arrange='1 2 3 3 3 3'
+arrange='1 2 4 5 6 6'
+arrange='1 2 4 5 7 8'
+align='left left center center left center'
+concat='yes yes no yes'
+valign='center center top center center top bottom'.
+.* jx16sv73 .-ps -1
+:table refid=corptbl id=tbtest.
+:i1.table example
+:i2 refid=mark.of a table
+:row.
+:c.Selected major industry and selected country
+:c.Number of U.S. corporation returns
+:c.Controlled Foreign Corporations
+:c.Number of foreign Corporations
+:c.Total assets or corp.
+:c.Foreign corporations with current earnings and
+profits (+) before taxes
+:c.Current
+earnings and
+profits before textes
+:c.Foreign income taxes (net)
+:erow.
+:tcap.A Sample Table
+:etable.
+:backm.
+:index.
+:egdoc.

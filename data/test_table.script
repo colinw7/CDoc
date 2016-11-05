@@ -1,0 +1,153 @@
+:sdoc.
+:tlist.
+.*
+.* Table 1
+.*
+:h1.Table 1
+:rdef id=exmpone cwidths='1.8i 1.8i *'.
+.* jx16sv73 .-ps -1
+:table column refid=exmpone.
+:row.
+:c.Here's the cell 1.
+:c.This text is in cell 2.
+:c.Cell 3
+:row.
+:c.Here's the first cell in the second row.
+:c.The arrangement of this row is the
+same as the arrangement of the previous row and
+the next row.
+:c.The depth of the row is determined by the depth of the
+cell in that row with the most text, so this row ends up being
+deeper than the previous and the next rows.
+:row.
+:c.This is the third row.
+:c 3.Cell 2 in this row is empty.
+:etable.
+.*
+.* Table 2
+.*
+:h1.Table 2
+:rdef id=exone cwidths='2i 2i *'.
+:rdef id=extwo cwidths='1i * * *'.
+.* jx16sv73 .-ps -1
+:table refid=exone.
+:row.
+:c.Here's cell 1.
+:c.This text is in cell 2.
+:c.Cell 3.
+:row.
+:c.Here's the first cell in the second row.
+:c.The arrangement of this row is the same
+as the arrangement of the previous row and the next row.
+:c.The depth of the row is determined by the depths
+of the cells, so this row ends up being deeper
+than the previous and the next rows.
+:row.
+:c.This is the third row.
+:c 3.Cell 2 in this row is empty.
+:row refid=extwo.
+:c.
+This row has a different arrangement from the arrangement
+of the previous row.
+:c.This is the second cell.
+:c.This is the third cell.
+The fourth cell is empty.
+:etable.
+.*
+.* Table 3
+.*
+:h1.Table 3
+:rdef id=more1 cwidths='1i * * *' hp='0 1 2'.
+.* jx16sv73 .-ps -1
+:table refid=more1 column
+:row.
+:c.This is the first cell; it uses highlight level 0.
+This is the same as specifying the HP0 tag.
+:c.This cell is defined to be in highlight level 1.
+:c.This cell is defined to be in highlight level 2.
+:c.The HP attribute contains only 3 specifications, so this
+cell, the fourth cell, uses the highlight level used in the
+previous cell.
+:etable.
+.*
+.* Table 4
+.*
+:h1.Table 4
+:rdef id=more2 cwidths='1i * * *'
+      hp ='0 1 2' align='l c r jus'
+      valign='top bottom top center' concat ='yes no yes'.
+:table refid=more2 column.
+.* jx16sv73 .-ps -1
+:row.
+:c.This cell uses highlight level 0.
+Concatenation is on in this cell. All the lines are left
+aligned, and the cell contents are aligned to the top
+of the cell.
+:c.Highlight
+level 1;
+text lines
+centered and
+not
+concatenated
+bottom vertical
+alignment is used.
+:c.This cell uses highlight level 2.
+Concatenation is on in this cell. All the lines are right
+aligned, and the cell contents are aligned to the top
+of the cell.
+:c.The HP attribute contains 3 values, so
+the fourth cell uses the highlight level from the
+previous cell.
+Input lines are joined, and space is added between words to
+make the left and right edges even.
+The text is centered vertically.
+:etable.
+.*
+.* Table 5
+.*
+:h1.Table 5
+:rdef id=corptbl cwidths='1i * * * * *'
+arrange='1 2 3 3 3 3'
+arrange='1 2 4 5 6 6'
+arrange='1 2 4 5 7 8'
+align='left left center center center left center'
+concat='yes yes no yes'
+valign='center center top center center top bottom'.
+.* jx16sv73 .-ps -1
+:table refid=corptbl id=tbtest.
+:row.
+:c.Selected major industry and selected country
+:c.Number of U.S. corporation returns
+:c.Controlled Foreign Corporations
+:c.Number of foreign Corporations
+:c.Total assets or corp.
+:c.Foreign corporations with current earnings and
+profits (+) before taxes
+:c.Current
+earnings and
+profits before taxes
+:c.Foreign income taxes (net)
+:erow.
+:tcap.A Sample Table
+:etable.
+.*
+.* Table 6
+.*
+:h1.Table 6
+:rdef id=geef cwidths='3* 2* *'
+.* jx16sv73 .-ps -1
+:table refid=geef.
+:row.
+:c.This is the first cell; the second and third
+cels are empty.
+:tnote.This is a table note. It is placed in a row
+containing one cell that is as wide as the table.
+:etnote.
+:row.
+:c 3.This is the third cell in this row. (The first and second
+cells are empty.)
+:tcap.Example of a Table Note, Caption, and Description
+:tdesc.This is a rather short example. Probably
+it does not represent a table you might create for
+a real purpose.
+:etable.

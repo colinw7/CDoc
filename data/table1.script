@@ -1,0 +1,19 @@
+:rdef id=exmpone cwidths='1.8i 1.8i *'.
+.* jx16sv73 .-ps -1
+:table column refid=exmpone.
+:row.
+:c.Here's the cell 1.
+:c.This text is in cell 2.
+:c.Cell 3
+:row.
+:c.Here's the first cell in the second row.
+:c.The arrangement of this row is the
+same as the arrangement of the previous row and
+the next row.
+:c.The depth of the row is determined by the depth of the
+cell in that row with the most text, so this row ends up being
+deeper than the previous and the next rows.
+:row.
+:c.This is the third row.
+:c 3.Cell 2 in this row is empty.
+:etable.

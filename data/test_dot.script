@@ -1,0 +1,36 @@
+.ce 1
+Centred Line
+.ce 3
+Centred Line 1
+Centred Line 2
+Centred Line 3
+Uncentred Line 4
+Uncentred Line 5
+.ce on
+Centred Line 1
+Centred Line 2
+Centred Line 3
+Centred Line 4
+Centred Line 5
+.ce off
+.ce Centred Line
+.ce on top of old smokey
+.ce 555 Bailey Ave.
+.uc 1
+Underscored and Capitialized
+.uc 3
+Underscored and Capitialized 1
+Underscored and Capitialized 2
+Underscored and Capitialized 2
+Not Underscored and Capitialized 4
+Not Underscored and Capitialized 5
+.uc on
+Underscored and Capitialized 1
+Underscored and Capitialized 2
+Underscored and Capitialized 2
+Underscored and Capitialized 4
+Underscored and Capitialized 5
+.uc off
+.uc Underscored and Capitialized
+.uc on top of old smokey
+.uc 555 Bailey Ave.

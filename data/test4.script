@@ -1,0 +1,12 @@
+:dl tsize=9 break.
+:dthd.TERM
+:ddhd.DESCRIPTION
+:dt.Script
+:dd.A text processing program
+:dt.GML
+:dd.Generalised Markup Language
+:dt.Control Words
+:dd.The basic control language of Script
+:dt.DCF
+:dd.Document Composition Facility
+:edl.

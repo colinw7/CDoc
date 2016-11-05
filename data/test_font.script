@@ -1,0 +1,28 @@
+:psc proc='jx16jx16'
+.df courier -*-courier-medium-r-*-*-14-*-100-100-*
+.df times -*-times-medium-r-*-*-17-*-100-100-*
+.df helvetica -*-helvetica-medium-r-normal-*-25-*-100-100-*
+.df symbol -*-symbol-medium-r-normal-*-34-*-100-100-*
+:epsc.
+:psc proc='jx16sv73'
+.df courier courier 10
+.df times times 10
+.df helvetica helvetica 10
+.df symbol symbol 10
+:epsc
+:p.This paragraph should be in the default font.
+.bf courier
+:p.This paragraph should be in Courier font.
+.bf times
+:p.This paragraph should be in Times font.
+.pf
+:p.This paragraph should be in Courier font.
+.pf
+:p.This paragraph should be in the default font.
+.bf helvetica
+:p.This paragraph should be in Helvetica font.
+.pf
+.bf symbol
+:p.This paragraph should be in Symbol font.
+.pf
+:p.This paragraph should be in the default font.

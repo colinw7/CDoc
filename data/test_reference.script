@@ -1,0 +1,64 @@
+:h1 id=clst.All Kinds of Lists
+:p.See :hdref refid=clst..
+:p.See :hdref page=no refid=clst..
+:h1.List Items
+Steps to follow when changing wallpaper:
+:ol.
+:li.Peel off the old wallpaper.
+:li.Clean and size the wall.
+:li.Prepare the paste.
+:li id=help.Get help from someone
+who knows what to do.
+:eol.
+:p.We'd better start with number
+:liref refid=help. the next time.
+:h1.Figures
+:fig id=xreffig frame=box place=inline width=column.
+We're partial to figures in
+boxes.
+A figure that is going to
+have a cross-reference
+must also have a caption (FIGCAP).
+:figcap.A Captioned Figure for Cross-Reference
+:efig.
+:p.See :figref refid=xreffig. for an illustration of...
+:h1.Tables
+:rdef id=exmpone cwidths='1.8i 1.8i *'.
+:table column refid=exmpone id=tbtest.
+:row.
+:c.Here's the cell 1.
+:c.This text is in cell 2.
+:c.Cell 3
+:row.
+:c.Here's the first cell in the second row.
+:c.The arrangement of this row is the
+same as the arrangement of the previous row and
+the next row.
+:c.The depth of the row is determined by the depth of the
+cell in that row with the most text, so this row ends up being
+deeper than the previous and the next rows.
+:row.
+:c.This is the third row.
+:c 3.Cell 2 in this row is empty.
+:tcap.A Captioned Table, to Demonstrate Cross-Referencing
+:etable.
+:p.See :tref refid=tbtest. for an illustration of...
+:h1.Footnotes
+:p.A footnote appears at the end of this
+sentence because that is where I put my footnote.
+:fn.
+This is the text of a footnote that I entered without using
+the ID attribute to give the footnote a name.
+:efn.
+:fn id=fnxmp.
+This is the text of the footnote.
+It starts with an implied paragraph.
+:p.It could have several paragraphs, but it
+can't contain examples, figures, or another
+footnote.
+:efn.
+:p.And here is our reference.:fnref refid=fnxmp.
+:h1.Unmatched References
+See :hdref refid=nohead., :figref refid=nofig.,
+:liref refid=nolist., :fnref refid=nofoot., and
+this non existent table :tref refid=notable..

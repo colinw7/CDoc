@@ -1,0 +1,13 @@
+:sl.
+:li.First simple list item
+:li.Second simple list item
+:ol compact
+:li.First nested item
+:li.Second nested item
+:eol.
+:li.Last simple list item
+:esl.
+:ul.
+:li.An unordered list item
+:li.Another unordered list item
+:eul.

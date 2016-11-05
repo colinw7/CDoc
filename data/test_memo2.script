@@ -1,0 +1,125 @@
+:memo
+:mh.
+:from.Colin Williams
+:ref.Gle/CW (CW#D0001)
+:date.22 August 1988
+:tel.49548
+:location.MOOR LANE - DERBY
+:function.Engineering Computing
+:to.See Separate Sheet
+:emh.
+:title.USE OF PRODUCTION G404 VER 2D8
+:p.To produce an acceptable MERGE facility in G404 a number of
+outstanding bugs in the program have been fixed and a number of options
+have been altered.
+:p.A list of the bugs & alterations are given on the release sheet for
+this version.
+:p.The purpose of this note is to make the users aware of the
+alterations to the options and indicate how to use them.
+.sp 2
+:p.The options that have been changed are described below.
+:p.:hp2.PLOT(PL):ehp2.
+:p.Only the appearance of the plot has been changed. This has been
+necessary to highlight the differences between the three possible
+sections (inlet, engine and bypass) which make up an annulus and to
+distinguish between the current and background annuli when two are
+present.
+:p.The modifications to the display are as follows
+:ul.
+:li.Each section of the annulus uses a separate symbol to display the
+stations contained within it.
+:li.If two annuli are present then the background annulus uses a
+separate set of symbols for its stations and the outer annulus
+wall (if displayed) uses a dashed line instead of a solid line.
+:li.A key to the symbols used is displayed on the screen.
+:eul.
+:p.See Figure 1 for an example plot.
+:p.:hp2.CREATE(CR):ehp2.
+:p.The current production create option has a number of hidden options
+and makes a few assumptions about the layout of the annulus from the way
+the user enters the stations.
+:p.The hidden prompts are
+:dl tsize=6 break.
+:dt.ID
+:dd.To prompt the user for the type and identification of the station
+being entered.
+:dt.ENG
+:dd.To define the station being entered as the first station in the
+engine section.
+:edl.
+:p.In many cases users do not use these options correctly e.g. often
+defining an engine section without using the ENG prompt causing the
+program to assume an inlet section definition.
+:p.All stations in the inlet and engine section have to be added
+monotonically and any non-monotonic stations are added as the first
+station in the bypass section (if an engine section had already been
+defined).
+:p.This option thus causes a number of problems which are directly
+relevant to the correct operation of the merge option i.e. it is not
+possible to define a bypass section or an inlet section with a bypass
+section.
+:p.This restriction in the types of annuli that can be created
+prevents users from working with partial annulus definitions which are
+to be merged together later on in the design procedure.
+.sp 2
+:p.A new create option has been written to overcome the problems in
+using the previous create command.
+:p.The user is required to enter the section for each station to be
+added. This allows a non-monotonic input of sections and the ability to
+define an annulus consisting of any combination of inlet, engine or
+bypass sections.
+:note.In cross-hair input the prompting mechanism for the section
+works differently.
+:p.The commands are still the same i.e.
+:dl tsize=20 break.
+:dt.INLET(IN)
+:dd.To define the station as an Inlet Section station.
+:dt.ENGINE(ENG)
+:dd.To define the station as an Engine Section station.
+:dt.BYPASS(BYP)
+:dd.To define the station as an Bypass Section station.
+:dt.END(E)
+:dd.To end the CREATE command.
+:edl.
+:p.Unfortunately the user can only enter a single character at the
+cross-hairs which means that for commands longer than one character
+the '+' character must be entered to put up a prompt from which
+longer commands can be entered.
+:p.Entering RETURN at the cross-hairs takes the default section which is
+initially the engine section but from then on defaults to the last
+defined section.
+:p.The ID command has been removed from this option to avoid too many
+prompts occuring in the text area causing continual screen erasures and
+subsequent re-plotting. This is not considered a major omission as this
+facility is available using the IDENT(ID) option.
+.sp 2
+:p.:hp2.ADD(A):ehp2.
+:p.This has the same format as the CREATE command.
+:p.The command only allows one station to be added at a time and cannot
+be used to add the first station of an annulus.
+.sp 2
+:p.:hp2.IDENT(ID):ehp2.
+:p.This option now prompts for the information required.
+:p.The option also contains three extra commands at the top level which
+allow the user to change any station in a single Inlet, Engine or Bypass
+section to be a Inlet station or the first station in an Engine or
+Bypass section.
+.sp 2
+:p.:hp2.MERGE(M):ehp2.
+:p.This option requires no input by the user but will only merge
+certain combinations of annuli.
+:p.The numbers refered to below refer to the seven possible annulus
+combinations as illustrated in Figure 2.
+:p.The possible merge combinations are (assuming no overlap) shown below
+with the first number being the Leftmost Annulus and the second
+number(s) the Rightmost Annulus
+:sl.
+:li. 1 to 5,6,7
+:li. 2 to 5,6,7
+:li. 3 to 5,6,7
+:li. 4 to 1,2,3,4,5,6,7
+:li. 5 to 5,6,7
+:li. 6 to 5,6,7
+:li. 7 to 5,6,7
+:esl.
+:sig.

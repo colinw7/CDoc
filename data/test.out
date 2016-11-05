@@ -1,0 +1,6080 @@
+--- fig.script ---
+
+
+      -------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+      Some Text in the Figure
+      this should appear unformatted
+      and in normal font.
+      
+                    0  0
+                     /\
+                   \____/
+      
+      -------------------------------------------------------------------------------
+
+                               [1mFigure 1.  Test Figure 1[0m
+
+      This is some text between the figures Figure 1. on page 1 and Figure 2. on
+      page 1.
+
+      %-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*
+
+
+
+
+
+
+
+
+
+      Some more figure Text
+      %-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*-%-*
+
+        [1mFigure 2.  Test Figure 2:  [0mThis is a sample Figure for testing purposes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- index1.script ---
+
+
+                                    [1mIndex[0m
+
+
+
+     [1mS[0m
+
+     sauces
+       bearnaise 1
+       hollandaise 1
+       bechamel 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- index2.script ---
+
+
+                                    [1mIndex[0m
+
+
+
+     [1mS[0m
+
+     sauces
+       hollandaise 1
+       bechamel 1
+       bearnaise 1
+       mayonnaise
+         blender method 1
+         food-processor method 1
+         manual method 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- index3.script ---
+
+
+                                    [1mIndex[0m
+
+
+
+     [1mS[0m
+
+     sauces
+       hallondaise
+       mayonnaise
+         blender method 1
+         food-processor method 1
+         manual method 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- index4.script ---
+
+
+      [1mPage 1     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mPage 2     [0m
+
+       Äæ±&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mPage 3     [0m
+
+       Äæ±&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+
+
+                                   [1mIndex[0m
+
+
+
+     [1mS[0m
+
+     sauces
+       mayonnaise
+         blender method 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+--- index5.script ---
+
+
+      [1mPage 1     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mPage 2     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mPage 3     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+
+
+      [1mPage 4     [0m
+
+       `=+&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+
+
+      [1mPage 5     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 5
+
+
+
+
+      [1mPage 6     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 6
+
+
+
+
+                                   [1mIndex[0m
+
+
+
+     [1mM[0m
+
+     marinara sauce (Volume II)
+
+     [1mS[0m
+
+     sauces 1-2
+     sauce
+       mayonnaise 3-?
+       blender method 3
+         blender method [1m5[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 7
+
+--- ps_page.script ---
+
+
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+
+                                 [1mFigure 1.  Test Image[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- reference.script ---
+--- sample_gml.script ---
+                                Company Confidential
+
+
+
+
+
+
+
+
+
+
+
+             [4mA Short GML Document Demonstrating the Document Composition Facility[0m
+
+
+
+
+
+
+
+
+
+
+                                                                        [4m05 Nov 16[0m
+
+
+
+
+
+
+                                                                      [4mC. H. Scott[0m
+
+
+                                                                  [4m77 Cattle Drive[0m
+                                                                [4mBoulder, Colorado[0m
+
+
+                                                             [4mCompany Confidential[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+                                Company Confidential
+
+                              [1mTable of Contents[0m
+
+
+         
+         [1m1.0  Introduction to the Generalized Markup Language[0m  ............... 5
+         1.1  What is Generalized Markup?  ................................... 5
+           1.1.1  Potential Benefits of GML for SCRIPT/VS Text Processing  ... 5
+         
+         [1mIndex[0m  .............................................................. 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+                                Company Confidential
+
+                            [1mList of Illustrations[0m
+
+
+         Figure 1.  A Sample Figure  ......................................... 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+                                Company Confidential
+
+                               [1mList of Tables[0m
+
+
+         Table 1.  A Sample Table  ........................................... 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+                                Company Confidential
+
+      [1m1.0  Introduction to the Generalized Markup Language     [0m
+
+       The practice of generalized markup of source documents has significant
+       benefits not only for SCRIPT/VS processing, but also facilitates many
+       other applications.
+
+
+
+        [1m1.1  What is Generalized Markup?  [0m
+
+         To mark up a source document is to add information to it that enables a
+         person or system to process it in some way. The added information or
+         markup can be instructions called control words, or indicators, or
+         descriptions of some kind. Document markup is the primary means of
+         instructing a computerizes text processing system, such as SCRIPT/VS,
+         how a document is to be processed.
+
+         A document can be marked up in two ways:
+
+         1. With specific markup, which limits text processing to a particular
+            application.
+
+         2. With generalized markup, which describes the contents x{Õ the
+            parts of the document.[1m{1}[0m
+
+         A GML tage identifies the associated text as a particular document
+         elemeny. For example:
+
+         .  A book might have the major divisions:
+
+            .  front matter
+
+            .  body
+
+            .  back matter
+
+            Within those divisions we can have paragraphs, examples, figures,
+            list items, and so on.
+
+         .  A memo might have document elements of addressee, date, sender,
+            address, subject, and reference, as well as other types similar to
+            those of a book.
+
+         You might ask, "Why use generalized markup instead of specific markup"?
+         Well, thinking in terms of the content or purpose of the parts of a
+         document is easier than thinking in terms of how the parts should be
+         processed or how they should appear when printed. A person doing
+         generalized markup can concentrate on the text, without thinking about
+         the format.
+
+ -----------------
+
+         [1m{1}[0m A starter set of GML tags is provided with the Document Composition
+         Facility to allow the user to get going.
+
+                                       Page 5
+
+
+                                Company Confidential
+
+         There are benefits of generalized markup when your only application will
+         be text processing with SCRIPT/VS and others when you anticipate
+         additional applications.
+
+         -------------------------------------------------------------------------------
+
+
+
+
+         I've just drawn a little figure here
+         where I've left 10 picas and 6 points of
+         space before the text of the figure
+         started. I've set my width to four
+         inches -- if I print out my
+         document with a column width of
+         four inches or larger, my figure
+         will be column width, if I print
+         out my document with a column width
+         of less than four inches, my figure
+         will extend the width of the page
+         dimension.
+         -------------------------------------------------------------------------------
+
+             [1mFigure 1.  A Sample Figure:  [0mThis figure also gives you a little
+           bit of information on how the WIDTH attribute of the FIG tag works.
+
+
+
+          [1m1.1.1  Potential Benefits of GML for SCRIPT/VS Text Processing  [0m
+
+           Here are some potential benefits in using GML when you intend to use
+           SCRIPT/VS only for text processing:
+
+           .  Alternative GML interpretation. A GML tag need not be limited to a
+              single SCRIPT/VS interpretation. For example, a tag might indicate
+              that a group of words in the text is a title. For one application,
+              you might want titles to be enclosed in quotation marks. But for
+              another application, you might want titles to be underlined or set
+              in italics. Each application could be satisfied by alternative GML
+              interpretations, [4mwith no change[0m[0m to the source document or to the
+              markup of titles. As described in a later section in this chapter,
+              you have control over the way GML is interpreted.
+
+           .  Ease of markup It is easy to remember GML tags because they can
+              consist of terms and abbreviations commonly used to descibe a
+              document. GML generally requires fewer characters to be entered for
+              markup than a corresponding complex sequence of control words. The
+              result is faster markup and keying of the document. Changes to the
+              markup are also faster and may even be eliminated with GML, because
+              you can control how GML is interpreted.
+
+           .  Ease of Text update. It's easy to update text marked up with GML.
+              With GML, such things as the numbering of items in a numbered list
+              is left to the formatter, which numbers the items automatically.
+
+                                       Page 6
+
+
+                                Company Confidential
+
+              Thus, when you insert or delete an item, you don`t have to renumber
+              subsequent items, as you would have to if the numbers were part of
+              the source text.
+
+           +--------------------------------------------+-----------+------------+
+           |      Controlled Foreign Corporations       |           |            |
+           +---------------------+----------+-----------|           |            |
+           |Foreign corporations |          |           |           |            |
+           |with current earnings|          |           |           |            |
+           |   and profits (+)   |          |           |Number of  |Selected    |
+           |    before taxes     |          |           |U.S.       |major       |
+           +----------+----------|Total     | Number of |corporation|industry and|
+           |          | Current  |assets or |foreign Cor|returns    |selected    |
+           |          | earnings |corp.     | porations |           |country     |
+           | Foreign  |   and    |          |           |           |            |
+           |  income  | profits  |          |           |           |            |
+           |  taxes   |  before  |          |           |           |            |
+           |  (net)   |  textes  |          |           |           |            |
+           +----------+----------+----------+-----------+-----------+------------+
+
+                                  [1mTable 1.  A Sample Table[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 7
+
+
+                                Company Confidential
+
+                                 [1mIndex[0m
+
+
+
+     [1mG[0m
+
+     Generalized Markup Language
+       introduction to 5
+       tags 5
+       potential benefits of 6
+
+     [1mF[0m
+
+     figure example 6
+
+     [1mT[0m
+
+     table example 7
+
+     [1mM[0m
+
+     markup
+       definition of 5
+       of a table 7
+       of a figure 6
+       generalized 5
+       specific 5
+
+     [1mG[0m
+
+     GML
+       See Generalized Markup Language
+
+     [1mT[0m
+
+     tags 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 8
+
+--- symbol.script ---
+
+
+      SCRIPT/VS is the formatter component of the Document Composition Facility
+
+      Consult the [1mDocument Composition Facility
+
+      [1mDocument Composition Facility[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table1.script ---
+
+
+
+      +------------------------------+---------------------+---------------------+
+      |Cell 3                        |This text is in cell |Here's the cell 1.   |
+      |                              |2.                   |                     |
+      +------------------------------+---------------------+---------------------+
+      |The depth of the row is       |The arrangement of   |Here's the first cell|
+      |determined by the depth of the|this row is the same |in the second row.   |
+      |cell in that row with the most|as the arrangement of|                     |
+      |text, so this row ends up     |the previous row and |                     |
+      |being deeper than the previous|the next row.        |                     |
+      |and the next rows.            |                     |                     |
+      +------------------------------+---------------------+---------------------+
+      |Cell 2 in this row is empty.  |                     |This is the third    |
+      |                              |                     |row.                 |
+      +------------------------------+---------------------+---------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table2.script ---
+
+
+
+      +------------------------+------------------------+------------------------+
+      |Cell 3.                 |This text is in cell 2. |Here's cell 1.          |
+      +------------------------+------------------------+------------------------+
+      |The depth of the row is |The arrangement of this |Here's the first cell in|
+      |determined by the depths|row is the same as the  |the second row.         |
+      |of the cells, so this   |arrangement of the      |                        |
+      |row ends up being deeper|previous row and the    |                        |
+      |than the previous and   |next row.               |                        |
+      |the next rows.          |                        |                        |
+      +------------------------+------------------------+------------------------+
+      |Cell 2 in this row is   |                        |This is the third row.  |
+      |empty.                  |                        |                        |
+      +-------------------+----+---------------+--------+-----------+------------+
+      |                   |This is the third   |This is the second  |This row has|
+      |                   |cell. The fourth    |cell.               |a different |
+      |                   |cell is empty.      |                    |arrangement |
+      |                   |                    |                    |from the    |
+      |                   |                    |                    |arrangement |
+      |                   |                    |                    |of the      |
+      |                   |                    |                    |previous    |
+      |                   |                    |                    |row.        |
+      +-------------------+--------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table3.script ---
+
+
+
+      +-------------------+--------------------+--------------------+------------+
+      |[1mThe HP attribute   [0m|[1mThis cell is defined[0m|[4mThis cell is defined[0m|This is the |
+      |[1mcontains only 3    [0m|[1mto be in highlight  [0m|[4mto be in highlight  [0m|first cell; |
+      |[1mspecifications, so [0m|[1mlevel 2.            [0m|[4mlevel 1.            [0m|it uses     |
+      |[1mthis cell, the     [0m|                    |                    |highlight   |
+      |[1mfourth cell, uses  [0m|                    |                    |level 0.    |
+      |[1mthe highlight level[0m|                    |                    |This is the |
+      |[1mused in the        [0m|                    |                    |same as     |
+      |[1mprevious cell.     [0m|                    |                    |specifying  |
+      |                   |                    |                    |the HP0 tag.|
+      +-------------------+--------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table4.script ---
+CDoc Warning : Invalid Value for Row Definition Align 'l' (Line 3, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'c' (Line 3, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'r' (Line 3, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'jus' (Line 3, Pass 2)
+
+
+
+      +-------------------+--------------------+--------------------+------------+
+      |                   |[1mThis cell uses      [0m|                    |This cell   |
+      |[1mThe HP attribute   [0m|[1mhighlight level 2.  [0m|                    |uses        |
+      |[1mcontains 3 values, [0m|[1mConcatenation is on [0m|                    |highlight   |
+      |[1mso the fourth cell [0m|[1min this cell. All   [0m|                    |level 0. Con|
+      |[1muses the highlight [0m|[1mthe lines are right [0m|                    |catenation  |
+      |[1mlevel from the     [0m|[1maligned, and the    [0m|                    |is on in    |
+      |[1mprevious cell.     [0m|[1mcell contents are   [0m|                    |this cell.  |
+      |[1mInput lines are    [0m|[1maligned to the top  [0m|                    |All the     |
+      |[1mjoined, and space  [0m|[1mof the cell.        [0m|[4mHighlight           [0m|lines are   |
+      |[1mis added between   [0m|                    |[4mlevel 1;            [0m|left        |
+      |[1mwords to make the  [0m|                    |[4mtext lines          [0m|aligned, and|
+      |[1mleft and right     [0m|                    |[4mcentered and        [0m|the cell    |
+      |[1medges even. The    [0m|                    |[4mnot                 [0m|contents are|
+      |[1mtext is centered   [0m|                    |[4mconcatenated        [0m|aligned to  |
+      |[1mvertically.        [0m|                    |[4mbottom vertical     [0m|the top of  |
+      |                   |                    |[4malignment is used.  [0m|the cell.   |
+      +-------------------+--------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table5.script ---
+
+
+
+      +------------------------------------------------+------------+------------+
+      |        Controlled Foreign Corporations         |            |            |
+      +-----------------------+-----------+------------|            |            |
+      |Foreign corporations   |           |            |            |            |
+      |with current earnings  |           |            |            |Selected    |
+      |and profits (+) before |           |            |Number of   |major       |
+      |taxes                  |   Total   | Number of  |U.S.        |industry and|
+      +-----------+-----------| assets or |  foreign   |corporation |selected    |
+      |           |  Current  |   corp.   |Corporations|returns     |country     |
+      |           | earnings  |           |            |            |            |
+      |  Foreign  |and profits|           |            |            |            |
+      |  income   |  before   |           |            |            |            |
+      |taxes (net)|   taxes   |           |            |            |            |
+      +-----------+-----------+-----------+------------+------------+------------+
+
+                               [1mTable 1.  A Sample Table[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table6.script ---
+
+
+
+      +-------------+------------------------+-----------------------------------+
+      |             |                        |This is the first cell; the second |
+      |             |                        |and third cels are empty.          |
+      +-------------+------------------------+-----------------------------------+
+      |[1mNote:  [0mThis is a table note. It is placed in a row containing one         |
+      |cell that is as wide as the table.                                        |
+      +-------------+------------------------+-----------------------------------+
+      |This is the  |                        |                                   |
+      |third cell in|                        |                                   |
+      |this row.    |                        |                                   |
+      |(The first   |                        |                                   |
+      |and second   |                        |                                   |
+      |cells are    |                        |                                   |
+      |empty.)      |                        |                                   |
+      +-------------+------------------------+-----------------------------------+
+
+          [1mTable 1.  Example of a Table Note, Caption, and Description:  [0mThis
+      is a rather short example. Probably it does not represent a table you might
+                              create for a real purpose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- table7.script ---
+
+
+
+      +-----------------+-------------------------------------+------------------+
+      |Text for column  |Text for column 2, this column should|                  |
+      |5, this column   |be at the top middle and extend the  |Text for column 1,|
+      |should be on the |width of the two columns below it.   |this column should|
+      |right hand side  +------------------+------------------|be on the left    |
+      |and extend the   |Text for column 4,|Text for column 3,|hand side and     |
+      |whole table      |this column should|this column should|extend the whole  |
+      |height.          |be at the bottom  |be at the bottom  |table height.     |
+      |                 |right middle.     |left middle.      |                  |
+      +-----------------+------------------+------------------+------------------+
+
+                               [1mTable 1.  A Sample Table[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test1.script ---
+
+
+      [1mCar Names     [0m
+
+       xÎj«–
+
+          Granada
+
+          Golf
+
+          Astra
+
+
+
+        [1mExpanded List  [0m
+
+         
+
+         [1mGranada     [0mFord
+
+         [1mGolf        [0mVolkswaggon
+
+         [1mAstra       [0mVauxhall
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test2.script ---
+
+
+      [1mFirst Level Heading     [0m
+
+       Text is indented five characters and a paragraph is implied at the start
+
+       Use the paragraph tag to get this effect
+
+
+
+        [1mSecond Level Heading  [0m
+
+         Text here is indented a further 5 characters
+
+
+
+          [1mThird Level Heading  [0m
+
+           Yet another 5 characters indentation here
+
+
+
+            [4mFourth Level Heading  [0m
+
+             Indentation now ceases
+
+             [1mFifth Level Heading  [0mNumbering now ceases and entries are no longer
+             made in the table of contents
+
+             [3mSixth Level Heading  [0mThis heading is a bit like the fifth level
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test3.script ---
+
+
+         First simple list item
+
+         Second simple list item
+
+         1. First nested item
+         2. Second nested item
+
+         Last simple list item
+
+      .  An unordered list item
+
+      .  Another unordered list item
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test4.script ---
+
+
+      [3mTERM     [0m[3mDESCRIPTION[0m
+
+      [1mScript   [0mA text processing program
+
+      [1mGML      [0mGeneralised Markup Language
+
+      [1mControl Words[0m
+               The basic control language of Script
+
+      [1mDCF      [0mDocument Composition Facility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test5.script ---
+
+
+      x+Õ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test6.script ---
+
+
+      [1mHeader1     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mHeader 2     [0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+--- test_all.script ---
+
+
+      [4mTest Script[0m
+
+       This text should eventually contain a test for all commands supported by
+       'jx16_process_script'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mParagraphs     [0m
+
+       The rain in spain falls mainly on the plain. The quick brown fox jumps
+       over the lazy dog. Around the rugged rock the ragged rascal ran. Simple
+       Simon met a pieman on the way to the fair, said Simple Simon to the pieman
+       let me taste your wares .....
+
+       Blah, blah blah (See "Another Section" on page 6).
+
+       [1mNote: [0mThis text does not mean anything it is being typed in in order to
+             test my SCRIPT converter.
+
+
+
+        [1mSub-Paragraphs  [0m
+
+         Lets have some highlighted text [4mHighlight1[0m[0m, [1mHighlight2[0m[0m, [3mHighlight3[0m[0m.
+
+
+
+        [1mSymbols  [0m
+
+         Ampersand &amp., date 05 Nov 16., GML :., required Blank  .,  semi-colon
+         ;., time 09:10:24..
+
+
+
+        [1mOther Stuff  [0m
+
+                                      Centered Line
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mLists     [0m
+
+       [1mTerm 1[0m
+           Definition of Term 1
+
+       Some extra text for Term 1
+
+           [1mTerm 1.1[0m
+               Definition of Term 1.1
+
+           Some extra text for Term 1.1
+
+               [1mTerm 1.1.1[0m
+                   Definition of Term 1.1.1
+
+               Some extra text for Term 1.1.1
+
+                   1. List Item 1.1.1.1
+
+                   Some extra text for Item 1.1.1.1
+
+                   2. List Item 1.1.1.2
+
+                   3. List Item 1.1.1.3
+
+                   4. List Item 1.1.1.4
+
+               [1mTerm 1.1.2[0m
+                   Definition of Term 1.1.2
+
+               [1mTerm 1.1.3[0m
+                   Definition of Term 1.1.3
+
+               [1mTerm 1.1.4[0m
+                   Definition of Term 1.1.4
+
+           [1mTerm 1.1[0m
+               Definition of Term 1.2
+
+           [1mTerm 1.3[0m
+               Definition of Term 1.3
+
+           [1mTerm 1.4[0m
+               Definition of Term 1.4
+
+       [1mTerm 2[0m
+           Definition of Term 2
+
+       [1mTerm 3[0m
+           Definition of Term 3
+
+       [1mTerm 4[0m
+           Definition of Term 4
+
+
+                                       Page 3
+
+
+
+
+       1. List Item 1
+
+          1.1. List Item 1.1
+
+               1.1.1. List Item 1.1.1
+
+                      [1mTerm 1.1.1.1[0m
+                          Definition of Term 1.1.1.1
+
+                      Some extra text for Term 1.1.1.1
+
+                      [1mTerm 1.1.1.2[0m
+                          Definition of Term 1.1.1.2
+
+                      [1mTerm 1.1.1.3[0m
+                          Definition of Term 1.1.1.3
+
+                      [1mTerm 1.1.1.4[0m
+                          Definition of Term 1.1.1.4
+
+               1.1.2. List Item 1.1.2
+
+               1.1.3. List Item 1.1.3
+
+               1.1.4. List Item 1.1.4
+
+          1.2. List Item 1.2
+
+          1.3. List Item 1.3
+
+          1.4. List Item 1.4
+
+       2. List Item 2
+
+       3. List Item 3
+
+       4. List Item 4
+
+       1. Item 1
+
+       Some extra text for Item 1
+
+       2. Item 2
+
+       3. Item 3
+
+          Item 1
+
+       Some extra text for Item 1
+
+          Item 2
+
+          Item 3
+
+
+                                       Page 4
+
+
+
+
+       .  Item 1
+
+       Some extra text for Item 1
+
+       .  Item 2
+
+       .  Item 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 5
+
+
+
+
+      [1mAnother Section     [0m
+
+       This section is referenced in the first Section (See "Paragraphs" on page
+       2) so you should be able to flick backwards and forwards between the two.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 6
+
+
+
+
+      [1mYet Another Section     [0m
+
+       –Å3&
+       –Å3&
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 7
+
+--- test_cont.script ---
+
+
+      [1mTest Header     [0m
+
+       Test Paragraph
+
+       Test Paragraph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_dh.script ---
+--- test_dl.script ---
+
+
+      [1mDefinition Lists     [0m
+
+       Normal Definition List.
+
+       [3mTerm      [0m[3mDescription[0m
+
+       [1mTerm 1    [0mDescription of Term 1. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+
+                 Extra Text for Term 1. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+
+       [1mTerm 2    [0mDescription of Term 2. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+
+       [1mTerm 3    [0mDescription of Term 3. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+
+       Compact Definition List.
+
+       [3mTerm      [0m[3mDescription[0m
+       [1mTerm 1    [0mDescription of Term 1. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+                 Extra Text for Term 1. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+       [1mTerm 2    [0mDescription of Term 2. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+       [1mTerm 3    [0mDescription of Term 3. This is some extra text to pad out the
+                 line so we get a mult-line paragraph.
+
+       Definition List with Terms too long
+
+       [3mTerm  [0m[3mDescription[0m
+
+       [1mLong Term 1  [0mDescription of Term 1. This is some extra text to pad out the
+            line so we get a mult-line paragraph.
+
+            Extra Text for Term 1. This is some extra text to pad out the line so
+            we get a mult-line paragraph.
+
+       [1mLong Term 2  [0mDescription of Term 2. This is some extra text to pad out the
+            line so we get a mult-line paragraph.
+
+       [1mLong Term 3  [0mDescription of Term 3. This is some extra text to pad out the
+            line so we get a mult-line paragraph.
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_dot.script ---
+
+
+                                     Centred Line
+
+          
+          
+                                    Centred Line 3
+
+      Uncentred Line 4 Uncentred Line 5
+
+          
+          
+          
+          
+                                    Centred Line 5
+
+                                     Centred Line
+
+                                 on top of old smokey
+
+                                    555 Bailey Ave.
+
+      
+
+      
+      
+      
+
+      Not Underscored and Capitialized 4 Not Underscored and Capitialized 5
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_example.script ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        10 LET A = B
+        20 IF A GT C THEN GO TO 40
+        30 LET A = C
+        40 PRINT A, C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_fig.script ---
+
+
+      See Figure 1. on page 1.
+
+      -------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+      
+        +------------------+
+        |                  |
+        |                  |
+        |                  |
+        |                  |
+        |                  |
+        |                  |
+        +------------------+
+      
+      -------------------------------------------------------------------------------
+
+                    [1mFigure 1.  Figure Caption:  [0mFigure Description
+
+      Postscript Figure
+
+      -------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      -------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_font.script ---
+CDoc Error : Font List is Invalid - 'courier' (Line 14, Pass 2)
+CDoc Error : Font List is Invalid - 'times' (Line 16, Pass 2)
+CDoc Warning : No Current Font (Line 18, Pass 2)
+CDoc Warning : No Current Font (Line 20, Pass 2)
+CDoc Error : Font List is Invalid - 'helvetica' (Line 22, Pass 2)
+CDoc Warning : No Current Font (Line 24, Pass 2)
+CDoc Error : Font List is Invalid - 'symbol' (Line 25, Pass 2)
+CDoc Warning : No Current Font (Line 27, Pass 2)
+
+
+      This paragraph should be in the default font.
+
+      This paragraph should be in Courier font.
+
+      This paragraph should be in Times font.
+
+      This paragraph should be in Courier font.
+
+      This paragraph should be in the default font.
+
+      This paragraph should be in Helvetica font.
+
+      This paragraph should be in Symbol font.
+
+      This paragraph should be in the default font.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_format.script ---
+
+
+      This is a test paragraph, to format, it contains -- various punctuation ?
+      and other stuff. The formatter should (ensure) that the text is
+      left-aligned and that words-that-belong-together are not broken !!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_fronts.script ---
+
+
+      
+
+                                [1m    cughj27    Issue 2[0m
+
+                              [1mGraphical Data Manipulation[0m
+
+
+                        [1mAuthor: C Williams (Flt/CW)  Tel: 47372[0m
+
+      [1mSummary[0m
+
+      This program has three major functions :-
+
+      1. To create/modify the list of graphs associated with a particular
+         Experiment Identity.
+
+      2. To create/modify the list of graphs associated with a particular Engine
+         Type and User Key.
+
+      3. To import graphs from the Mainframe R280 Database onto the Experiment
+         Analyser (EA) Database. This may be done either one graph at a time, or
+         several graphs at a time by specifying a Graph Identifier Table (GIDT).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_gdoc.script ---
+                                  No Classification
+
+
+
+
+
+
+
+
+
+
+
+                                                                   [4mDocument Title[0m
+
+
+
+
+
+
+                                                                [4mDocument Number 4[0m
+
+
+
+                                                                        [4m05 Nov 16[0m
+
+
+
+
+
+
+                                                                       [4mC Williams[0m
+
+
+                                                              [4m16 Sweetbriar Close[0m
+                                                                         [4mAlvaston[0m
+                                                                            [4mDerby[0m
+                                                                         [4mDE24 0TF[0m
+
+
+                                                                [4mNo Classification[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+                                  No Classification
+
+      [1mAbstract[0m
+
+      This is a test document for all Script Tags.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+                                  No Classification
+
+      [1mPreface[0m
+
+      A preface for the document.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+                                  No Classification
+
+                              [1mTable of Contents[0m
+
+
+         
+         [1mPart Header[0m  ........................................................ 7
+         
+         [1m1.0  Chapter Header[0m  ................................................ 8
+         1.1  Level 2 Header  ................................................ 8
+           1.1.1  Level 3 Header  ............................................ 8
+         
+         [1mAppendix A.  Appendix Header[0m  ....................................... 10
+         
+         [1mBack Matter Header[0m  ................................................. 11
+         
+         [1mIndex[0m  .............................................................. 12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+                                  No Classification
+
+                            [1mList of Illustrations[0m
+
+
+         Figure 1.  Caption  ................................................. 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 5
+
+
+                                  No Classification
+
+                               [1mList of Tables[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 6
+
+
+                                  No Classification
+
+      [4mPart Header[0m
+
+       The body part.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 7
+
+
+                                  No Classification
+
+      [1m1.0  Chapter Header     [0m
+
+       The text part. [1mMotif Programming Manual [0m
+
+       [3mTerm Heading  [0m[3mDesc Heading[0m
+       [1mTerm 1    [0mDescription of Term 1
+       Extra Text for Term 1
+       [1mTerm 2    [0mDescription of Term 2
+
+       1. List Item 1
+
+       2. List Item 2
+
+       3. List Item 3
+
+       .  List Item 1
+
+       .  List Item 2
+
+       .  List Item 3
+
+          List Item 1
+
+          List Item 2
+
+          List Item 3
+
+
+
+        [1m1.1  Level 2 Header  [0m
+
+         -------------------------------------------------------------------------------
+         +----------------------------+
+         |                            |
+         |                            |
+         |                            |
+         |                            |
+         |                            |
+         |                            |
+         +----------------------------+
+         -------------------------------------------------------------------------------
+
+                             [1mFigure 1.  Caption:  [0mDescription
+
+
+
+          [1m1.1.1  Level 3 Header  [0m
+
+           [4mHightlight 1, [0mHighlight 0[0m[4m[0m[0m
+
+           [1mHightlight 2[0m[0m and [3mHightlight 3[0m[0m
+
+             The time has come for all good men to do their duty.
+
+
+                                      Page 8
+
+
+                                 No Classification
+
+             Ask not what your country can do for you, ask what you can do for
+             your country.
+
+           [1mNote: [0mThis is a note.
+
+           This is a paragraph
+
+
+
+           This is a continuation of the paragraph.
+
+           "We will fight them on the beaches"[1m{23734080}[0m
+
+           See Figure 1. on page 8 and [1m{1}[0m on page 0 and "Level 2 Header" on
+           page 8 and 2. on page 8 and List Item 2 on page 8 and List Item 2 on
+           page 8.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -----------------
+
+           [1m{23734080}[0m 
+
+           This is a footnote.
+
+
+                                       Page 9
+
+
+                                  No Classification
+
+      [1mAppendix A.  Appendix Header     [0m
+
+       The appendix text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 10
+
+
+                                  No Classification
+
+      [1mBack Matter Header     [0m
+
+       [1mGlossary Term 1[0m:  Description of Glossary Term 1
+
+       Extra text for Description of Glossary Term 1
+
+       [1mGlossary Term 2[0m:  Description of Glossary Term 2. Add some text to the end
+       so that the paragraph is more than 1 line.
+
+       [1mGlossary Term 3[0m:  Description of Glossary Term 3
+
+       [1mGlossary Term 4[0m:  Description of Glossary Term 4
+
+       The back matter text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 11
+
+
+                                  No Classification
+
+                                   [1mIndex[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 12
+
+--- test_heading.script ---
+
+
+      [4mHeading Level 0[0m
+
+       A Paragraph following the header to show how the header interacts with the
+       actual document text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mHeading Level 1     [0m
+
+       A Paragraph following the header to show how the header interacts with the
+       actual document text (See "Heading Level 0" on page 1).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mAnother Heading Level 1     [0m
+
+       A Paragraph following the header to show how the header interacts with the
+       actual document text (See "Another Heading Level 1" on page 3).
+
+
+
+        [1mHeading Level 2  [0m
+
+         A Paragraph following the header to show how the header interacts with
+         the actual document text (See "Heading Level 2" on page 3).
+
+
+
+          [1mHeading Level 3  [0m
+
+           A Paragraph following the header to show how the header interacts with
+           the actual document text (See "Heading Level 3" on page 3).
+
+
+
+            [4mHeading Level 4  [0m
+
+             A Paragraph following the header to show how the header interacts
+             with the actual document text (See "Heading Level 4" on page 3).
+
+             Heading Level 5:  A Paragraph following the header to show how the
+                               header interacts with the actual document text
+                               (See "Heading Level 5" on page 3).
+
+             Heading Level 6:  A Paragraph following the header to show how the
+                               header interacts with the actual document text
+                               (See "Heading Level 6" on page 3).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+
+
+      [1mTest Heading Tags     [0m
+
+       A Paragraph following the header.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+
+
+      [1mHeading with No Dot     [0m
+
+       A Paragraph following the header.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 5
+
+--- test_highlight.script ---
+
+
+      [1mCOMMAND KEYWORD='[3mDEFAULT[0m[1m|[4mvalue[0m[1m ' KEYWORD[0m[0m
+
+      [4mHighlight 1[0m[0m
+
+      [1mHighlight 2[0m[0m
+
+      [3mHighlight 3[0m[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_hook.script ---
+
+
+      [1mTest Hook     [0m
+
+       $DISPLAY.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_list.script ---
+
+
+      Ordered List :-
+
+      1. List Item 1
+
+      List Paragraph :.lp
+
+      2. List Item 2
+
+         List Paragraph :.p
+
+      3. List Item 3
+
+      Simple List :-
+
+         List Item 1
+
+      List Paragraph :.lp
+
+         List Item 2
+
+         List Paragraph :.p
+
+         List Item 3
+
+      Unordered List :-
+
+      .  List Item 1
+
+      List Paragraph :.lp
+
+      .  List Item 2
+
+         List Paragraph :.p
+
+      .  List Item 3
+
+      Definition List (Size Large Enough) :-
+
+      [3mTerm                [0m[3mDescription[0m
+
+      [1mTerm 1              [0mDefinition for Term 1
+
+      List Paragraph :.lp
+
+      [1mTerm 2              [0mDefinition for Term 2
+
+                          List Paragraph :.p
+
+      [1mTerm 2              [0mDefinition for Term 3
+
+      Definition List (Size Not Large Enough) :-
+
+      [4mTerm  [0m[4mDescription[0m
+
+
+                                       Page 1
+
+
+
+
+      Term 1  Definition for Term 1
+
+      List Paragraph :.lp
+
+      Term 2  Definition for Term 2
+
+         List Paragraph :.p
+
+      Term 2  Definition for Term 3
+
+      Definition List (Broken) :-
+
+      [1mTerm 1[0m
+         Definition for Term 1
+
+      List Paragraph :.lp
+
+      [1mTerm 2[0m
+         Definition for Term 2
+
+         List Paragraph :.p
+
+      [1mTerm 2[0m
+         Definition for Term 3
+
+      Embedded Ordered List :-
+
+         List Item 1
+
+         1. List Item 1
+         2. List Item 2
+         3. List Item 3
+
+         List Item 2
+
+         List Item 3
+
+      Embedded Simple List :-
+
+      .  List Item 1
+
+      .  List Item 2
+
+            List Item 1
+         List Paragraph :.lp
+            List Item 2
+            List Paragraph :.p
+            List Item 3
+
+      .  List Item 3
+
+      Embedded Unordered List :-
+
+
+
+                                       Page 2
+
+
+
+
+      1. List Item 1
+
+      2. List Item 2
+
+      3. List Item 3
+
+         .  List Item 1
+         .  List Item 2
+         .  List Item 3
+
+      Embedded Definition List
+
+      1. List Item 1
+
+      2. List Item 2
+
+      3. List Item 3
+
+         [1mTerm 1              [0mDefinition for Term 1
+         List Paragraph :.lp
+         [1mTerm 2              [0mDefinition for Term 2
+                             List Paragraph :.p
+         [1mTerm 2              [0mDefinition for Term 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+--- test_memo1.script ---
+
+ internal memorandum             EDS c/o Rolls-Royce plc.
+
+                                 T2 'A' Site - DERBY
+                                 Engineering Computing
+
+ from: Colin Williams            to  : Flt,Gle/TJM
+                                 c   : Vn,Wan
+ ref: Vn/CW (CW#D0015)
+
+ date: 9 February 1993
+
+ tel: 47372
+
+      [1mSpace Usage of R280 Books[0m
+
+      When an R280 verse is read from the Mainframe onto a Workstation, a file is
+      created in the '.r280/<r280 book>' directory in the user's home directory.
+
+      These R280 verses are used to speed up Mainframe access as they are read in
+      preference to those on the Mainframe if the Mainframe R280 verse has not
+      been modified since the last read.
+
+      A number of problems occur due to this system :-
+
+      .  The R280 verses are never deleted from the Workstation and so use up
+         precious file server space.
+
+      .  An R280 verse can be available on the Workstation when it has been
+         deleted from the Mainframe.
+
+      .  The files are hidden from the user (stored in a directory stating with
+         the dot character) and the actual file names give little indication of
+         the data held within.
+
+      I would recommend that a program is run every weekend which deletes any
+      R280 verses which have not been used for some period of time (say 8 weeks)
+      or have been deleted from the mainframe.
+
+
+
+
+
+      Colin Williams
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- test_memo2.script ---
+
+ internal memorandum             EDS c/o Rolls-Royce plc.
+
+                                 MOOR LANE - DERBY
+                                 Engineering Computing
+
+ from: Colin Williams            to  : See Separate Sheet
+
+ ref: Gle/CW (CW#D0001)
+
+ date: 22 August 1988
+
+ tel: 49548
+
+      [1mUSE OF PRODUCTION G404 VER 2D8[0m
+
+      To produce an acceptable MERGE facility in G404 a number of outstanding
+      bugs in the program have been fixed and a number of options have been
+      altered.
+
+      A list of the bugs & alterations are given on the release sheet for this
+      version.
+
+      The purpose of this note is to make the users aware of the alterations to
+      the options and indicate how to use them.
+
+
+
+
+      The options that have been changed are described below.
+
+      [1mPLOT(PL)[0m[0m
+
+      Only the appearance of the plot has been changed. This has been necessary
+      to highlight the differences between the three possible sections (inlet,
+      engine and bypass) which make up an annulus and to distinguish between the
+      current and background annuli when two are present.
+
+      The modifications to the display are as follows
+
+      .  Each section of the annulus uses a separate symbol to display the
+         stations contained within it.
+
+      .  If two annuli are present then the background annulus uses a separate
+         set of symbols for its stations and the outer annulus wall (if
+         displayed) uses a dashed line instead of a solid line.
+
+      .  A key to the symbols used is displayed on the screen.
+
+      See Figure 1 for an example plot.
+
+      [1mCREATE(CR)[0m[0m
+
+      The current production create option has a number of hidden options and
+      makes a few assumptions about the layout of the annulus from the way the
+      user enters the stations.
+
+
+
+
+
+     Gle/CW (CW#D0001)
+     22 August 1988
+     - 2 -
+
+
+      The hidden prompts are
+
+      [1mID    [0mTo prompt the user for the type and identification of the station
+            being entered.
+
+      [1mENG   [0mTo define the station being entered as the first station in the
+            engine section.
+
+      In many cases users do not use these options correctly e.g. often defining
+      an engine section without using the ENG prompt causing the program to
+      assume an inlet section definition.
+
+      All stations in the inlet and engine section have to be added monotonically
+      and any non-monotonic stations are added as the first station in the bypass
+      section (if an engine section had already been defined).
+
+      This option thus causes a number of problems which are directly relevant to
+      the correct operation of the merge option i.e. it is not possible to define
+      a bypass section or an inlet section with a bypass section.
+
+      This restriction in the types of annuli that can be created prevents users
+      from working with partial annulus definitions which are to be merged
+      together later on in the design procedure.
+
+
+
+
+      A new create option has been written to overcome the problems in using the
+      previous create command.
+
+      The user is required to enter the section for each station to be added.
+      This allows a non-monotonic input of sections and the ability to define an
+      annulus consisting of any combination of inlet, engine or bypass sections.
+
+      [1mNote: [0mIn cross-hair input the prompting mechanism for the section works
+            differently.
+
+      The commands are still the same i.e.
+
+      [1mINLET(IN)           [0mTo define the station as an Inlet Section station.
+
+      [1mENGINE(ENG)         [0mTo define the station as an Engine Section station.
+
+      [1mBYPASS(BYP)         [0mTo define the station as an Bypass Section station.
+
+      [1mEND(E)              [0mTo end the CREATE command.
+
+      Unfortunately the user can only enter a single character at the cross-hairs
+      which means that for commands longer than one character the '+' character
+      must be entered to put up a prompt from which longer commands can be
+      entered.
+
+
+
+
+     Gle/CW (CW#D0001)
+     22 August 1988
+     - 3 -
+
+
+      Entering RETURN at the cross-hairs takes the default section which is
+      initially the engine section but from then on defaults to the last defined
+      section.
+
+      The ID command has been removed from this option to avoid too many prompts
+      occuring in the text area causing continual screen erasures and subsequent
+      re-plotting. This is not considered a major omission as this facility is
+      available using the IDENT(ID) option.
+
+
+
+
+      [1mADD(A)[0m[0m
+
+      This has the same format as the CREATE command.
+
+      The command only allows one station to be added at a time and cannot be
+      used to add the first station of an annulus.
+
+
+
+
+      [1mIDENT(ID)[0m[0m
+
+      This option now prompts for the information required.
+
+      The option also contains three extra commands at the top level which allow
+      the user to change any station in a single Inlet, Engine or Bypass section
+      to be a Inlet station or the first station in an Engine or Bypass section.
+
+
+
+
+      [1mMERGE(M)[0m[0m
+
+      This option requires no input by the user but will only merge certain
+      combinations of annuli.
+
+      The numbers refered to below refer to the seven possible annulus
+      combinations as illustrated in Figure 2.
+
+      The possible merge combinations are (assuming no overlap) shown below with
+      the first number being the Leftmost Annulus and the second number(s) the
+      Rightmost Annulus
+
+         1 to 5,6,7
+
+         2 to 5,6,7
+
+         3 to 5,6,7
+
+
+
+
+
+     Gle/CW (CW#D0001)
+     22 August 1988
+     - 4 -
+
+
+         4 to 1,2,3,4,5,6,7
+
+         5 to 5,6,7
+
+         6 to 5,6,7
+
+         7 to 5,6,7
+
+
+
+
+
+      Colin Williams
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- test_memo.script ---
+
+ internal memorandum             EDS c/o Rolls-Royce plc.
+
+                                 T2 'A' Site - DERBY
+                                 Engineering Computing
+
+ from: Colin Williams            to  : Flt,Gle/TJM
+                                 c   : Vn,Wan
+ ref: Vn/CW (CW#D0015)
+
+ date: 9 February 1993
+
+ tel: 47372
+
+      [1mSpace Usage of R280 Books[0m
+
+      When an R280 verse is read from the Mainframe onto a Workstation, a file is
+      created in the '.r280/<r280 book>' directory in the user's home directory.
+
+      These R280 verses are used to speed up Mainframe access as they are read in
+      preference to those on the Mainframe if the Mainframe R280 verse has not
+      been modified since the last read.
+
+      A number of problems occur due to this system :-
+
+      .  The R280 verses are never deleted from the Workstation and so use up
+         precious file server space.
+
+      .  An R280 verse can be available on the Workstation when it has been
+         deleted from the Mainframe.
+
+      .  The files are hidden from the user (stored in a directory stating with
+         the dot character) and the actual file names give little indication of
+         the data held within.
+
+      I would recommend that a program is run every weekend which deletes any
+      R280 verses which have not been used for some period of time (say 8 weeks)
+      or have been deleted from the mainframe.
+
+
+
+
+
+      Colin Williams
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- test_options.script ---
+--- test_page.script ---
+
+
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+
+                                       Page 1
+
+
+
+
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+         The quick brown fox jumps over the lazy dog. The rain in spain falls
+         main on the plain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+--- test_paragraph.script ---
+
+
+      This is an ordinary paragraph and should appear at the left margin and
+      should fit inside the right margin.
+
+      This is a paragraph where the text is on the next line after the :.p tag.
+
+      This is a paragraph where the dot is missing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_process.script ---
+--- test_reference.script ---
+
+
+      [1mAll Kinds of Lists     [0m
+
+       See "All Kinds of Lists" on page 1.
+
+       See "All Kinds of Lists".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mList Items     [0m
+
+       Steps to follow when changing wallpaper:
+
+       1. Peel off the old wallpaper.
+
+       2. Clean and size the wall.
+
+       3. Prepare the paste.
+
+       4. Get help from someone who knows what to do.
+
+       We'd better start with number 4. on page 2 the next time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mFigures     [0m
+
+       -------------------------------------------------------------------------------
+       We're partial to figures in
+       boxes.
+       A figure that is going to
+       have a cross-reference
+       must also have a caption (FIGCAP).
+       -------------------------------------------------------------------------------
+
+                   [1mFigure 1.  A Captioned Figure for Cross-Reference[0m
+
+       See Figure 1. on page 3 for an illustration of...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+
+
+      [1mTables     [0m
+
+
+       +-----------------------------+---------------------+---------------------+
+       |Cell 3                       |This text is in cell |Here's the cell 1.   |
+       |                             |2.                   |                     |
+       +-----------------------------+---------------------+---------------------+
+       |The depth of the row is      |The arrangement of   |Here's the first cell|
+       |determined by the depth of   |this row is the same |in the second row.   |
+       |the cell in that row with the|as the arrangement of|                     |
+       |most text, so this row ends  |the previous row and |                     |
+       |up being deeper than the     |the next row.        |                     |
+       |previous and the next rows.  |                     |                     |
+       +-----------------------------+---------------------+---------------------+
+       |Cell 2 in this row is empty. |                     |This is the third    |
+       |                             |                     |row.                 |
+       +-----------------------------+---------------------+---------------------+
+
+             [1mTable 1.  A Captioned Table, to Demonstrate Cross-Referencing[0m
+
+
+       See Table 1. on page 4 for an illustration of...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+
+
+      [1mFootnotes     [0m
+
+       A footnote appears at the end of this sentence because that is where I put
+       my footnote.[1m{1}[0m
+
+       [1m{25193120}[0m
+
+       And here is our reference.[1m{2}[0m on page 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -----------------
+
+       [1m{1}[0m This is the text of a footnote that I entered without using the ID
+       attribute to give the footnote a name.
+
+       [1m{25193120}[0m This is the text of the footnote. It starts with an implied
+       paragraph.
+
+       It could have several paragraphs, but it can't contain examples, figures,
+       or another footnote.
+
+
+                                       Page 5
+
+
+
+
+      [1mUnmatched References     [0m
+
+       x[…
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 6
+
+--- test_symbol.script ---
+
+
+      cat.
+
+      .qu
+
+      This is a sentence
+
+      Mrs. O'Grady's Cat
+
+      Mrs. O'Grady's Cat'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_table.script ---
+CDoc Warning : Invalid Value for Row Definition Align 'l' (Line 78, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'c' (Line 78, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'r' (Line 78, Pass 2)
+CDoc Warning : Invalid Value for Row Definition Align 'jus' (Line 78, Pass 2)
+
+
+      [1m1.0  List of Tables[0m
+
+
+         Table 1.  A Sample Table  ........................................... 6
+         Table 2.  Example of a Table Note, Caption, and Description  ........ 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+
+
+
+
+      [1mTable 1     [0m
+
+
+       +-----------------------------+---------------------+---------------------+
+       |Cell 3                       |This text is in cell |Here's the cell 1.   |
+       |                             |2.                   |                     |
+       +-----------------------------+---------------------+---------------------+
+       |The depth of the row is      |The arrangement of   |Here's the first cell|
+       |determined by the depth of   |this row is the same |in the second row.   |
+       |the cell in that row with the|as the arrangement of|                     |
+       |most text, so this row ends  |the previous row and |                     |
+       |up being deeper than the     |the next row.        |                     |
+       |previous and the next rows.  |                     |                     |
+       +-----------------------------+---------------------+---------------------+
+       |Cell 2 in this row is empty. |                     |This is the third    |
+       |                             |                     |row.                 |
+       +-----------------------------+---------------------+---------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 2
+
+
+
+
+      [1mTable 2     [0m
+
+
+       +-----------------------+------------------------+------------------------+
+       |Cell 3.                |This text is in cell 2. |Here's cell 1.          |
+       +-----------------------+------------------------+------------------------+
+       |The depth of the row is|The arrangement of this |Here's the first cell in|
+       |determined by the      |row is the same as the  |the second row.         |
+       |depths of the cells, so|arrangement of the      |                        |
+       |this row ends up being |previous row and the    |                        |
+       |deeper than the        |next row.               |                        |
+       |previous and the next  |                        |                        |
+       |rows.                  |                        |                        |
+       +-----------------------+------------------------+------------------------+
+       |Cell 2 in this row is  |                        |This is the third row.  |
+       |empty.                 |                        |                        |
+       +-------------------+---+---------------+--------+-----------+------------+
+       |                   |This is the third  |This is the second  |This row has|
+       |                   |cell. The fourth   |cell.               |a different |
+       |                   |cell is empty.     |                    |arrangement |
+       |                   |                   |                    |from the    |
+       |                   |                   |                    |arrangement |
+       |                   |                   |                    |of the      |
+       |                   |                   |                    |previous    |
+       |                   |                   |                    |row.        |
+       +-------------------+-------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 3
+
+
+
+
+      [1mTable 3     [0m
+
+
+       +-------------------+-------------------+--------------------+------------+
+       |[1mThe HP attribute   [0m|[1mThis cell is       [0m|[4mThis cell is defined[0m|This is the |
+       |[1mcontains only 3    [0m|[1mdefined to be in   [0m|[4mto be in highlight  [0m|first cell; |
+       |[1mspecifications, so [0m|[1mhighlight level 2. [0m|[4mlevel 1.            [0m|it uses     |
+       |[1mthis cell, the     [0m|                   |                    |highlight   |
+       |[1mfourth cell, uses  [0m|                   |                    |level 0.    |
+       |[1mthe highlight level[0m|                   |                    |This is the |
+       |[1mused in the        [0m|                   |                    |same as     |
+       |[1mprevious cell.     [0m|                   |                    |specifying  |
+       |                   |                   |                    |the HP0 tag.|
+       +-------------------+-------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 4
+
+
+
+
+      [1mTable 4     [0m
+
+
+       +-------------------+-------------------+--------------------+------------+
+       |                   |[1mThis cell uses     [0m|                    |This cell   |
+       |[1mThe HP attribute   [0m|[1mhighlight level 2. [0m|                    |uses        |
+       |[1mcontains 3 values, [0m|[1mConcatenation is on[0m|                    |highlight   |
+       |[1mso the fourth cell [0m|[1min this cell. All  [0m|                    |level 0. Con|
+       |[1muses the highlight [0m|[1mthe lines are right[0m|                    |catenation  |
+       |[1mlevel from the     [0m|[1maligned, and the   [0m|                    |is on in    |
+       |[1mprevious cell.     [0m|[1mcell contents are  [0m|                    |this cell.  |
+       |[1mInput lines are    [0m|[1maligned to the top [0m|                    |All the     |
+       |[1mjoined, and space  [0m|[1mof the cell.       [0m|[4mHighlight           [0m|lines are   |
+       |[1mis added between   [0m|                   |[4mlevel 1;            [0m|left        |
+       |[1mwords to make the  [0m|                   |[4mtext lines          [0m|aligned, and|
+       |[1mleft and right     [0m|                   |[4mcentered and        [0m|the cell    |
+       |[1medges even. The    [0m|                   |[4mnot                 [0m|contents are|
+       |[1mtext is centered   [0m|                   |[4mconcatenated        [0m|aligned to  |
+       |[1mvertically.        [0m|                   |[4mbottom vertical     [0m|the top of  |
+       |                   |                   |[4malignment is used.  [0m|the cell.   |
+       +-------------------+-------------------+--------------------+------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 5
+
+
+
+
+      [1mTable 5     [0m
+
+
+       +-----------------------------------------------+------------+------------+
+       |        Controlled Foreign Corporations        |            |            |
+       +-----------------------+-----------+-----------|            |            |
+       |Foreign corporations   |           |           |            |            |
+       |with current earnings  |           |           |            |Selected    |
+       |and profits (+) before |           |           |Number of   |major       |
+       |taxes                  |   Total   | Number of |U.S.        |industry and|
+       +-----------+-----------| assets or |foreign Cor|corporation |selected    |
+       |           |  Current  |   corp.   | porations |returns     |country     |
+       |           | earnings  |           |           |            |            |
+       |  Foreign  |and profits|           |           |            |            |
+       |  income   |  before   |           |           |            |            |
+       |taxes (net)|   taxes   |           |           |            |            |
+       +-----------+-----------+-----------+-----------+------------+------------+
+
+                                [1mTable 1.  A Sample Table[0m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 6
+
+
+
+
+      [1mTable 6     [0m
+
+
+       +------------+------------------------+-----------------------------------+
+       |            |                        |This is the first cell; the second |
+       |            |                        |and third cels are empty.          |
+       +------------+------------------------+-----------------------------------+
+       |[1mNote:  [0mThis is a table note. It is placed in a row containing one        |
+       |cell that is as wide as the table.                                       |
+       +------------+------------------------+-----------------------------------+
+       |This is the |                        |                                   |
+       |third cell  |                        |                                   |
+       |in this row.|                        |                                   |
+       |(The first  |                        |                                   |
+       |and second  |                        |                                   |
+       |cells are   |                        |                                   |
+       |empty.)     |                        |                                   |
+       +------------+------------------------+-----------------------------------+
+
+           [1mTable 2.  Example of a Table Note, Caption, and Description:  [0mThis
+         is a rather short example. Probably it does not represent a table you
+                            might create for a real purpose.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 7
+
+--- test_ulist.script ---
+
+
+      .  Item 1
+
+         .  Item 1
+
+         .  Item 2
+
+            .  Item 1
+
+            .  Item 2
+
+               .  Item 1
+
+                  .  Item 1
+
+                  .  Item 2
+
+                     .  Item 1
+
+                     .  Item 2
+
+                        .  Item 1
+
+                        .  Item 2
+
+                           .  Item 1
+
+                           .  Item 2
+
+                           .  Item 3
+
+                        .  Item 3
+
+                     .  Item 3
+
+                  .  Item 3
+
+               .  Item 2
+
+               .  Item 3
+
+            .  Item 3
+
+         .  Item 3
+
+      .  Item 2
+
+      .  Item 3
+
+
+
+
+
+
+
+
+                                       Page 1
+
+--- test_xwd.script ---
+
+
+      The sub-panels described below will by default use Transient Shells (i.e.
+      they can no be iconised and will always appear in front of the Help Display
+      Panel). This can be changed by setting the environment variable
+      [1mJX16_VENDOR_SHELL[0m[0m which will cause use Vendor Shells to be used instead
+      (i.e. they can be iconised and moved underneath the Help Display Panel).
+
+      -------------------------------------------------------------------------------
+      -------------------------------------------------------------------------------
+
+                                [1mFigure 1.  Test Figure[0m
+
+      The sub-panels described below will by default use Transient Shells (i.e.
+      they can no be iconised and will always appear in front of the Help Display
+      Panel). This can be changed by setting the environment variable
+      [1mJX16_VENDOR_SHELL[0m[0m which will cause use Vendor Shells to be used instead
+      (i.e. they can be iconised and moved underneath the Help Display Panel).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Page 1
+

@@ -1,0 +1,15 @@
+:h1.First Level Heading
+Text is indented five characters and a
+paragraph is implied at the start
+:p.Use the paragraph tag to get this effect
+:h2.Second Level Heading
+Text here is indented a further 5 characters
+:h3.Third Level Heading
+Yet another 5 characters indentation here
+:h4.Fourth Level Heading
+Indentation now ceases
+:h5.Fifth Level Heading
+Numbering now ceases and entries are no
+longer made in the table of contents
+:h6.Sixth Level Heading
+This heading is a bit like the fifth level

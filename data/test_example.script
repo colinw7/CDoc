@@ -1,0 +1,6 @@
+:xmp depth=3i.
+10 LET A = B
+20 IF A GT C THEN GO TO 40
+30 LET A = C
+40 PRINT A, C
+:exmp.

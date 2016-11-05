@@ -1,0 +1,112 @@
+:p.Ordered List :-
+:ol.
+:li.List Item 1
+:lp.List Paragraph &gml.lp
+:li.List Item 2
+:p.List Paragraph &gml.p
+:li.List Item 3
+:eol.
+:p.Simple List :-
+:sl.
+:li.List Item 1
+:lp.List Paragraph &gml.lp
+:li.List Item 2
+:p.List Paragraph &gml.p
+:li.List Item 3
+:esl.
+:p.Unordered List :-
+:ul.
+:li.List Item 1
+:lp.List Paragraph &gml.lp
+:li.List Item 2
+:p.List Paragraph &gml.p
+:li.List Item 3
+:eul.
+:p.Definition List (Size Large Enough) :-
+:dl tsize=20.
+:dthd.Term
+:ddhd.Description
+:dt.Term 1
+:dd.Definition for Term 1
+:lp.List Paragraph &gml.lp
+:dt.Term 2
+:dd.Definition for Term 2
+:p.List Paragraph &gml.p
+:dt.Term 2
+:dd.Definition for Term 3
+:edl.
+:p.Definition List (Size Not Large Enough) :-
+:dl tsize=3 headhi=1 termhi=0.
+:dthd.Term
+:ddhd.Description
+:dt.Term 1
+:dd.Definition for Term 1
+:lp.List Paragraph &gml.lp
+:dt.Term 2
+:dd.Definition for Term 2
+:p.List Paragraph &gml.p
+:dt.Term 2
+:dd.Definition for Term 3
+:edl.
+:p.Definition List (Broken) :-
+:dl tsize=3 break.
+:dt.Term 1
+:dd.Definition for Term 1
+:lp.List Paragraph &gml.lp
+:dt.Term 2
+:dd.Definition for Term 2
+:p.List Paragraph &gml.p
+:dt.Term 2
+:dd.Definition for Term 3
+:edl.
+:p.Embedded Ordered List :-
+:sl.
+:li.List Item 1
+:ol compact.
+:li.List Item 1
+:li.List Item 2
+:li.List Item 3
+:eol.
+:li.List Item 2
+:li.List Item 3
+:esl.
+:p.Embedded Simple List :-
+:ul.
+:li.List Item 1
+:li.List Item 2
+:sl compact.
+:li.List Item 1
+:lp.List Paragraph &gml.lp
+:li.List Item 2
+:p.List Paragraph &gml.p
+:li.List Item 3
+:esl.
+:li.List Item 3
+:eul.
+:p.Embedded Unordered List :-
+:ol.
+:li.List Item 1
+:li.List Item 2
+:li.List Item 3
+:ul compact.
+:li.List Item 1
+:li.List Item 2
+:li.List Item 3
+:eul.
+:eol.
+:p.Embedded Definition List
+:ol.
+:li.List Item 1
+:li.List Item 2
+:li.List Item 3
+:dl tsize=20 compact.
+:dt.Term 1
+:dd.Definition for Term 1
+:lp.List Paragraph &gml.lp
+:dt.Term 2
+:dd.Definition for Term 2
+:p.List Paragraph &gml.p
+:dt.Term 2
+:dd.Definition for Term 3
+:edl.
+:eol.

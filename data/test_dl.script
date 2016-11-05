@@ -1,0 +1,55 @@
+:h1.Definition Lists
+.*
+:p.Normal Definition List.
+.*
+:dl tsize=10
+:dthd.Term
+:ddhd.Description
+:dt.Term 1
+:dd.Description of Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:p.Extra Text for Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Term 2
+:dd.Description of Term 2. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Term 3
+:dd.Description of Term 3. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:edl.
+.*
+:p.Compact Definition List.
+.*
+:dl tsize=10 compact
+:dthd.Term
+:ddhd.Description
+:dt.Term 1
+:dd.Description of Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:p.Extra Text for Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Term 2
+:dd.Description of Term 2. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Term 3
+:dd.Description of Term 3. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:edl.
+.*
+:p.Definition List with Terms too long
+.*
+:dl tsize=5
+:dthd.Term
+:ddhd.Description
+:dt.Long Term 1
+:dd.Description of Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:p.Extra Text for Term 1. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Long Term 2
+:dd.Description of Term 2. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:dt.Long Term 3
+:dd.Description of Term 3. This is some extra text to pad out the
+line so we get a mult-line paragraph.
+:edl.

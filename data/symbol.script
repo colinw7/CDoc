@@ -1,0 +1,10 @@
+.se dcf = 'Document Composition Facility'
+:p.SCRIPT/VS is the formatter component of the &dcf..
+.se dcfpg = '&dcf.:  SCRIPT/VS Text Programmer''s Guide'
+:p.Consult the :cit.&dcfpg.:ecit.
+for more information on the &dcf..
+.se gmul = 'Generalized Markup Language'
+.se ssug = 'Starter Set User''s Guide'
+.se stpg = '(Sample Title Page)'
+:title stitle='GML &ssug.'.
+:title.&dcf.:  &gmul. &ssug. &stpg.

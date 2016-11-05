@@ -1,0 +1,19 @@
+:p.See :figref refid=fig1..
+:fig id=fig1 frame=box place=inline width=page depth=3i.
+
+  +------------------+
+  |                  |
+  |                  |
+  |                  |
+  |                  |
+  |                  |
+  |                  |
+  +------------------+
+
+:figcap.Figure Caption
+:figdesc.Figure Description
+:efig.
+:p.Postscript Figure
+:fig id=fig2 frame=box place=inline width=page depth=3i.
+.* jx16jx16 **jx16**command Postscript Face	postscript face.ps
+:efig.

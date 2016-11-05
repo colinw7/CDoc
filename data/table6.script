@@ -1,0 +1,17 @@
+:rdef id=geef cwidths='3* 2* *'
+.* jx16sv73 .-ps -1
+:table refid=geef.
+:row.
+:c.This is the first cell; the second and third
+cels are empty.
+:tnote.This is a table note. It is placed in a row
+containing one cell that is as wide as the table.
+:etnote.
+:row.
+:c 3.This is the third cell in this row. (The first and second
+cells are empty.)
+:tcap.Example of a Table Note, Caption, and Description
+:tdesc.This is a rather short example. Probably
+it does not represent a table you might create for
+a real purpose.
+:etable.

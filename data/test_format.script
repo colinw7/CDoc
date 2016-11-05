@@ -1,0 +1,4 @@
+:p.This is a test paragraph, to format, it contains -- various
+punctuation ? and other stuff. The formatter should (ensure)
+that the text is left-aligned and that words-that-belong-together
+are not broken !!

@@ -1,0 +1,18 @@
+:fig id=fig1 frame=rule place='top' width='page' depth='3i'.
+Some Text in the Figure
+this should appear unformatted
+and in normal font.
+
+              0  0
+               /\
+             \____/
+
+:figcap.Test Figure 1
+:efig
+:p.This is some text between the figures :figref refid=fig1. and
+:figref refid=fig2..
+:fig id=fig2 frame='%-*-' place='bottom' width=16p depth='10p'.
+Some more figure Text
+:figcap.Test Figure 2
+:figdesc.This is a sample Figure for testing purposes
+:efig

@@ -1,0 +1,116 @@
+:h0.Test Script
+:p.This text should eventually contain a test for all commands
+supported by 'jx16_process_script'.
+:h1 id=ref1.Paragraphs
+:p.The rain in spain falls mainly on the plain. The quick brown fox
+jumps over the lazy dog. Around the rugged rock the ragged rascal ran.
+Simple Simon met a pieman on the way to the fair, said Simple Simon
+to the pieman let me taste your wares .....
+:p.Blah, blah blah (See :hdref refid=ref2.).
+:note.This text does not mean anything it is being typed in in order
+to test my SCRIPT converter.
+:h2.Sub-Paragraphs
+:p.Lets have some highlighted text :hp1.Highlight1:ehp1.,
+:hp2.Highlight2:ehp2., :hp3.Highlight3:ehp3..
+:h2.Symbols
+:p.Ampersand &amp., date &date., GML &gml., required Blank &rbl., 
+semi-colon &semi., time &time..
+:h2.Other Stuff
+.ce Centered Line
+.uc Underscore and Capitalize
+:h1.Lists
+:dl tsize=4 break.
+:dt.Term 1
+:dd.Definition of Term 1
+:lp.Some extra text for Term 1
+:dl tsize=4 break.
+:dt.Term 1.1
+:dd.Definition of Term 1.1
+:lp.Some extra text for Term 1.1
+:dl tsize=4 break.
+:dt.Term 1.1.1
+:dd.Definition of Term 1.1.1
+:lp.Some extra text for Term 1.1.1
+:ol.
+:li.List Item 1.1.1.1
+:lp.Some extra text for Item 1.1.1.1
+:li.List Item 1.1.1.2
+:li.List Item 1.1.1.3
+:li.List Item 1.1.1.4
+:eol.
+:dt.Term 1.1.2
+:dd.Definition of Term 1.1.2
+:dt.Term 1.1.3
+:dd.Definition of Term 1.1.3
+:dt.Term 1.1.4
+:dd.Definition of Term 1.1.4
+:edl.
+:dt.Term 1.1
+:dd.Definition of Term 1.2
+:dt.Term 1.3
+:dd.Definition of Term 1.3
+:dt.Term 1.4
+:dd.Definition of Term 1.4
+:edl.
+:dt.Term 2
+:dd.Definition of Term 2
+:dt.Term 3
+:dd.Definition of Term 3
+:dt.Term 4
+:dd.Definition of Term 4
+:edl.
+:ol.
+:li.List Item 1
+:ol.
+:li.List Item 1.1
+:ol.
+:li.List Item 1.1.1
+:dl tsize=4 break.
+:dt.Term 1.1.1.1
+:dd.Definition of Term 1.1.1.1
+:lp.Some extra text for Term 1.1.1.1
+:dt.Term 1.1.1.2
+:dd.Definition of Term 1.1.1.2
+:dt.Term 1.1.1.3
+:dd.Definition of Term 1.1.1.3
+:dt.Term 1.1.1.4
+:dd.Definition of Term 1.1.1.4
+:edl.
+:li.List Item 1.1.2
+:li.List Item 1.1.3
+:li.List Item 1.1.4
+:eol.
+:li.List Item 1.2
+:li.List Item 1.3
+:li.List Item 1.4
+:eol.
+:li.List Item 2
+:li.List Item 3
+:li.List Item 4
+:eol.
+:ol.
+:li.Item 1
+:lp.Some extra text for Item 1
+:li.Item 2
+:li.Item 3
+:eol.
+:sl.
+:li.Item 1
+:lp.Some extra text for Item 1
+:li.Item 2
+:li.Item 3
+:esl.
+:ul.
+:li.Item 1
+:lp.Some extra text for Item 1
+:li.Item 2
+:li.Item 3
+:eul.
+:h1 id=ref2.Another Section
+:p.This section is referenced in the first Section (See :hdref refid=ref1.)
+so you should be able to flick backwards and forwards between the two.
+:h1 id=ref3.Yet Another Section
+.fo off
+Hello :hp3.World:ehp3.
+:hp1.Hello:ehp1. World
+.fo on

@@ -1,0 +1,12 @@
+:rdef id=more cwidths='1i * * *' hp='0 1 2'.
+.* jx16sv73 .-ps -1
+:table refid=more column
+:row.
+:c.This is the first cell; it uses highlight level 0.
+This is the same as specifying the HP0 tag.
+:c.This cell is defined to be in highlight level 1.
+:c.This cell is defined to be in highlight level 2.
+:c.The HP attribute contains only 3 specifications, so this
+cell, the fourth cell, uses the highlight level used in the
+previous cell.
+:etable.

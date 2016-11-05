@@ -1,0 +1,18 @@
+:sdoc.
+:p.The sub-panels described below will by default use Transient
+Shells (i.e. they can no be iconised and will always appear in
+front of the Help Display Panel). This can be changed by setting
+the environment variable :hp2.JX16_VENDOR_SHELL:ehp2. which will
+cause use Vendor Shells to be used instead (i.e. they can be
+iconised and moved underneath the Help Display Panel).
+:fig frame=box place=inline width=page.
+.* jx16jx16 **jx16**image wide.xwd 10 resize
+:figcap.Test Figure
+:efig.
+:p.The sub-panels described below will by default use Transient
+Shells (i.e. they can no be iconised and will always appear in
+front of the Help Display Panel). This can be changed by setting
+the environment variable :hp2.JX16_VENDOR_SHELL:ehp2. which will
+cause use Vendor Shells to be used instead (i.e. they can be
+iconised and moved underneath the Help Display Panel).
+:esdoc.

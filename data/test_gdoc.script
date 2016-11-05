@@ -1,0 +1,103 @@
+:gdoc sec='No Classification'
+:frontm
+:titlep
+:title.Document Title
+:docnum.4
+:date.&date
+:author.C Williams
+:address
+:aline.16 Sweetbriar Close
+:aline.Alvaston
+:aline.Derby
+:aline.DE24 0TF
+:eaddress
+:etitlep.
+:abstract
+:p.This is a test document for all Script Tags.
+:preface
+:p.A preface for the document.
+:toc
+:figlist
+:tlist
+:body
+:h0.Part Header
+:p.The body part.
+:h1.Chapter Header
+:p.The text part.
+:cit.Motif Programming Manual
+:ecit.
+:dl compact
+:dthd.Term Heading
+:ddhd.Desc Heading
+:dt.Term 1
+:dd.Description of Term 1
+:lp.Extra Text for Term 1
+:dt.Term 2
+:dd.Description of Term 2
+:edl.
+:ol.
+:li.List Item 1
+:li id=ol2.List Item 2
+:li.List Item 3
+:eol.
+:ul.
+:li.List Item 1
+:li id=ul2.List Item 2
+:li.List Item 3
+:eul.
+:sl.
+:li.List Item 1
+:li id=sl2.List Item 2
+:li.List Item 3
+:esl.
+:h2 id=lvlh2.Level 2 Header
+:fig id=fig1 frame=box place=inline.
++----------------------------+
+|                            |
+|                            |
+|                            |
+|                            |
+|                            |
+|                            |
++----------------------------+
+:figcap.Caption
+:figdesc.Description
+:efig.
+:h3.Level 3 Header
+:p.:hp1.Hightlight 1, :hp0.Highlight 0:ehp0.:ehp1.
+:p.:hp2.Hightlight 2:ehp2. and :hp3.Hightlight 3:ehp3.
+:lq.
+:p.The time has come for all good men to do their duty.
+:p.Ask not what your country can do for you, ask what you
+can do for your country.
+:elq.
+:note.This is a note.
+:p.This is a paragraph
+.sp 1
+:pc.This is a continuation of the paragraph.
+:p.:q.We will fight them on the beaches:eq.
+:fn id=fn1.
+:p.This is a footnote.
+:efn.
+:p.See :figref refid=fig1. and :fnref refid=fn1. and
+:hdref refid=lvlh2. and :liref refid=ol2. and :liref refid=ul2.
+and :liref refid=sl2..
+:appendix
+:h1.Appendix Header
+:p.The appendix text.
+:backm
+:h1.Back Matter Header
+:gl
+:gt.Glossary Term 1
+:gd.Description of Glossary Term 1
+:lp.Extra text for Description of Glossary Term 1
+:gt.Glossary Term 2
+:gd.Description of Glossary Term 2. Add some text to the end so
+that the paragraph is more than 1 line.
+:gt.Glossary Term 3
+:gd.Description of Glossary Term 3
+:gt.Glossary Term 4
+:gd.Description of Glossary Term 4
+:egl.
+:p.The back matter text.
+:index

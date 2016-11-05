@@ -1,0 +1,31 @@
+:h0 id=head0.Heading Level 0
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text.
+:h1.Heading Level 1
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head0.).
+:h1 id=head1.
+Another Heading Level 1
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head1.).
+:h2 id=head2.Heading Level 2
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head2.).
+:h3 id=head3.Heading Level 3
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head3.).
+:h4 id=head4.Heading Level 4
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head4.).
+:h5 id=head5.Heading Level 5
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head5.).
+:h6 id=head6.Heading Level 6
+:p.A Paragraph following the header to show how the header interacts
+with the actual document text (See :hdref refid=head6.).
+:h1 stitle='Short Title'
+id=head1a1.
+Test Heading Tags
+:p.A Paragraph following the header.
+:h1 Heading with No Dot
+:p.A Paragraph following the header.

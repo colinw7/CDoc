@@ -1,0 +1,12 @@
+:sdoc.
+:body.
+:fig id=test frame=box place=inline width=page.
+:psc proc='PS'
+.ce on
+.dd psfile dsn script.postlib(test)
+.po psfile width 4i scale
+.ce off
+:epsc.
+:figcap.Test Image
+:efig.
+:esdoc.

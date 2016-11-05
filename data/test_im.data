@@ -1,0 +1,13 @@
+:h1.Test Imbed
+.dd im1 test_im1.data
+.dd im2 test_im2.data
+.dd im3 test_im3.data
+.dd im4 test_im4.data
+:h2.Imbed 1
+.im im1
+:h2.Imbed 2
+.im im2
+:h2.Imbed 3
+.im im3
+:h2.Imbed 4
+.im im4

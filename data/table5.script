@@ -1,0 +1,24 @@
+:rdef id=corptbl cwidths='1i * * * * *'
+arrange='1 2 3 3 3 3'
+arrange='1 2 4 5 6 6'
+arrange='1 2 4 5 7 8'
+align='left left center center center left center'
+concat='yes yes no yes'
+valign='center center top center center top bottom'.
+.* jx16sv73 .-ps -1
+:table refid=corptbl id=tbtest.
+:row.
+:c.Selected major industry and selected country
+:c.Number of U.S. corporation returns
+:c.Controlled Foreign Corporations
+:c.Number of foreign Corporations
+:c.Total assets or corp.
+:c.Foreign corporations with current earnings and
+profits (+) before taxes
+:c.Current
+earnings and
+profits before taxes
+:c.Foreign income taxes (net)
+:erow.
+:tcap.A Sample Table
+:etable.
