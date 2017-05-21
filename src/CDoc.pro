@@ -60,20 +60,12 @@ CDocScriptWrite.cpp \
 CDocString.cpp \
 \
 CFontMetrics.cpp \
-CFreeType.cpp \
-CImagePixelRenderer.cpp \
-CPixelClip.cpp \
-CPixelRenderer.cpp \
 CPrint.cpp \
-CQImageButton.cpp \
-CQPixelRenderer.cpp \
-CQWidgetPixelRenderer.cpp \
 CSpellCtrl.cpp \
 CSpellGood.cpp \
 CSpellHash.cpp \
 CSpellLookup.cpp \
 CSpellTree.cpp \
-CSymbol2D.cpp \
 
 HEADERS += \
 CDocControlI.h \
@@ -122,17 +114,8 @@ CDocScriptTranslateI.h \
 CDocScriptWriteI.h \
 CDocStringI.h \
 \
-CBrush.h \
-CBrushStyle.h \
 CFontMetrics.h \
-CImagePixelRenderer.h \
-CPen.h \
-CPixelClip.h \
-CPixelRenderer.h \
 CPrint.h \
-CQImageButton.h \
-CQPixelRenderer.h \
-CQWidgetPixelRenderer.h \
 CSpellCtrl.h \
 CSpellGenI.h \
 CSpellGood.h \
@@ -141,7 +124,6 @@ CSpellHash.h \
 CSpellI.h \
 CSpellLookup.h \
 CSpellTree.h \
-CSymbol2D.h \
 std_tmpl++.h \
 
 DESTDIR     = ../bin
@@ -153,6 +135,8 @@ INCLUDEPATH += \
 Expr \
 ../include \
 ../../CQUtil/include \
+../../CRenderer/qinclude \
+../../CRenderer/include \
 ../../CFont/include \
 ../../CImageLib/include \
 ../../CConfig/include \
@@ -167,16 +151,18 @@ Expr \
 unix:LIBS += \
 -L$$LIB_DIR \
 -L../../CQUtil/lib \
+-L../../CRenderer/lib \
 -L../../CFont/lib \
 -L../../CConfig/lib \
 -L../../CUtil/lib \
 -L../../CImageLib/lib \
 -L../../CFile/lib \
 -L../../CFileUtil/lib \
+-L../../CMath/lib \
 -L../../COS/lib \
 -L../../CStrUtil/lib \
 -L../../CRegExp/lib \
 -L../../CRGBName/lib \
--lCQUtil -lCUtil -lCFont -lCConfig -lCImageLib \
--lCRGBName -lCFile -lCFileUtil -lCUtil -lCOS -lCStrUtil -lCRegExp \
+-lCQUtil -lCUtil -lCQRenderer -lCRenderer -lCFont -lCConfig -lCImageLib \
+-lCRGBName -lCFile -lCFileUtil -lCMath -lCUtil -lCOS -lCStrUtil -lCRegExp \
 -lpng -ljpeg -ltre -lfreetype
