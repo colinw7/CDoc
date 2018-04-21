@@ -3,6 +3,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <cassert>
 
 /* Internal Data */
 
@@ -68,12 +69,11 @@ CSpellInitWords()
 
     cspell_hashsize = 1;  /* This prevents divides by zero */
 
-    cspell_hashtbl = new CDSpellDEnt;
+    cspell_hashtbl = new CDSpellDEnt [cspell_hashsize];
 
-    if (cspell_hashtbl == NULL) {
-      fprintf (stderr, "Couldn't allocate space for hash table\n");
-
-      return(-1);
+    if (! cspell_hashtbl) {
+      fprintf(stderr, "Couldn't allocate space for hash table\n");
+      return -1;
     }
 
     cspell_hashtbl[0].word = (char *) "xxxxxxxxxxx";
@@ -92,13 +92,15 @@ CSpellInitWords()
     return(-1);
   }
 
+  assert(sizeof(CDSpellDEnt) == sizeof(CDSpellHEnt));
+
   cspell_hash_strings = new char [cspell_hashheader.stringsize];
 
   cspell_hashtbl = new CDSpellDEnt [cspell_hashheader.tblsize];
 
   CDSpellHEnt *hashtbl = new CDSpellHEnt [cspell_hashheader.tblsize];
 
-  if (cspell_hashtbl == NULL || cspell_hash_strings == NULL || hashtbl == NULL) {
+  if (! cspell_hashtbl || ! cspell_hash_strings || ! hashtbl) {
     fprintf(stderr, "Couldn't allocate space for hash table\n");
     return(-1);
   }
@@ -111,6 +113,8 @@ CSpellInitWords()
   close(hashfd);
 
   for (i = cspell_hashsize, hp = hashtbl, dp = cspell_hashtbl; --i >= 0; ++hp, ++dp) {
+    assert(hp->word >= 0 && hp->word < cspell_hashheader.stringsize);
+
     dp->word = &cspell_hash_strings[hp->word];
 
     if (hp->next == -1)

@@ -4229,7 +4229,7 @@ drawImage(const std::string &id, const std::string &filename, int size, int resi
     }
     else {
       renderer->fillPatternRectangle(CIBBox2D(indent + width, *y, width1, height1),
-                                     CBRUSH_PATTERN_DOTTED6);
+                                     CBrushPattern::DOTTED6);
 
       *y += height1;
     }

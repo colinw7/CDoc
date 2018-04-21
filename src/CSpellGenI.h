@@ -25,8 +25,8 @@
 /*--------------------------------------------------------------------*/
 
 struct CDSpellHEnt {
-  int          next;
-  int          word;
+  long         next;
+  long         word;
   unsigned int used   : 1;
   unsigned int v_flag : 1;
   unsigned int n_flag : 1;

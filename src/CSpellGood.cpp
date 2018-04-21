@@ -7,7 +7,9 @@ static int wordok = false;
 
 /* Internal Subroutines */
 
+#ifdef CSPELL_CAPS
 static int  CSpellCapOK    (char *, CDSpellDEnt *);
+#endif
 #if 0
 static void CSpellFlagPrint(char *, int, char *);
 #endif
@@ -24,34 +26,25 @@ static int  CSpellIsVowel  (int);
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellIsGoodWord
+ * CSpellIsGoodWord
+ *   Checks whether the supplied word is correctly
+ *   spelled by looking it up in the Dictionary.
  *
- * #FUNCTION
- *       Checks whether the supplied word is correctly
- *       spelled by looking it up in the Dictionary.
+ *   int flag = CSpellIsGoodWord(char *word);
  *
- * #CALL_DETAILS
- *       flag = CSpellIsGoodWord(word);
+ *     word : The word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
+ *     flag : Flag to indicate whether the Word
+ *          : was found in the Dictionary.
+ *          :  1 - OK, 0 - Failed.
  *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       flag    : Flag to indicate whether the Word
- *        int    : was found in the Dictionary.
- *               :  1 - OK, 0 - Failed.
- *
- * #NOTES
- *       The routine CSpellCheckWord() should be used
- *       in preference to this routine (which is called
- *       by CSpellCheckWord()) so that all access to
- *       the Spell Checked from the rest of C (non
- *       cspell routines) is confined to routines in
- *       the cspell.c file.
+ * NOTES
+ *   The routine CSpellCheckWord() should be used
+ *   in preference to this routine (which is called
+ *   by CSpellCheckWord()) so that all access to
+ *   the Spell Checked from the rest of C (non
+ *   cspell routines) is confined to routines in
+ *   the cspell.c file.
  *
  *------------------------------------------------------------------*/
 
@@ -151,32 +144,23 @@ CSpellIsGoodWord(char *w)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellCapOK
+ * CSpellCapOK
+ *  Checks whether a capitaized version of a word is
+ *  correct by checking the works allowed capitalizations.
  *
- * #FUNCTION
- *       Checks whether a capitaized version of a word is
- *       correct by checking the works allowed capitalizations.
+ *   int flag = CSpellCapOK(char *word, CDSpellDEnt *dent);
  *
- * #CALL_DETAILS
- *       flag = CSpellCapOK(word, dent);
+ *     word : The word to be checked.
  *
- * #INPUT_ARGS
- *       word           : The word to be checked.
- *        char *        :
+ *     dent : The Dictionary Entry found
+ *          : for the word (non-case sensitive)
  *
- *       dent           : The Dictionary Entry found
- *        CDSpellDEnt * : for the word (non-case sensitive)
+ *     flag : Flag to indicate whether the
+ *          : capitalization is valid.
+ *          :  1 - OK, 0 - Failed.
  *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       flag           : Flag to indicate whether the
- *        int           : capitalization is valid.
- *                      :  1 - OK, 0 - Failed.
- *
- * #NOTES
- *       All capitals is always legal.
+ * NOTES
+ *   All capitals is always legal.
  *
  *------------------------------------------------------------------*/
 
@@ -291,29 +275,16 @@ CSpellCapOK(char *word, CDSpellDEnt *dent)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellGEnding
+ * CSpellGEnding
+ *   Checks whether the supplied word has a "ING" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "ING" ending.
+ *   CSpellGEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellGEnding(word, n);
+ *     word : The word to be checked.
+ *     n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -367,29 +338,16 @@ CSpellGEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellDEnding
+ * CSpellDEnding
+ *   Checks whether the supplied word has a "ED" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "ED" ending.
+ *   CSpellDEnding(chat *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellDEnding(word, n);
+ *     word    : The word to be checked.
+ *     n       : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -453,29 +411,16 @@ CSpellDEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellTEnding
+ * CSpellTEnding
+ *   Checks whether the supplied word has a "EST" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "EST" ending.
+ *   CSpellTEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellTEnding(word, n);
+ *    word : The word to be checked.
+ *    n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -535,29 +480,16 @@ CSpellTEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellREnding
+ * CSpellREnding
+ *   Checks whether the supplied word has a "ER" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "ER" ending.
+ *   CSpellREnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellREnding(word, n);
+ *     word    : The word to be checked.
+ *     n       : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -616,29 +548,16 @@ CSpellREnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellHEnding
+ * CSpellHEnding
+ *   Checks whether the supplied word has a "TH" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "TH" ending.
+ *   CSpellHEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellHEnding(word, n);
+ *     word : The word to be checked.
+ *     n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -681,31 +600,18 @@ CSpellHEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellSEnding
+ * CSpellSEnding
+ *   Checks whether the supplied word has a "IONS", "ICATIONS",
+ *   "ENS", "INGS", "ERS", "IERS", "IES", "ES", "S", "INESS",
+ *   "NESS" or "'S" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "IONS", "ICATIONS",
- *       "ENS", "INGS", "ERS", "IERS", "IES", "ES", "S", "INESS",
- *       "NESS" or "'S" ending.
+ *   CSpellSEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellSEnding(word, n);
+ *     word : The word to be checked.
+ *     n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -926,30 +832,17 @@ CSpellSEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellNEnding
+ * CSpellNEnding
+ *   Checks whether the supplied word has a "EN" or "ION"
+ *   ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "EN" or "ION"
- *       ending.
+ *     CSpellNEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellNEnding(word, n);
+ *     word : The word to be checked.
+ *     n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -1011,29 +904,16 @@ CSpellNEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellEEnding
+ * CSpellEEnding
+ *   Checks whether the supplied word has a "IVE" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "IVE" ending.
+ *     CSpellEEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellEEnding(word, n);
+ *       word : The word to be checked.
+ *       n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -1073,29 +953,16 @@ CSpellEEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellYEnding
+ * CSpellYEnding
+ *   Checks whether the supplied word has a "LY" ending.
  *
- * #FUNCTION
- *       Checks whether the supplied word has a "LY" ending.
+ *   CSpellYEnding(char *word, int n);
  *
- * #CALL_DETAILS
- *       CSpellYEnding(word, n);
+ *     word : The word to be checked.
+ *     n    : The length of the word to be checked.
  *
- * #INPUT_ARGS
- *       word    : The word to be checked.
- *        char * :
- *
- *       n       : The length of the word to be checked.
- *        int *  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       None
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 
@@ -1121,27 +988,17 @@ CSpellYEnding(char *w, int n)
 
 /*------------------------------------------------------------------*
  *
- * #NAME CSpellIsVowel
+ * CSpellIsVowel
+ *   Checks whether the supplied character is a vowel.
  *
- * #FUNCTION
- *       Checks whether the supplied character is a vowel.
+ *     int flag = CSpellIsVowel(int cc);
  *
- * #CALL_DETAILS
- *       flag = CSpellIsVowel(c);
+ *      c     : The word to be checked.
+ *      flag  : Whether the character was a vowel.
+ *            :   1 - Vowel, 0 - Not Vowel.
  *
- * #INPUT_ARGS
- *       c     : The word to be checked.
- *        int  :
- *
- * #OUTPUT_ARGS
- *       None
- *
- * #RETURN_ARG
- *       flag  : Whether the character was a vowel.
- *        int  :   1 - Vowel, 0 - Not Vowel.
- *
- * #NOTES
- *       Global variable 'wordok' is updated if ending found.
+ * NOTES
+ *   Global variable 'wordok' is updated if ending found.
  *
  *------------------------------------------------------------------*/
 

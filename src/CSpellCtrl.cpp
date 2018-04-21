@@ -10,11 +10,11 @@
 int                cspell_aflag                 = 0;
 int                cspell_lflag                 = 0;
 char               cspell_rootword[BUFSIZ]      = "";
-CDSpellDEnt       *cspell_last_dent             = NULL;
-char              *cspell_hash_strings          = NULL;
+CDSpellDEnt       *cspell_last_dent             = nullptr;
+char              *cspell_hash_strings          = nullptr;
 CDSpellHashHeader  cspell_hashheader;
 char               cspell_hash_file[MAXPATHLEN] = "";
-CDSpellDEnt       *cspell_hashtbl               = NULL;
+CDSpellDEnt       *cspell_hashtbl               = nullptr;
 int                cspell_hashsize              = 0;
 
 /*--------------------------------------------------------------------*/
@@ -71,6 +71,9 @@ CSpellTerm()
 {
   delete [] cspell_hash_strings;
   delete [] cspell_hashtbl;
+
+  cspell_hash_strings = nullptr;
+  cspell_hashtbl      = nullptr;
 }
 
 /*------------------------------------------------------------------*

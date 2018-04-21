@@ -116,8 +116,10 @@ static CDSpellDEnt *CSpellTreeInsert
                      (char *, CDSpellDEnt *, int);
 static char        *CSpellToUpper
                      (char *);
+#ifdef CSPELL_CAPS
 static char        *CSpellToLower
                      (char *);
+#endif
 #ifdef NEVER
 #if SORTPERSONAL != 0
 static int          CScriptPDictCompare
@@ -864,6 +866,7 @@ CSpellToUpper(char *s)
   return os;
 }
 
+#ifdef CSPELL_CAPS
 /*------------------------------------------------------------------*
  *
  * #NAME CSpellToLower
@@ -905,6 +908,7 @@ CSpellToLower(char *s)
 
   return os;
 }
+#endif
 
 /*---------------------------------------------------------------------*
  *
@@ -952,9 +956,7 @@ CScriptTreeOutput(void)
       }
     }
 
-    for (cent = cspell_hashtbl,
-         ehtab = cspell_hashtbl + cspell_hashsize;
-         cent < ehtab; cent++) {
+    for (cent = cspell_hashtbl, ehtab = cspell_hashtbl + cspell_hashsize; cent < ehtab; cent++) {
       if (cent->keep && cent->used)
         pdictsize++;
     }
@@ -971,9 +973,7 @@ CScriptTreeOutput(void)
       }
     }
 
-    for (cent = cspell_hashtbl,
-         ehtab = cspell_hashtbl + cspell_hashsize;
-         cent < ehtab; cent++) {
+    for (cent = cspell_hashtbl, ehtab = cspell_hashtbl + cspell_hashsize; cent < ehtab; cent++) {
       if (cent->used && cent->keep)
         CSpellOutputTreeEntry(cent);
     }
@@ -999,9 +999,7 @@ CScriptTreeOutput(void)
     }
   }
 
-  for (cent = cspell_hashtbl,
-       ehtab = cspell_hashtbl + cspell_hashsize;
-       cent < ehtab; cent++) {
+  for (cent = cspell_hashtbl, ehtab = cspell_hashtbl + cspell_hashsize; cent < ehtab; cent++) {
     if (cent->used && cent->keep)
       *sortptr++ = cent;
   }
