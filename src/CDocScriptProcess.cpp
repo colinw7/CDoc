@@ -3034,7 +3034,7 @@ CDocProcessDotCommandPass2(CDDotCommand *dot_command)
   else if (dot_command->getCommand() == "in") {
     int sign = 0;
 
-    std::string str = dot_command->getText();;
+    std::string str = dot_command->getText();
 
     if      (str[0] == '+') {
       str  = str.substr(1);
@@ -6280,7 +6280,7 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
           CDocInst->getOutputFormat() == CDOC_OUTPUT_ILEAF) {
         strcpy(&line1[i], CDocEndBold());
 
-        i += strlen(CDocEndBold());;
+        i += strlen(CDocEndBold());
       }
 
       /* Skip Command */
