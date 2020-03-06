@@ -30,7 +30,7 @@ struct CDParameterData {
   const char *name;
   int         type;
   void       *data;
-  uint        offset;
+  size_t      offset;
 };
 
 struct CDOptionData {
@@ -38,7 +38,7 @@ struct CDOptionData {
   const char *short_name;
   int         type;
   void       *data;
-  uint        offset;
+  size_t      offset;
 };
 
 struct CDParameterChoiceData {

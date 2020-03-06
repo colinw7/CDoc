@@ -6,9 +6,9 @@
 class QSlider;
 class QLabel;
 
-class CDHelpPanel;
-class CDHelpDatasetData;
-class CDHelpDatasetSection;
+class  CDHelpPanel;
+class  CDHelpDatasetData;
+struct CDHelpDatasetSection;
 
 class CDHelpPageNoPanel : public QDialog {
   Q_OBJECT

@@ -3,14 +3,14 @@
 
 #include <CFont.h>
 
-class CDHelpDatasetPage;
-class CDHelpDatasetFont;
-class CDHelpDatasetCommandData;
-class CDHelpDatasetRefData;
-class CDHelpDatasetHookData;
-class CDHelp;
-class CDHelpPanel;
-class CDProgramHelps;
+struct CDHelpDatasetPage;
+struct CDHelpDatasetFont;
+class  CDHelpDatasetCommandData;
+struct CDHelpDatasetRefData;
+struct CDHelpDatasetHookData;
+class  CDHelp;
+class  CDHelpPanel;
+class  CDProgramHelps;
 
 class QWidget;
 

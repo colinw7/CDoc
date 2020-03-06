@@ -1224,7 +1224,7 @@ CDocLengthStringToChars(const std::string &str)
     return -1;
   }
 
-  int length;
+  int length = 0;
 
   if      (CStrUtil::casencmp(str.substr(i), "i", 1) == 0) {
     length = int(CStrUtil::toReal(value_string)*CHARS_PER_INCH);
@@ -1341,7 +1341,7 @@ CDocLengthStringToLines(const std::string &str)
     return -1;
   }
 
-  int length;
+  int length = 0;
 
   if      (CStrUtil::casecmp(str.substr(i, 1), "i") == 0) {
     length = int(CStrUtil::toReal(value_string)*LINES_PER_INCH);

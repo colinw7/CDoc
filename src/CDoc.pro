@@ -61,11 +61,6 @@ CDocString.cpp \
 \
 CFontMetrics.cpp \
 CPrint.cpp \
-CSpellCtrl.cpp \
-CSpellGood.cpp \
-CSpellHash.cpp \
-CSpellLookup.cpp \
-CSpellTree.cpp \
 
 HEADERS += \
 CDocControlI.h \
@@ -116,14 +111,6 @@ CDocStringI.h \
 \
 CFontMetrics.h \
 CPrint.h \
-CSpellCtrl.h \
-CSpellGenI.h \
-CSpellGood.h \
-CSpell.h \
-CSpellHash.h \
-CSpellI.h \
-CSpellLookup.h \
-CSpellTree.h \
 std_tmpl++.h \
 
 DESTDIR     = ../bin
@@ -137,6 +124,7 @@ Expr \
 ../../CQUtil/include \
 ../../CRenderer/qinclude \
 ../../CRenderer/include \
+../../CSpell/include \
 ../../CFont/include \
 ../../CImageLib/include \
 ../../CConfig/include \

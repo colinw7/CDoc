@@ -3,8 +3,8 @@
 
 /*---------------------------------------------------------------------*/
 
-struct CDDotCommand;
-struct CDColonCommand;
+class CDDotCommand;
+class CDColonCommand;
 
 enum CDocLineType {
   CDOC_NO_COMMAND    = 0,

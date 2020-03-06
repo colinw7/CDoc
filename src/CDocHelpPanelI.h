@@ -34,8 +34,8 @@ struct CDTableRow;
 class  CDHelpDatasetCommandData;
 struct CDHelpDatasetRefData;
 struct CDHelpDatasetHookData;
-struct CDProgramHelps;
-struct CDHelp;
+class  CDProgramHelps;
+class  CDHelp;
 class  CDHelpDatasetData;
 
 struct CDHelpDatasetFont {

@@ -5,9 +5,9 @@
 
 class QListWidget;
 
-class CDHelpPanel;
-class CDHelpDatasetData;
-class CDHelpDatasetSection;
+class  CDHelpPanel;
+class  CDHelpDatasetData;
+struct CDHelpDatasetSection;
 
 class CDHelpSectionPanel : public QDialog {
   Q_OBJECT

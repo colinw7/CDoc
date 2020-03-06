@@ -1,5 +1,6 @@
-#include "CDocI.h"
-#include "CDocHelpListWidgetI.h"
+#include <CDocI.h>
+#include <CDocHelpListWidgetI.h>
+#include <sys/stat.h>
 
 #include <QApplication>
 

@@ -7,7 +7,7 @@ class CFile;
 #include <CILineDash.h>
 #include <CFont.h>
 #include <CImage.h>
-#include <CAutoPtr.h>
+#include <memory>
 
 class CPrint {
  public:
@@ -111,28 +111,39 @@ class CPrint {
   std::string timeToDateString(time_t t);
 
  private:
-  bool            active_;
-  std::string     filename_;
-  CAutoPtr<CFile> file_;
-  std::string     creator_;
-  std::string     title_;
-  int             page_width_, page_height_;
-  bool            has_range_;
-  double          xmin_, ymin_, xmax_, ymax_;
-  double          width_, height_;
-  int             per_page_;
-  Orientation     orient_;
-  CFontPtr        font_;
-  int             font_width_, font_ascent_, font_descent_;
-  std::string     font_name_;
-  CRGBA           bg_, fg_;
-  double          line_width_, last_line_width_;
-  CILineDash      line_dash_;
-  bool            fill_string_defined_;
-  bool            color_image_defined_;
-  bool            output_color_;
-  uint            output_depth_;
-  bool            output_invert_;
+  using FileP = std::unique_ptr<CFile>;
+
+  bool        active_              { false };
+  std::string filename_            { ".screen.ps" };
+  FileP       file_;
+  std::string creator_             { "Nobody" };
+  std::string title_               { "Nobody" };
+  int         page_width_          { 600 };
+  int         page_height_         { 800 };
+  bool        has_range_           { false };
+  double      xmin_                { 1.0 };
+  double      ymin_                { 1.0 };
+  double      xmax_                { 2.0 };
+  double      ymax_                { 2.0 };
+  double      width_;
+  double      height_;
+  int         per_page_;
+  Orientation orient_;
+  CFontPtr    font_;
+  int         font_width_          { 8 };
+  int         font_ascent_         { 8 };
+  int         font_descent_        { 2 };
+  std::string font_name_           { "FontCN" };
+  CRGBA       bg_                  { 0, 0, 0 };
+  CRGBA       fg_                  { 1, 1, 1 };
+  double      line_width_          { 1.0 };
+  double      last_line_width_     { -1.0 };
+  CILineDash  line_dash_;
+  bool        fill_string_defined_ { false };
+  bool        color_image_defined_ { false };
+  bool        output_color_        { true };
+  uint        output_depth_        { 4 };
+  bool        output_invert_       { false };
 };
 
 #endif

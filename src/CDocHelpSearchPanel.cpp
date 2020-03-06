@@ -382,21 +382,21 @@ void
 CDHelpSearchPanel::
 findPrevString(const std::string &str, int case_sensitive, int match_word, int regular_expression)
 {
-  char                   *p;
-  char                   *p1;
-  char                   *p2;
-  int                     len;
-  char                   *line1;
-  int                     in_escape;
-  int                     found_page_no;
-  int                     found_line_no;
-  int                     found_char_no;
-  int                     found_end_pos;
-  int                     found_start_pos;
+  char*      p;
+  char*      p1;
+  char*      p2;
+  int        len;
+  char*      line1;
+  int        in_escape;
+  int        found_page_no;
+  int        found_line_no;
+  int        found_char_no;
+  int        found_end_pos;
+  int        found_start_pos;
 #ifdef CDOC_REGEXP
-  int                     error;
-  regex_t                 regex;
-  regmatch_t              regmatch;
+  int        error;
+  regex_t    regex;
+  regmatch_t regmatch;
 #endif
 
   int found = false;
@@ -470,7 +470,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
 
     /* Ignore Lines After the Last Search Line */
 
-    if (page_no == page_no && line_no >  line_no)
+    if (page_no == found_page_no && line_no > found_line_no)
       goto findPrevString_1;
 
     /**********/
@@ -485,7 +485,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
 
     line1 = line;
 
-    if (page_no == page_no && line_no == line_no) {
+    if (page_no == found_page_no && line_no == found_line_no) {
       if (char_no == 1)
         goto findPrevString_1;
 
@@ -605,7 +605,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
           p2 = CDocNextChar(&p[len]);
 
           if ((p1 == NULL || isspace(*p1) || ispunct(*p1)) &&
-              (p2 == '\0' || isspace(*p2) || ispunct(*p2)))
+              (p2 == NULL || isspace(*p2) || ispunct(*p2)))
             break;
         }
 
@@ -692,21 +692,21 @@ void
 CDHelpSearchPanel::
 findNextString(const std::string &str, int case_sensitive, int match_word, int regular_expression)
 {
-  char                   *p;
-  char                   *p1;
-  char                   *p2;
-  int                     len;
-  char                   *line1;
-  int                     in_escape;
+  char*      p;
+  char*      p1;
+  char*      p2;
+  int        len;
+  char*      line1;
+  int        in_escape;
 #ifdef CDOC_REGEXP
-  int                     error;
-  regex_t                 regex;
-  regmatch_t              regmatch;
+  int        error;
+  regex_t    regex;
+  regmatch_t regmatch;
 #endif
 
   int page_no = 0;
   int line_no = 1;
-  int char_no = 1;
+//int char_no = 1;
 
   CDHelpDatasetPage *page = NULL;
 
@@ -768,9 +768,8 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
 
     /* Ignore Lines Before/After the Last Search Line */
 
-    if (page_no == page_no &&
-        line_no <  line_no)
-      goto findNextString_1;
+//  if (page_no == page_no && line_no < line_no)
+//    goto findNextString_1;
 
     /**********/
 
@@ -784,9 +783,8 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
 
     line1 = line;
 
-    if (page_no == page_no &&
-        line_no == line_no)
-      line1 += char_no - 1;
+//  if (page_no == page_no && line_no == line_no)
+//    line1 += char_no - 1;
 
     /**********/
 
@@ -878,7 +876,7 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
           p2 = CDocNextChar(&p[len]);
 
           if ((p1 == NULL || isspace(*p1) || ispunct(*p1)) &&
-              (p2 == '\0' || isspace(*p2) || ispunct(*p2)))
+              (p2 == NULL || isspace(*p2) || ispunct(*p2)))
             break;
         }
 
@@ -907,18 +905,16 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
     }
 
     if (p != NULL) {
-      page_no = page_no;
-      line_no = line_no;
-      char_no = p - line + 1;
+      int found_page_no = page_no;
+//    int found_line_no = line_no;
+      int found_char_no = p - line + 1;
 
-      start_pos =
-        pos + char_no - 1;
-      end_pos   =
-        start_pos + len - 1;
+//    int found_start_pos = pos + found_char_no - 1;
+//    int found_end_pos   = found_start_pos + len - 1;
 
-      char_no += len;
+      found_char_no += len;
 
-      help_dataset_data_->setPageNum(page_no);
+      help_dataset_data_->setPageNum(found_page_no);
 
       panel_->updatePage();
 

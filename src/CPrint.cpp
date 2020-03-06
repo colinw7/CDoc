@@ -94,7 +94,6 @@ CPrint() :
   active_ = false;
 
   filename_ = ".screen.ps";
-  file_     = 0;
 
   creator_ = "Nobody";
   title_   = "Nobody";
@@ -137,24 +136,24 @@ bool
 CPrint::
 setFilename(const std::string &filename)
 {
-  file_ = 0;
-
   filename_ = filename;
 
-  if (filename != "") {
-    file_ = new CFile(filename_);
+  if (filename == "") {
+    file_ = 0;
 
-    return file_->open(CFile::WRITE);
-  }
-  else
     return true;
+  }
+
+  file_ = std::make_unique<CFile>(filename_);
+
+  return file_->open(CFile::Mode::WRITE);
 }
 
 void
 CPrint::
 setFile(FILE *fp)
 {
-  file_ = new CFile(fp);
+  file_ = std::make_unique<CFile>(fp);
 }
 
 void
@@ -191,7 +190,7 @@ CPrint::
 init()
 {
   if (! file_)
-    file_ = new CFile(filename_);
+    file_ = std::make_unique<CFile>(filename_);
 
   writeHeader();
 }

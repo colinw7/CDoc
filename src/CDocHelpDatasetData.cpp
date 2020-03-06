@@ -10,6 +10,7 @@
 
 #include <CQWidgetPixelRenderer.h>
 #include <CPrint.h>
+#include <CImageLib.h>
 #include <CFontMetrics.h>
 #include <CRGBName.h>
 

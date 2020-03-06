@@ -38,8 +38,8 @@ enum CDocOutputFormat {
   CDOC_OUTPUT_ILEAF      = 9
 };
 
-class CDProgramHelps;
-class CDTempFile;
+class  CDProgramHelps;
+struct CDTempFile;
 
 #define CDocInst CDoc::getInstance()
 
