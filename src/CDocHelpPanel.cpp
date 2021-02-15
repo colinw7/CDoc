@@ -205,8 +205,7 @@ static CImagePtr slct_page1_image;
 
 /* Internal Subroutines */
 
-static CDHelpDatasetData *CDocGetHelpDatasetData
-                           (CDHelp *);
+static CDHelpDatasetData *CDocGetHelpDatasetData(CDHelp *);
 
 /*****************************************************************************/
 
@@ -215,9 +214,9 @@ static CDHelpDatasetData *CDocGetHelpDatasetData
 extern QWidget *
 CDocHelpDatasetDisplay(CDHelp *help, const std::string &dataset)
 {
-  CDHelpDatasetData *help_dataset_data = CDocGetHelpDatasetData(help);
+  auto *help_dataset_data = CDocGetHelpDatasetData(help);
 
-  if (help_dataset_data != NULL) {
+  if (help_dataset_data) {
     CDHelpPanel *panel = help_dataset_data->getHelpPanel();
 
     if (cdoc_popup_on_display)
@@ -249,7 +248,7 @@ CDocHelpDatasetDisplay(CDHelp *help, const std::string &dataset)
 
   /* Create Help Panel */
 
-  CDHelpPanel *panel = help_dataset_data->getHelpPanel(true);
+  auto *panel = help_dataset_data->getHelpPanel(true);
 
   /***********/
 
@@ -262,9 +261,9 @@ CDocHelpDatasetDisplay(CDHelp *help, const std::string &dataset)
 
     /* Display the Sections Panel if required */
 
-    CDHelpSectionPanel *section_panel = help_dataset_data->getHelpPanel()->getSectionPanel();
+    auto *section_panel = help_dataset_data->getHelpPanel()->getSectionPanel();
 
-    if (show_section && section_panel != NULL)
+    if (show_section && section_panel)
       section_panel->show();
   }
 
@@ -289,12 +288,10 @@ CDocHelpDatasetDisplay(CDHelp *help, const std::string &dataset)
 extern void
 CDocHelpDatasetDisplaySection(CDHelp *help, const std::string &section)
 {
-  CDHelpDatasetData *help_dataset_data = CDocGetHelpDatasetData(help);
+  auto *help_dataset_data = CDocGetHelpDatasetData(help);
+  if (! help_dataset_data) return;
 
-  if (help_dataset_data == NULL)
-    return;
-
-  CDHelpPanel *panel = help_dataset_data->getHelpPanel();
+  auto *panel = help_dataset_data->getHelpPanel();
 
   if (section == "") {
     if (help_dataset_data->getPageNum() != 1) {
@@ -320,12 +317,12 @@ CDocHelpDatasetDisplaySection(CDHelp *help, const std::string &section)
     }
   }
   else {
-    CDHelpSectionPanel *section_panel = panel->getSectionPanel();
+    auto *section_panel = panel->getSectionPanel();
 
     if (section_panel) {
-      CDHelpDatasetSection *help_dataset_section = section_panel->getSectionData(section);
+      auto *help_dataset_section = section_panel->getSectionData(section);
 
-      if (help_dataset_section          != NULL &&
+      if (help_dataset_section &&
           help_dataset_section->page_no != help_dataset_data->getPageNum()) {
         help_dataset_data->setPageNum(help_dataset_section->page_no);
 
@@ -342,30 +339,30 @@ CDocHelpDatasetDisplaySection(CDHelp *help, const std::string &section)
 static CDHelpDatasetData *
 CDocGetHelpDatasetData(CDHelp *help)
 {
-  CDHelpDatasetDataList::const_iterator p1 = help_dataset_data_list.begin();
-  CDHelpDatasetDataList::const_iterator p2 = help_dataset_data_list.end  ();
+  auto p1 = help_dataset_data_list.begin();
+  auto p2 = help_dataset_data_list.end  ();
 
   for ( ; p1 != p2; ++p1) {
-    CDHelpDatasetData *help_dataset_data = *p1;
+    auto *help_dataset_data = *p1;
 
     if (help_dataset_data->getHelp() == help)
       return help_dataset_data;
   }
 
-  return NULL;
+  return nullptr;
 }
 
 //------------
 
 CDHelpPanel::
 CDHelpPanel(CDHelpDatasetData *help_dataset_data) :
- QMainWindow       (NULL),
+ QMainWindow       (nullptr),
  help_dataset_data_(help_dataset_data),
- page_no_panel_    (NULL),
- command_panel_    (NULL),
- section_panel_    (NULL),
- print_panel_      (NULL),
- search_panel_     (NULL)
+ page_no_panel_    (nullptr),
+ command_panel_    (nullptr),
+ section_panel_    (nullptr),
+ print_panel_      (nullptr),
+ search_panel_     (nullptr)
 {
 }
 
@@ -375,7 +372,7 @@ init()
 {
   /* Set the title */
 
-  CDHelp *help = help_dataset_data_->getHelp();
+  auto *help = help_dataset_data_->getHelp();
 
   std::string title = (help ? help->getSubject() : "Help");
 
@@ -388,15 +385,15 @@ init()
   /* Create the Menu Bar containing the required functions
      (definition is in Private Header File) */
 
-  QMenu *fileMenu = menuBar()->addMenu("&File");
+  auto *fileMenu = menuBar()->addMenu("&File");
 
-  if (help != NULL && ! help->getInternal() && help->getFormat() == CDOC_FORMAT_CDOC) {
-    QAction *selectSectionAction  = new QAction("Select &Section ..." , fileMenu);
-    QAction *viewReferencesAction = new QAction("View &References ...", fileMenu);
-    QAction *listAllAction        = new QAction("List &All Helps ..." , fileMenu);
-    QAction *printAction          = new QAction("&Print ..."          , fileMenu);
-    QAction *searchAction         = new QAction("Sear&ch ..."         , fileMenu);
-    QAction *quitAction           = new QAction("&Quit"               , fileMenu);
+  if (help && ! help->getInternal() && help->getFormat() == CDOC_FORMAT_CDOC) {
+    auto *selectSectionAction  = new QAction("Select &Section ..." , fileMenu);
+    auto *viewReferencesAction = new QAction("View &References ...", fileMenu);
+    auto *listAllAction        = new QAction("List &All Helps ..." , fileMenu);
+    auto *printAction          = new QAction("&Print ..."          , fileMenu);
+    auto *searchAction         = new QAction("Sear&ch ..."         , fileMenu);
+    auto *quitAction           = new QAction("&Quit"               , fileMenu);
 
     fileMenu->addAction(selectSectionAction);
     fileMenu->addAction(viewReferencesAction);
@@ -414,9 +411,9 @@ init()
     connect(quitAction          , SIGNAL(triggered()), this, SLOT(quitSlot()));
   }
   else {
-    QAction *printAction  = new QAction("&Print ..." , fileMenu);
-    QAction *searchAction = new QAction("Sear&ch ...", fileMenu);
-    QAction *quitAction   = new QAction("&Quit"      , fileMenu);
+    auto *printAction  = new QAction("&Print ..." , fileMenu);
+    auto *searchAction = new QAction("Sear&ch ...", fileMenu);
+    auto *quitAction   = new QAction("&Quit"      , fileMenu);
 
     fileMenu->addAction(printAction);
     fileMenu->addAction(searchAction);
@@ -428,13 +425,13 @@ init()
     connect(quitAction  , SIGNAL(triggered()), this, SLOT(quitSlot()));
   }
 
-  QMenu *pageMenu = menuBar()->addMenu("&Page");
+  auto *pageMenu = menuBar()->addMenu("&Page");
 
-  QAction *firstPageAction  = new QAction("&First"     , pageMenu);
-  QAction *lastPageAction   = new QAction("&Last"      , pageMenu);
-  QAction *nextPageAction   = new QAction("&Next"      , pageMenu);
-  QAction *prevPageAction   = new QAction("&Previous"  , pageMenu);
-  QAction *selectPageAction = new QAction("&Select ...", pageMenu);
+  auto *firstPageAction  = new QAction("&First"     , pageMenu);
+  auto *lastPageAction   = new QAction("&Last"      , pageMenu);
+  auto *nextPageAction   = new QAction("&Next"      , pageMenu);
+  auto *prevPageAction   = new QAction("&Previous"  , pageMenu);
+  auto *selectPageAction = new QAction("&Select ...", pageMenu);
 
   pageMenu->addAction(firstPageAction);
   pageMenu->addAction(lastPageAction);
@@ -448,9 +445,9 @@ init()
   connect(prevPageAction  , SIGNAL(triggered()), this, SLOT(prevPageSlot()));
   connect(selectPageAction, SIGNAL(triggered()), this, SLOT(selectPageSlot()));
 
-  QMenu *helpMenu = menuBar()->addMenu("&Help");
+  auto *helpMenu = menuBar()->addMenu("&Help");
 
-  QAction *helpAction = new QAction("&Help", helpMenu);
+  auto *helpAction = new QAction("&Help", helpMenu);
 
   helpMenu->addAction(helpAction);
 
@@ -461,7 +458,7 @@ init()
   QWidget *icons[10];
 
   if (CDocInst->getIconBar()) {
-    QToolBar *toolbar = addToolBar("File");
+    auto *toolbar = addToolBar("File");
 
     /***********/
 
@@ -521,14 +518,14 @@ init()
       toolbar->addWidget(icons[i]);
   }
   else {
-    icons[0] = NULL;
-    icons[1] = NULL;
-    icons[2] = NULL;
-    icons[3] = NULL;
-    icons[4] = NULL;
-    icons[5] = NULL;
-    icons[6] = NULL;
-    icons[7] = NULL;
+    icons[0] = nullptr;
+    icons[1] = nullptr;
+    icons[2] = nullptr;
+    icons[3] = nullptr;
+    icons[4] = nullptr;
+    icons[5] = nullptr;
+    icons[6] = nullptr;
+    icons[7] = nullptr;
   }
 
   /***********/
@@ -588,11 +585,11 @@ init()
   if (help_dataset_data_->getNumPages() <= 1) {
     //pageMenu->setEnabled(false);
 
-    if (icons[3] != NULL) icons[3]->setEnabled(false);
-    if (icons[4] != NULL) icons[4]->setEnabled(false);
-    if (icons[5] != NULL) icons[5]->setEnabled(false);
-    if (icons[6] != NULL) icons[6]->setEnabled(false);
-    if (icons[7] != NULL) icons[7]->setEnabled(false);
+    if (icons[3]) icons[3]->setEnabled(false);
+    if (icons[4]) icons[4]->setEnabled(false);
+    if (icons[5]) icons[5]->setEnabled(false);
+    if (icons[6]) icons[6]->setEnabled(false);
+    if (icons[7]) icons[7]->setEnabled(false);
   }
 }
 
@@ -600,10 +597,9 @@ init()
 CDHelpPanel::
 ~CDHelpPanel()
 {
-  /* Free the Allocated Data */
-
-  CDHelpDatasetDataList::iterator p =
-    std::find(help_dataset_data_list.begin(), help_dataset_data_list.end(), help_dataset_data_);
+  // Free the Allocated Data
+  auto p = std::find(help_dataset_data_list.begin(), help_dataset_data_list.end(),
+                     help_dataset_data_);
 
   if (p != help_dataset_data_list.end())
     help_dataset_data_list.erase(p);
@@ -620,7 +616,7 @@ CDHelpPanel::
     exit(0);
 }
 
-// Load the Bitmaps used on the Panel's Iconbar.
+// Load the Bitmaps used on the Panel's Iconbar
 void
 CDHelpPanel::
 loadBitmaps()
@@ -781,7 +777,7 @@ selectSectionSlot()
 {
   CDHelpSectionPanel *section_panel = getSectionPanel();
 
-  if (section_panel == NULL) {
+  if (! section_panel) {
     CDocError::info("CDoc Help Display", "Dataset has no Sections");
     return;
   }
@@ -799,7 +795,7 @@ viewRefsSlot()
 {
   CDHelpCommandPanel *command_panel = getCommandPanel();
 
-  if (command_panel == NULL) {
+  if (! command_panel) {
     CDocError::info("CDoc Help Display", "Dataset has no Reference Files");
     return;
   }
@@ -816,12 +812,12 @@ listAllSlot()
 {
   uint num_helps = 0;
 
-  CDProgramHelps *program_helps = help_dataset_data_->getProgramHelps();
+  auto *program_helps = help_dataset_data_->getProgramHelps();
 
-  const CDProgramHelps::HelpList &help_list = program_helps->getHelpList();
+  const auto &help_list = program_helps->getHelpList();
 
-  CDProgramHelps::HelpList::const_iterator ph1 = help_list.begin();
-  CDProgramHelps::HelpList::const_iterator ph2 = help_list.end  ();
+  auto ph1 = help_list.begin();
+  auto ph2 = help_list.end  ();
 
   for ( ; ph1 != ph2; ++ph1) {
     CDHelp *help = *ph1;
@@ -832,11 +828,11 @@ listAllSlot()
 
   const CDProgramHelps::HelpSectionList &help_section_list = program_helps->getHelpSectionList();
 
-  CDProgramHelps::HelpSectionList::const_iterator ps1 = help_section_list.begin();
-  CDProgramHelps::HelpSectionList::const_iterator ps2 = help_section_list.end  ();
+  auto ps1 = help_section_list.begin();
+  auto ps2 = help_section_list.end  ();
 
   for ( ; ps1 != ps2; ++ps1) {
-    CDHelpSection *help_section = *ps1;
+    auto *help_section = *ps1;
 
     if (help_section->getHelp()->getSubject() != "" &&
         ! help_section->getHelp()->getInternal())
@@ -858,7 +854,7 @@ void
 CDHelpPanel::
 printSlot()
 {
-  CDHelpPrintPanel *print_panel = getPrintPanel(true);
+  auto *print_panel = getPrintPanel(true);
 
   print_panel->show();
 }
@@ -870,7 +866,7 @@ void
 CDHelpPanel::
 searchSlot()
 {
-  CDHelpSearchPanel *search_panel = getSearchPanel(true);
+  auto *search_panel = getSearchPanel(true);
 
   search_panel->show();
 }
@@ -882,7 +878,7 @@ void
 CDHelpPanel::
 quitSlot()
 {
-  CDHelpPanel *help_panel = help_dataset_data_->getHelpPanel();
+  auto *help_panel = help_dataset_data_->getHelpPanel();
 
   if (! help_dataset_data_->getPopupOnDisplay())
     help_panel->hide();
@@ -966,7 +962,7 @@ selectPageSlot()
     return;
   }
 
-  CDHelpPageNoPanel *page_no_panel = getPageNoPanel(true);
+  auto *page_no_panel = getPageNoPanel(true);
 
   page_no_panel->show();
 }
@@ -986,7 +982,7 @@ helpSlot()
                                    cdoc_help_text,
                                    CDocInputScript, CDocOutputCDoc);
 
-  CDHelp *help = CDocGetHelpForReference(help_dataset_data_->getProgramHelps(), ref);
+  auto *help = CDocGetHelpForReference(help_dataset_data_->getProgramHelps(), ref);
 
   help->setInternal(true);
 
@@ -1047,7 +1043,7 @@ void
 CDHelpPanel::
 draw()
 {
-  CDHelpDatasetPage *page = help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1);
+  auto *page = help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1);
 
   help_dataset_data_->loadPage(page);
 
@@ -1058,18 +1054,18 @@ void
 CDHelpPanel::
 mouseButtonEvent(bool press, QMouseEvent *e)
 {
-  static CDHelpDatasetCommandData *last_cmd_data = NULL;
+  static CDHelpDatasetCommandData *last_cmd_data = nullptr;
   static int                       x;
   static int                       y;
 
   // TODO: need to move this into draw loop
-  if (last_cmd_data != NULL) {
+  if (last_cmd_data) {
     int x1 = last_cmd_data->getX();
     int y1 = last_cmd_data->getY();
 
     help_dataset_data_->drawButton(last_cmd_data->getTitle(), &x1, &y1, CDOC_BUTTON_OUT);
 
-    last_cmd_data = NULL;
+    last_cmd_data = nullptr;
   }
 
   if (e->button() == 1) {
@@ -1077,7 +1073,7 @@ mouseButtonEvent(bool press, QMouseEvent *e)
       int no = help_dataset_data_->getNumPageCommandDatas();
 
       for (int i = 0; i < no; i++) {
-        CDHelpDatasetCommandData *cmd_data = help_dataset_data_->getPageCommandData(i);
+        auto *cmd_data = help_dataset_data_->getPageCommandData(i);
 
         if (cmd_data->isInside(e->x(), e->y())) {
           int x1 = cmd_data->getX();
@@ -1098,7 +1094,7 @@ mouseButtonEvent(bool press, QMouseEvent *e)
       int no = help_dataset_data_->getNumPageCommandDatas();
 
       for (int i = 0; i < no; i++) {
-        CDHelpDatasetCommandData *cmd_data = help_dataset_data_->getPageCommandData(i);
+        auto *cmd_data = help_dataset_data_->getPageCommandData(i);
 
         if (cmd_data->isInside(x, y) && cmd_data->isInside(e->x(), e->y())) {
           cmd_data->exec();
@@ -1110,7 +1106,7 @@ mouseButtonEvent(bool press, QMouseEvent *e)
       no = help_dataset_data_->getNumPageRefDatas();
 
       for (int i = 0; i < no; ++i) {
-        CDHelpDatasetRefData *ref_data = help_dataset_data_->getPageRefData(i);
+        auto *ref_data = help_dataset_data_->getPageRefData(i);
 
         if (x >= ref_data->x && x < (ref_data->x + ref_data->width ) &&
             y >= ref_data->y && y < (ref_data->y + ref_data->height) &&
@@ -1131,7 +1127,7 @@ mouseButtonEvent(bool press, QMouseEvent *e)
       no = help_dataset_data_->getNumPageHookDatas();
 
       for (int i = 0; i < no; ++i) {
-        CDHelpDatasetHookData *hook_data = help_dataset_data_->getPageHookData(i);
+        auto *hook_data = help_dataset_data_->getPageHookData(i);
 
         if (x >= hook_data->x && x <  (hook_data->x + hook_data->width ) &&
             y >= hook_data->y && y <  (hook_data->y + hook_data->height) &&
@@ -1169,12 +1165,12 @@ mouseButtonEvent(bool press, QMouseEvent *e)
         help_dataset_data_->setSelectPage((CDHelpDatasetPage *)
           help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1));
       else
-        help_dataset_data_->setSelectPage(NULL);
+        help_dataset_data_->setSelectPage(nullptr);
 
       help_dataset_data_->setSelectX(-1);
       help_dataset_data_->setSelectY(-1);
 
-      if (help_dataset_data_->getSelectPage() != NULL)
+      if (help_dataset_data_->getSelectPage())
         updatePage();
     }
   }
@@ -1214,7 +1210,7 @@ mouseMoveEvent(QMouseEvent *e)
 
 CDocHelpCanvas::
 CDocHelpCanvas(CDHelpPanel *panel) :
- QWidget(NULL), panel_(panel)
+ QWidget(nullptr), panel_(panel)
 {
   renderer_ = new CQWidgetPixelRenderer(this);
 }
@@ -1286,12 +1282,12 @@ clipBoardSlot()
     help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1);
 
   if (current_page == help_dataset_data_->getSelectPage()) {
-    help_dataset_data_->setSelectPage(NULL);
+    help_dataset_data_->setSelectPage(nullptr);
 
     updatePage();
   }
   else
-    help_dataset_data_->setSelectPage(NULL);
+    help_dataset_data_->setSelectPage(nullptr);
 }
 
 void
@@ -1334,7 +1330,7 @@ exec()
   if      (command_name == "showcase") {
     const char *command = getenv("CDOC_SHOWCASE");
 
-    if (command == NULL)
+    if (! command)
       command = "showcase";
 
     std::string file_name = help_dataset_data_->getFullPathName(&command[i]);
@@ -1356,7 +1352,7 @@ exec()
   else if (command_name == "postscript") {
     const char *command = getenv("CDOC_PSVIEW");
 
-    if (command == NULL)
+    if (! command)
       command = "ghostview";
 
     std::string file_name = help_dataset_data_->getFullPathName(&command[i]);
@@ -1378,7 +1374,7 @@ exec()
   else if (command_name == "xwd" || command_name == "xwd.Z") {
     const char *command = getenv("CDOC_XWD");
 
-    if (command == NULL)
+    if (! command)
       command = "xwud";
 
     std::string file_name = help_dataset_data_->getFullPathName(&command[i]);
@@ -1420,18 +1416,18 @@ exec()
      display it in another Panel */
 
   else if (command_name == "cdoc_help") {
-    CDHelp *help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
+    auto *help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
 
     /* Add Help if doesn't already exist */
 
-    if (help == NULL) {
+    if (! help) {
       CDocAddFormattedHelp(help_dataset_data_->getProgramHelps()->getProgram(),
                            title_, &command_[i], CDocInputCDoc, CDocOutputCDoc);
 
       help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
     }
 
-    if (help != NULL)
+    if (help)
       CDocWidgetHelpSelect(help, true);
     else
       CDocError::warn("CDoc Help Command", "Required CDoc Help not Found");
@@ -1442,18 +1438,18 @@ exec()
      display it in another Panel */
 
   else if (command_name == "script") {
-    CDHelp *help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
+    auto *help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
 
     /* Add Help if doesn't already exist */
 
-    if (help == NULL) {
+    if (! help) {
       CDocAddFormattedHelp(help_dataset_data_->getProgramHelps()->getProgram(),
                            title_, &command_[i], CDocInputScript, CDocOutputCDoc);
 
       help = CDocGetHelpForDataset(help_dataset_data_->getProgramHelps(), &command_[i]);
     }
 
-    if (help != NULL)
+    if (help)
       CDocWidgetHelpSelect(help, true);
     else
       CDocError::warn("CDoc Help Command", "Required CDoc Help not Found");

@@ -5891,7 +5891,7 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
              CStrUtil::casencmp(p1, ":iref"  , 5) == 0 ||
              CStrUtil::casencmp(p1, ":liref" , 6) == 0 ||
              CStrUtil::casencmp(p1, ":tref"  , 5) == 0) {
-      int              type;
+      int              type = 0;
       CDParameterData *parameter_data;
 
       const char *p2 = p1;
@@ -6349,7 +6349,7 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
              CStrUtil::casencmp(p1, ":iref"  , 5) == 0 ||
              CStrUtil::casencmp(p1, ":liref" , 6) == 0 ||
              CStrUtil::casencmp(p1, ":tref"  , 5) == 0) {
-      int              type;
+      int              type = 0;
       CDParameterData *parameter_data;
 
       const char *p2 = p1;
