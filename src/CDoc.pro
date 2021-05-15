@@ -6,7 +6,13 @@ TARGET = CDoc
 
 DEPENDPATH += .
 
-QMAKE_CXXFLAGS += -std=c++14
+QMAKE_CXXFLAGS += \
+-std=c++14 \
+-DCQUTIL_PEN \
+-DCQUTIL_BRUSH \
+-DCQUTIL_FONT \
+-DCQUTIL_IMAGE \
+-DCBRUSH_IMAGE \
 
 MOC_DIR = .moc
 
@@ -138,6 +144,7 @@ Expr \
 
 unix:LIBS += \
 -L$$LIB_DIR \
+-L../../CSpell/lib \
 -L../../CQUtil/lib \
 -L../../CRenderer/lib \
 -L../../CFont/lib \
@@ -151,6 +158,7 @@ unix:LIBS += \
 -L../../CStrUtil/lib \
 -L../../CRegExp/lib \
 -L../../CRGBName/lib \
+-lCSpell \
 -lCQUtil -lCUtil -lCQRenderer -lCRenderer -lCFont -lCConfig -lCImageLib \
 -lCRGBName -lCFile -lCFileUtil -lCMath -lCUtil -lCOS -lCStrUtil -lCRegExp \
 -lpng -ljpeg -ltre -lfreetype

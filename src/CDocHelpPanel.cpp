@@ -9,6 +9,7 @@
 
 #include <CQUtil.h>
 #include <CQImageButton.h>
+#include <CQImage.h>
 #include <CQWidgetPixelRenderer.h>
 
 #include <QApplication>
@@ -466,51 +467,58 @@ init()
 
     /***********/
 
+    auto createImageButton = [&](CImagePtr image) {
+      CQImage *qimage = image.cast<CQImage>();
+      assert(qimage);
+      auto pixmap = QPixmap::fromImage(qimage->getQImage());
+      return new CQImageButton(pixmap);
+    };
+
     /* Create the Select Section Button */
 
-    icons[0] = new CQImageButton(slct_sect_image);
+    icons[0] = createImageButton(slct_sect_image);
 
     connect(icons[0], SIGNAL(clicked()), this, SLOT(selectSectionSlot()));
 
     /* Create the Print Button */
 
-    icons[1] = new CQImageButton(prnt_text_image);
+    icons[1] = createImageButton(prnt_text_image);
 
     connect(icons[1], SIGNAL(clicked()), this, SLOT(printSlot()));
 
     /* Create the Search Button */
 
-    icons[2] = new CQImageButton(srch_text_image);
+    icons[2] = createImageButton(srch_text_image);
 
     connect(icons[2], SIGNAL(clicked()), this, SLOT(searchSlot()));
 
     /* Create the First Page Button */
 
-    icons[3] = new CQImageButton(frst_page_image);
+    icons[3] = createImageButton(frst_page_image);
 
     connect(icons[3], SIGNAL(clicked()), this, SLOT(firstPageSlot()));
 
     /* Create the Prev Page Button */
 
-    icons[4] = new CQImageButton(prev_page_image);
+    icons[4] = createImageButton(prev_page_image);
 
     connect(icons[4], SIGNAL(clicked()), this, SLOT(prevPageSlot()));
 
     /* Create the Next Page Button */
 
-    icons[5] = new CQImageButton(next_page_image);
+    icons[5] = createImageButton(next_page_image);
 
     connect(icons[5], SIGNAL(clicked()), this, SLOT(nextPageSlot()));
 
     /* Create the Last Page Button */
 
-    icons[6] = new CQImageButton(last_page_image);
+    icons[6] = createImageButton(last_page_image);
 
     connect(icons[6], SIGNAL(clicked()), this, SLOT(lastPageSlot()));
 
     /* Create the Select Page Button */
 
-    icons[7] = new CQImageButton(slct_page_image);
+    icons[7] = createImageButton(slct_page_image);
 
     connect(icons[7], SIGNAL(clicked()), this, SLOT(selectPageSlot()));
 
