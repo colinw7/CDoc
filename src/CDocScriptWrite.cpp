@@ -1011,10 +1011,9 @@ CDocScriptWriteJustifiedHeader(const std::string &str, int align)
 extern void
 CDocScriptWriteLeftJustifiedHeader(const std::string &str)
 {
-  int    i;
-  int    j;
-  int    width;
-  char  *temp_string;
+  int i;
+  int j;
+  int width;
 
   if (CDocInst->getOutputFormat() == CDOC_OUTPUT_HTML) {
     CDocScriptWriteCommand("<h3 align=left>%s</h3>", CDocEncodeHtmlString(str));
@@ -1089,7 +1088,7 @@ CDocScriptWriteLeftJustifiedHeader(const std::string &str)
   else {
     CDocScriptWriteLine("%s", str.c_str());
 
-    temp_string = CStrUtil::strdup(str);
+    char *temp_string = CStrUtil::strdup(str);
 
     for (i = 0; i < CDocStringDisplayLength(str); i++)
       temp_string[i] = '-';

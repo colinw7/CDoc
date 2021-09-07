@@ -9,6 +9,7 @@
 #include <QClipboard>
 
 #include <CQWidgetPixelRenderer.h>
+#include <CImageLib.h>
 #include <CPrint.h>
 #include <CFontMetrics.h>
 #include <CRGBName.h>

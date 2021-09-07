@@ -515,7 +515,7 @@ CDocScriptOutputTable(CDTable *table)
   if (table->caption != "" || table->description != "") {
     CDocScriptSkipLine();
 
-    char *temp_string;
+    char *temp_string = nullptr;
 
     if      (table->caption != "" && table->description != "") {
       temp_string = new char [table->caption.size() + table->description.size() + 128];
