@@ -64,7 +64,7 @@ main(int argc, char **argv)
       char **words1 = new char * [no_words1];
 
       for (int i = 0; i < no_words1; i++)
-        words1[i] = (char *) words[i].c_str();
+        words1[i] = const_cast<char *>(words[i].c_str());
 
       int rc = CDocProcessOptions(words1, &no_words1);
 
@@ -168,7 +168,7 @@ main(int argc, char **argv)
 
   /* Extract and Process Script Options */
 
-  CDocScriptProcessOptions((const char **) argv, &argc);
+  CDocScriptProcessOptions(const_cast<const char **>(argv), &argc);
 
   /*--------------------------*/
 
@@ -269,9 +269,9 @@ main(int argc, char **argv)
     /* Add Signal Handlers to Exit Cleanly */
 
     if (strcmp(output_format.c_str(), CDocOutputCDoc) == 0) {
-      signal(SIGINT , (SignalHandler) CDocTermProg);
-      signal(SIGQUIT, (SignalHandler) CDocTermProg);
-      signal(SIGTERM, (SignalHandler) CDocTermProg);
+      signal(SIGINT , SignalHandler(CDocTermProg));
+      signal(SIGQUIT, SignalHandler(CDocTermProg));
+      signal(SIGTERM, SignalHandler(CDocTermProg));
     }
 
     /* If Application defined for CDoc Output then
@@ -324,9 +324,9 @@ main(int argc, char **argv)
 
       /* Add Signal Handlers to Exit Cleanly */
 
-      signal(SIGINT , (SignalHandler) CDocTermProg);
-      signal(SIGQUIT, (SignalHandler) CDocTermProg);
-      signal(SIGTERM, (SignalHandler) CDocTermProg);
+      signal(SIGINT , SignalHandler(CDocTermProg));
+      signal(SIGQUIT, SignalHandler(CDocTermProg));
+      signal(SIGTERM, SignalHandler(CDocTermProg));
 
       /* Set Print Command */
 
@@ -654,9 +654,9 @@ CDocWaitForPSView()
 {
   /* Add Signal Handlers for a Controlled Exit */
 
-  signal(SIGINT , (SignalHandler) CDocTermProg);
-  signal(SIGQUIT, (SignalHandler) CDocTermProg);
-  signal(SIGTERM, (SignalHandler) CDocTermProg);
+  signal(SIGINT , SignalHandler(CDocTermProg));
+  signal(SIGQUIT, SignalHandler(CDocTermProg));
+  signal(SIGTERM, SignalHandler(CDocTermProg));
 
   /* Monitor PSView by checking the process list for the PSView
      process. When this disappears PSView has finished */
@@ -705,9 +705,9 @@ CDocWaitForXWD()
 {
   /* Add Signal Handlers for a Controlled Exit */
 
-  signal(SIGINT , (SignalHandler) CDocTermProg);
-  signal(SIGQUIT, (SignalHandler) CDocTermProg);
-  signal(SIGTERM, (SignalHandler) CDocTermProg);
+  signal(SIGINT , SignalHandler(CDocTermProg));
+  signal(SIGQUIT, SignalHandler(CDocTermProg));
+  signal(SIGTERM, SignalHandler(CDocTermProg));
 
   /* Monitor Xwd by checking the process list for the Xwd
      process. When this disappears XWd has finished */

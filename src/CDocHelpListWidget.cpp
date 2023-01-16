@@ -20,7 +20,7 @@ CDocListWidgetHelpsCreatePanel(CDWidgetReferenceList *widget_reference_list)
 
 CDListWidgetData::
 CDListWidgetData(CDWidgetReferenceList *widget_reference_list) :
- QWidget(NULL)
+ QWidget(nullptr)
 {
   widget_reference_list_ = widget_reference_list;
 
@@ -51,7 +51,7 @@ CDListWidgetData(CDWidgetReferenceList *widget_reference_list) :
 
     /* If Help exists add to the Scrolled List */
 
-    if (help != NULL)
+    if (help != nullptr)
       addHelp(help);
     else {
       CDHelpSection *help_section =
@@ -59,7 +59,7 @@ CDListWidgetData(CDWidgetReferenceList *widget_reference_list) :
 
       /* If Help Section exists add to the Scrolled List */
 
-      if (help_section != NULL)
+      if (help_section != nullptr)
         addHelpSection(help_section);
     }
   }
@@ -73,7 +73,7 @@ CDListWidgetData(CDWidgetReferenceList *widget_reference_list) :
   CDListWidgetHelpData *list_widget_help_data = new CDListWidgetHelpData;
 
   list_widget_help_data->type = LIST_WIDGET_LIST_ALL;
-  list_widget_help_data->data = (char *) NULL;
+  list_widget_help_data->data = nullptr;
 
   help_data_list_.push_back(list_widget_help_data);
 }
@@ -101,7 +101,7 @@ addHelp(CDHelp *help)
   CDListWidgetHelpData *list_widget_help_data = new CDListWidgetHelpData;
 
   list_widget_help_data->type = LIST_WIDGET_HELP;
-  list_widget_help_data->data = (char *) help;
+  list_widget_help_data->data = reinterpret_cast<char *>(help);
 
   help_data_list_.push_back(list_widget_help_data);
 }
@@ -129,7 +129,7 @@ addHelpSection(CDHelpSection *help_section)
   CDListWidgetHelpData *list_widget_help_data = new CDListWidgetHelpData;
 
   list_widget_help_data->type = LIST_WIDGET_HELP_SECTION;
-  list_widget_help_data->data = (char *) help_section;
+  list_widget_help_data->data = reinterpret_cast<char *>(help_section);
 
   help_data_list_.push_back(list_widget_help_data);
 }
@@ -151,11 +151,11 @@ listSelectionSlot()
 
   /* Process Item */
 
-  if (list_widget_help_data != NULL) {
+  if (list_widget_help_data != nullptr) {
     if      (list_widget_help_data->type == LIST_WIDGET_HELP)
-      CDocWidgetHelpSelect((CDHelp *) list_widget_help_data->data, true);
+      CDocWidgetHelpSelect(reinterpret_cast<CDHelp *>(list_widget_help_data->data), true);
     else if (list_widget_help_data->type == LIST_WIDGET_HELP_SECTION)
-      CDocWidgetHelpSectionSelect((CDHelpSection *) list_widget_help_data->data);
+      CDocWidgetHelpSectionSelect(reinterpret_cast<CDHelpSection *>(list_widget_help_data->data));
     else
       CDocListAllHelpsCreatePanel(widget_reference_list_->getProgramHelps());
   }

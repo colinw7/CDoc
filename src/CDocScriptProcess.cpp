@@ -63,12 +63,12 @@ dh_parameter_data[] = {
   {"tcin"   , PARM_INT    , NULL, DH_OFFSET(toc_indentation      ),},
   {"tfont"  , PARM_NEW_STR, NULL, DH_OFFSET(toc_font             ),},
 
-  {"center" , PARM_VALUE  , (char *) CHALIGN_TYPE_CENTRE , DH_OFFSET(alignment),},
-  {"centre" , PARM_VALUE  , (char *) CHALIGN_TYPE_CENTRE , DH_OFFSET(alignment),},
-  {"left"   , PARM_VALUE  , (char *) CHALIGN_TYPE_LEFT   , DH_OFFSET(alignment),},
-  {"inside" , PARM_VALUE  , (char *) CHALIGN_TYPE_INSIDE , DH_OFFSET(alignment),},
-  {"outside", PARM_VALUE  , (char *) CHALIGN_TYPE_OUTSIDE, DH_OFFSET(alignment),},
-  {"right"  , PARM_VALUE  , (char *) CHALIGN_TYPE_RIGHT  , DH_OFFSET(alignment),},
+  {"center" , PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_CENTRE ), DH_OFFSET(alignment),},
+  {"centre" , PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_CENTRE ), DH_OFFSET(alignment),},
+  {"left"   , PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_LEFT   ), DH_OFFSET(alignment),},
+  {"inside" , PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_INSIDE ), DH_OFFSET(alignment),},
+  {"outside", PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_OUTSIDE), DH_OFFSET(alignment),},
+  {"right"  , PARM_VALUE  , reinterpret_cast<char *>(CHALIGN_TYPE_RIGHT  ), DH_OFFSET(alignment),},
 
   {NULL, 0, NULL, 0,},
 };
@@ -106,38 +106,38 @@ struct CDFigureData {
 
 static CDParameterChoiceData
 fig_frame_data[] = {
-  {"rule", (char *) FRAME_RULE  ,},
-  {"box" , (char *) FRAME_BOX   ,},
-  {"none", (char *) FRAME_NONE  ,},
-  {""    , (char *) PARM_NEW_STR,},
-  {NULL  , (char *) 0           ,},
+  {"rule", reinterpret_cast<char *>(FRAME_RULE  ),},
+  {"box" , reinterpret_cast<char *>(FRAME_BOX   ),},
+  {"none", reinterpret_cast<char *>(FRAME_NONE  ),},
+  {""    , reinterpret_cast<char *>(PARM_NEW_STR),},
+  {NULL  , reinterpret_cast<char *>(0           ),},
 };
 
 static CDParameterChoiceData
 fig_place_data[] = {
-  {"top"   , (char *) PLACE_TOP   ,},
-  {"bottom", (char *) PLACE_BOTTOM,},
-  {"inline", (char *) PLACE_INLINE,},
-  {NULL    , (char *) 0           ,},
+  {"top"   , reinterpret_cast<char *>(PLACE_TOP   ),},
+  {"bottom", reinterpret_cast<char *>(PLACE_BOTTOM),},
+  {"inline", reinterpret_cast<char *>(PLACE_INLINE),},
+  {NULL    , reinterpret_cast<char *>(0           ),},
 };
 
 static CDParameterChoiceData
 fig_width_data[] = {
-  {"page"  , (char *) WIDTH_PAGE  ,},
-  {"column", (char *) WIDTH_COLUMN,},
-  {""      , (char *) PARM_CLENSTR,},
-  {NULL    , (char *) 0           ,},
+  {"page"  , reinterpret_cast<char *>(WIDTH_PAGE  ),},
+  {"column", reinterpret_cast<char *>(WIDTH_COLUMN),},
+  {""      , reinterpret_cast<char *>(PARM_CLENSTR),},
+  {NULL    , reinterpret_cast<char *>(0           ),},
 };
 
 static CDParameterData
 fig_parameter_data[] = {
-  {"depth" , PARM_LLENSTR, NULL                   , FIG_OFFSET(depth ),},
-  {"frame" , PARM_CHOICE , (char *) fig_frame_data, FIG_OFFSET(frame ),},
-  {"id"    , PARM_NEW_STR, NULL                   , FIG_OFFSET(ident ),},
-  {"indent", PARM_CLENSTR, NULL                   , FIG_OFFSET(indent),},
-  {"place" , PARM_CHOICE , (char *) fig_place_data, FIG_OFFSET(place ),},
-  {"width" , PARM_CHOICE , (char *) fig_width_data, FIG_OFFSET(width ),},
-  {NULL    , 0           , NULL                   , 0                 ,},
+  {"depth" , PARM_LLENSTR, NULL                                    , FIG_OFFSET(depth ),},
+  {"frame" , PARM_CHOICE , reinterpret_cast<char *>(fig_frame_data), FIG_OFFSET(frame ),},
+  {"id"    , PARM_NEW_STR, NULL                                    , FIG_OFFSET(ident ),},
+  {"indent", PARM_CLENSTR, NULL                                    , FIG_OFFSET(indent),},
+  {"place" , PARM_CHOICE , reinterpret_cast<char *>(fig_place_data), FIG_OFFSET(place ),},
+  {"width" , PARM_CHOICE , reinterpret_cast<char *>(fig_width_data), FIG_OFFSET(width ),},
+  {NULL    , 0           , NULL                                    , 0                 ,},
 };
 
 /*---------------------------------------------------------------------------*/
@@ -262,35 +262,35 @@ struct CDIndexRef {
 
 static CDParameterChoiceData
 index_pg_data[] = {
-  {"start", (char *) PG_START    ,},
-  {"end"  , (char *) PG_END      ,},
-  {"major", (char *) PG_MAJOR    ,},
-  {""     , (char *) PARM_NEW_STR,},
-  {NULL   , (char *) 0           ,},
+  {"start", reinterpret_cast<char *>(PG_START    ),},
+  {"end"  , reinterpret_cast<char *>(PG_END      ),},
+  {"major", reinterpret_cast<char *>(PG_MAJOR    ),},
+  {""     , reinterpret_cast<char *>(PARM_NEW_STR),},
+  {NULL   , reinterpret_cast<char *>(0           ),},
 };
 
 static CDParameterData
 i1_parameter_data[] = {
-  {"id"   , PARM_STR    , NULL                  , IX_OFFSET(ident)  ,},
-  {"pg"   , PARM_CHOICE , (char *) index_pg_data, IX_OFFSET(page )  ,},
-  {NULL   , 0           , NULL                  , 0                 ,},
+  {"id"   , PARM_STR    , NULL                                   , IX_OFFSET(ident)  ,},
+  {"pg"   , PARM_CHOICE , reinterpret_cast<char *>(index_pg_data), IX_OFFSET(page )  ,},
+  {NULL   , 0           , NULL                                   , 0                 ,},
 };
 
 static CDParameterData
 i23_parameter_data[] = {
-  {"id"   , PARM_STR    , NULL                  , IX_OFFSET(ident)  ,},
-  {"refid", PARM_STR    , NULL                  , IX_OFFSET(refid)  ,},
-  {"pg"   , PARM_CHOICE , (char *) index_pg_data, IX_OFFSET(page )  ,},
-  {NULL   , 0           , NULL                  , 0                 ,},
+  {"id"   , PARM_STR    , NULL                                   , IX_OFFSET(ident)  ,},
+  {"refid", PARM_STR    , NULL                                   , IX_OFFSET(refid)  ,},
+  {"pg"   , PARM_CHOICE , reinterpret_cast<char *>(index_pg_data), IX_OFFSET(page )  ,},
+  {NULL   , 0           , NULL                                   , 0                 ,},
 };
 
 static CDParameterData
 iref_parameter_data[] = {
-  {"refid", PARM_NEW_STR, NULL                  , IREF_OFFSET(refid),},
-  {"pg"   , PARM_CHOICE , (char *) index_pg_data, IREF_OFFSET(pg   ),},
-  {"see"  , PARM_NEW_STR, NULL                  , IREF_OFFSET(see  ),},
-  {"seeid", PARM_NEW_STR, NULL                  , IREF_OFFSET(seeid),},
-  {NULL   , 0           , NULL                  , 0                 ,},
+  {"refid", PARM_NEW_STR, NULL                                   , IREF_OFFSET(refid),},
+  {"pg"   , PARM_CHOICE , reinterpret_cast<char *>(index_pg_data), IREF_OFFSET(pg   ),},
+  {"see"  , PARM_NEW_STR, NULL                                   , IREF_OFFSET(see  ),},
+  {"seeid", PARM_NEW_STR, NULL                                   , IREF_OFFSET(seeid),},
+  {NULL   , 0           , NULL                                   , 0                 ,},
 };
 
 /*---------------------------------------------------------------------------*/
@@ -369,14 +369,14 @@ struct CDTableData {
 
 static CDParameterData
 table_parameter_data[] = {
-  {"column", PARM_VALUE  , (char *) WIDTH_COLUMN, TABLE_OFFSET(column),},
-  {"id"    , PARM_NEW_STR, NULL                 , TABLE_OFFSET(id    ),},
-  {"page"  , PARM_VALUE  , (char *) WIDTH_PAGE  , TABLE_OFFSET(page  ),},
-  {"refid" , PARM_NEW_STR, NULL                 , TABLE_OFFSET(refid ),},
-  {"split" , PARM_BOOLEAN, NULL                 , TABLE_OFFSET(split ),},
-  {"rotate", PARM_INT    , NULL                 , TABLE_OFFSET(rotate),},
-  {"width" , PARM_CLENSTR, NULL                 , TABLE_OFFSET(width ),},
-  {NULL    , 0           , NULL                 , 0                   ,},
+  {"column", PARM_VALUE  , reinterpret_cast<char *>(WIDTH_COLUMN), TABLE_OFFSET(column),},
+  {"id"    , PARM_NEW_STR, NULL                                  , TABLE_OFFSET(id    ),},
+  {"page"  , PARM_VALUE  , reinterpret_cast<char *>(WIDTH_PAGE  ), TABLE_OFFSET(page  ),},
+  {"refid" , PARM_NEW_STR, NULL                                  , TABLE_OFFSET(refid ),},
+  {"split" , PARM_BOOLEAN, NULL                                  , TABLE_OFFSET(split ),},
+  {"rotate", PARM_INT    , NULL                                  , TABLE_OFFSET(rotate),},
+  {"width" , PARM_CLENSTR, NULL                                  , TABLE_OFFSET(width ),},
+  {NULL    , 0           , NULL                                  , 0                   ,},
 };
 
 /*---------------------------------------------------------------------------*/
@@ -926,7 +926,7 @@ std::string        cdoc_date;
 std::string        cdoc_footer;
 std::string        cdoc_line;
 int                cdoc_line_len;
-int                cdoc_continuation_char   = (int) '\0';
+int                cdoc_continuation_char   = int('\0');
 
 /*---------------------------------------------------------------------------*/
 
@@ -1185,7 +1185,7 @@ CDocScriptInitPass1()
 
   /* Set Continuation Character */
 
-  cdoc_continuation_char = (int) '\0';
+  cdoc_continuation_char = int('\0');
 
   /* Initialise Translations */
 
@@ -1305,7 +1305,7 @@ CDocProcessCommentLinePass1(const std::string &comment)
   if (comment == "")
     return;
 
-  char *p1 = (char *) comment.c_str();
+  char *p1 = const_cast<char *>(comment.c_str());
 
   CStrUtil::skipSpace(&p1);
 
@@ -1494,7 +1494,7 @@ CDocProcessDotCommandPass1(CDDotCommand *dot_command)
       std::vector<std::string> words1(++p, words.end());
 
       CDocExtractParameters(words1, dh_parameter_data,
-                            (char *) &header_control[level]);
+                            reinterpret_cast<char *>(&header_control[level]));
     }
     else if (no_words == 1) {
       /* Set Header Control from Default Header Control */
@@ -1607,9 +1607,9 @@ CDocProcessDotCommandPass1(CDDotCommand *dot_command)
       if (words[0] == "cont") {
         if (no_words == 2) {
           if      (CStrUtil::casecmp(words[1], "off") == 0)
-            cdoc_continuation_char = (int) '\0';
+            cdoc_continuation_char = int('\0');
           else if (words[1].size() == 1)
-            cdoc_continuation_char = (int) words[1][0];
+            cdoc_continuation_char = int(words[1][0]);
           else
             CDocScriptError("Invalid Continuation Character '%s'", words[1].c_str());
         }
@@ -1705,12 +1705,12 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  h01_parameter_data,
-                                 (char *) &heading);
+                                 reinterpret_cast<char *>(&heading));
     else
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  h26_parameter_data,
-                                 (char *) &heading);
+                                 reinterpret_cast<char *>(&heading));
 
     /* If we have a reference identifier then add it to the
        reference list */
@@ -1826,7 +1826,7 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                fn_parameter_data,
-                               (char *) &footnote_data);
+                               reinterpret_cast<char *>(&footnote_data));
 
     CDFootnote footnote;
 
@@ -1900,7 +1900,7 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                li_parameter_data,
-                               (char *) &list_item);
+                               reinterpret_cast<char *>(&list_item));
 
     /* If we have a reference identifier and an ordered list then
        use the list item number (created from the depths of each
@@ -1976,7 +1976,7 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                fig_parameter_data,
-                               (char *) &figure_data);
+                               reinterpret_cast<char *>(&figure_data));
 
     current_figure->depth  = figure_data.depth;
     current_figure->frame  = figure_data.frame;
@@ -2074,7 +2074,7 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                table_parameter_data,
-                               (char *) &table_data);
+                               reinterpret_cast<char *>(&table_data));
 
     current_table->refid = (table_data.refid ? table_data.refid : "");
     current_table->id    = (table_data.id    ? table_data.id    : "");
@@ -2170,12 +2170,12 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    i1_parameter_data,
-                                   (char *) &index_entry);
+                                   reinterpret_cast<char *>(&index_entry));
       else
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    i23_parameter_data,
-                                   (char *) &index_entry);
+                                   reinterpret_cast<char *>(&index_entry));
 
       std::string ident = (index_entry.ident ? std::string(index_entry.ident) : "");
       std::string refid = (index_entry.refid ? std::string(index_entry.refid) : "");
@@ -2205,7 +2205,7 @@ CDocProcessColonCommandPass1(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  ih_parameter_data,
-                                 (char *) &index_entry_heading);
+                                 reinterpret_cast<char *>(&index_entry_heading));
 
       std::string ident = (index_entry_heading.ident ? std::string(index_entry_heading.ident) : "");
       std::string print = (index_entry_heading.print ? std::string(index_entry_heading.print) : "");
@@ -2325,7 +2325,7 @@ CDocScriptInitPass2()
 
   /* Set Continuation Character */
 
-  cdoc_continuation_char = (int) '\0';
+  cdoc_continuation_char = int('\0');
 
   /* Initialise Translations */
 
@@ -2620,7 +2620,7 @@ CDocInitialiseOutputPass2()
 static void
 CDocProcessCommentLinePass2(const std::string &comment)
 {
-  char *p1 = (char *) comment.c_str();
+  char *p1 = const_cast<char *>(comment.c_str());
 
   if (*p1 == '\0')
     return;
@@ -3269,7 +3269,7 @@ CDocProcessDotCommandPass2(CDDotCommand *dot_command)
       std::vector<std::string> words1(++p, words.end());
 
       CDocExtractParameters(words1, dh_parameter_data,
-                            (char *) &header_control[level]);
+                            reinterpret_cast<char *>(&header_control[level]));
     }
     else if (no_words == 1) {
       /* Set Header Control from Default Header Control */
@@ -3558,9 +3558,9 @@ CDocProcessDotCommandPass2(CDDotCommand *dot_command)
       if (words[0] == "cont") {
         if (no_words == 2) {
           if      (CStrUtil::casecmp(words[1], "off") == 0)
-            cdoc_continuation_char = (int) '\0';
+            cdoc_continuation_char = int('\0');
           else if (words[1].size() == 1)
-            cdoc_continuation_char = (int) words[1][0];
+            cdoc_continuation_char = int(words[1][0]);
         }
       }
     }
@@ -3655,7 +3655,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  sdoc_parameter_data,
-                                 (char *) &doc_data);
+                                 reinterpret_cast<char *>(&doc_data));
 
       if (doc_data.security) cdoc_document.security = doc_data.security;
       if (doc_data.language) cdoc_document.language = doc_data.language;
@@ -3677,7 +3677,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  gdoc_parameter_data,
-                                 (char *) &doc_data);
+                                 reinterpret_cast<char *>(&doc_data));
 
       if (doc_data.security) cdoc_document.security = doc_data.security;
       if (doc_data.language) cdoc_document.language = doc_data.language;
@@ -3778,12 +3778,12 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
           CDocExtractParameterValues(colon_command->getParameters(),
                                      colon_command->getValues(),
                                      i1_parameter_data,
-                                     (char *) &index_entry);
+                                     reinterpret_cast<char *>(&index_entry));
         else
           CDocExtractParameterValues(colon_command->getParameters(),
                                      colon_command->getValues(),
                                      i23_parameter_data,
-                                     (char *) &index_entry);
+                                     reinterpret_cast<char *>(&index_entry));
 
         std::string see_text;
 
@@ -3836,7 +3836,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    ih_parameter_data,
-                                   (char *) &index_entry_heading);
+                                   reinterpret_cast<char *>(&index_entry_heading));
 
         std::string see_text;
 
@@ -3887,7 +3887,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    row_parameter_data,
-                                   (char *) &row_data);
+                                   reinterpret_cast<char *>(&row_data));
 
         CDTableRow *row = CDocScriptCreateTableRow(current_table);
 
@@ -4011,7 +4011,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    tft_parameter_data,
-                                   (char *) row);
+                                   reinterpret_cast<char *>(row));
 
         CDocScriptSetTableRowRowDef(row);
 
@@ -4041,7 +4041,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    thd_parameter_data,
-                                   (char *) row);
+                                   reinterpret_cast<char *>(row));
 
         CDocScriptSetTableRowRowDef(row);
 
@@ -4163,7 +4163,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  dl_parameter_data,
-                                 (char *) cdoc_definition_list);
+                                 reinterpret_cast<char *>(cdoc_definition_list));
 
       cdoc_definition_list->heading_highlight %= 4;
       cdoc_definition_list->term_highlight    %= 4;
@@ -4520,7 +4520,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  ol_parameter_data,
-                                 (char *) cdoc_general_list);
+                                 reinterpret_cast<char *>(cdoc_general_list));
 
       /* Add List Structure as the Current List */
 
@@ -4552,7 +4552,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  sl_parameter_data,
-                                 (char *) cdoc_general_list);
+                                 reinterpret_cast<char *>(cdoc_general_list));
 
       /* Add List Structure as the Current List */
 
@@ -4584,7 +4584,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  ul_parameter_data,
-                                 (char *) cdoc_general_list);
+                                 reinterpret_cast<char *>(cdoc_general_list));
 
       /* Add List Structure as the Current List */
 
@@ -4610,7 +4610,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  li_parameter_data,
-                                 (char *) &list_item);
+                                 reinterpret_cast<char *>(&list_item));
 
       /* Add reference if List has Identifier */
 
@@ -4817,7 +4817,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  gl_parameter_data,
-                                 (char *) cdoc_glossary_list);
+                                 reinterpret_cast<char *>(cdoc_glossary_list));
 
       cdoc_glossary_list->term_highlight %= 4;
 
@@ -4961,12 +4961,12 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    h01_parameter_data,
-                                   (char *) &heading);
+                                   reinterpret_cast<char *>(&heading));
       else
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    h26_parameter_data,
-                                   (char *) &heading);
+                                   reinterpret_cast<char *>(&heading));
 
       if (CDocInst->getOutputFormat() == CDOC_OUTPUT_HTML) {
         if (header_control[level].new_page)
@@ -5680,7 +5680,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
       CDocExtractParameterValues(colon_command->getParameters(),
                                  colon_command->getValues(),
                                  fn_parameter_data,
-                                 (char *) current_footnote);
+                                 reinterpret_cast<char *>(current_footnote));
 
       /* Start Footnote Processing */
 
@@ -5716,7 +5716,7 @@ CDocProcessColonCommandPass2(CDColonCommand *colon_command)
         CDocExtractParameterValues(colon_command->getParameters(),
                                    colon_command->getValues(),
                                    xmp_parameter_data,
-                                   (char *) current_example);
+                                   reinterpret_cast<char *>(current_example));
 
         /* Start Example */
 
@@ -5991,9 +5991,11 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
           std::string temp_string1 = CDocScriptReplaceSymbolsInString(temp_string);
 
           if (type == INDEX_REF)
-            CDocExtractParameterValue(temp_string1, &parameter_data[j], (char *) &index_ref);
+            CDocExtractParameterValue(temp_string1, &parameter_data[j],
+                                      reinterpret_cast<char *>(&index_ref));
           else
-            CDocExtractParameterValue(temp_string1, &parameter_data[j], (char *) &cross_ref);
+            CDocExtractParameterValue(temp_string1, &parameter_data[j],
+                                      reinterpret_cast<char *>(&cross_ref));
 
           /* Skip Space after Reference Value */
 
@@ -6099,7 +6101,8 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
 
           std::string temp_string1 = CDocScriptReplaceSymbolsInString(temp_string);
 
-          CDocExtractParameterValue(temp_string1, &hook_parameter_data[j], (char *) &hook_data);
+          CDocExtractParameterValue(temp_string1, &hook_parameter_data[j],
+                                    reinterpret_cast<char *>(&hook_data));
 
           /* Skip Space after Reference Value */
 
@@ -6234,11 +6237,11 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
   /* Get Script Line's Text */
 
   if      (script_line->getType() == CDOC_DOT_COMMAND)
-    p1 = (char *) script_line->getDotCommand()->getText().c_str();
+    p1 = const_cast<char *>(script_line->getDotCommand()->getText().c_str());
   else if (script_line->getType() == CDOC_COLON_COMMAND)
-    p1 = (char *) script_line->getColonCommand()->getText().c_str();
+    p1 = const_cast<char *>(script_line->getColonCommand()->getText().c_str());
   else
-    p1 = (char *) script_line->getData().c_str();
+    p1 = const_cast<char *>(script_line->getData().c_str());
 
   /* Set New Line */
 
@@ -6449,9 +6452,11 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
           std::string temp_string1 = CDocScriptReplaceSymbolsInString(temp_string);
 
           if (type == INDEX_REF)
-            CDocExtractParameterValue(temp_string1, &parameter_data[j], (char *) &index_ref);
+            CDocExtractParameterValue(temp_string1, &parameter_data[j],
+                                      reinterpret_cast<char *>(&index_ref));
           else
-            CDocExtractParameterValue(temp_string1, &parameter_data[j], (char *) &cross_ref);
+            CDocExtractParameterValue(temp_string1, &parameter_data[j],
+                                      reinterpret_cast<char *>(&cross_ref));
 
           /* Skip Space after Reference Value */
 
@@ -6558,7 +6563,8 @@ CDocReplaceEmbeddedColonCommands(CDScriptLine *script_line)
 
           std::string temp_string1 = CDocScriptReplaceSymbolsInString(temp_string);
 
-          CDocExtractParameterValue(temp_string1, &hook_parameter_data[j], (char *) &hook_data);
+          CDocExtractParameterValue(temp_string1, &hook_parameter_data[j],
+                                    reinterpret_cast<char *>(&hook_data));
 
           /* Skip Space after Hook Value */
 

@@ -91,5 +91,5 @@ CDocScriptTranslateLine(std::string &line)
   uint len = line.size();
 
   for (uint i = 0; i < len; ++i)
-    line[i] = cdoc_translate[(int) line[i]];
+    line[i] = cdoc_translate[int(line[i])];
 }

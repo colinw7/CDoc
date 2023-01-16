@@ -491,8 +491,10 @@ CDocScriptOutputTable(CDTable *table)
 
   /* Output contents of Temporary File */
 
-  CDocScriptSetPagePostHeaderProc
-    ((void (*)(const char *)) CDocScriptOutputHeaderRow, (char *) table);
+  using PagePostHeaderProc = void (*)(const char *);
+
+  CDocScriptSetPagePostHeaderProc(
+    PagePostHeaderProc(CDocScriptOutputHeaderRow), reinterpret_cast<char *>(table));
 
   /* Output Text in Temporary File */
 
@@ -619,8 +621,10 @@ CDocScriptOutputHeaderRow(CDTable *table)
 
   /*--------------*/
 
-  CDocScriptSetPagePostHeaderProc
-    ((void (*)(const char *)) CDocScriptOutputHeaderRow, (char *) table);
+  using PagePostHeaderProc = void (*)(const char *);
+
+  CDocScriptSetPagePostHeaderProc(
+    PagePostHeaderProc(CDocScriptOutputHeaderRow), reinterpret_cast<char *>(table));
 }
 
 // Output a Row of the Table whose overall width is supplied.
@@ -1418,8 +1422,8 @@ CDocScriptGetTable(int no)
 {
   CDTable *table = NULL;
 
-  if (no >= 1 && no <= (int) table_list.size())
-    table = (CDTable *) table_list[no - 1];
+  if (no >= 1 && no <= int(table_list.size()))
+    table = reinterpret_cast<CDTable *>(table_list[no - 1]);
 
   return table;
 }

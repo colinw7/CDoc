@@ -1,9 +1,9 @@
 #ifndef CDOC_SCRIPT_INDEX_I_H
 #define CDOC_SCRIPT_INDEX_I_H
 
-#define PG_START ((char *) 1)
-#define PG_END   ((char *) 2)
-#define PG_MAJOR ((char *) 3)
+#define PG_START (reinterpret_cast<char *>(1))
+#define PG_END   (reinterpret_cast<char *>(2))
+#define PG_MAJOR (reinterpret_cast<char *>(3))
 
 #define PG_START_STR "__pg_start__"
 #define PG_END_STR   "__pg_end__"

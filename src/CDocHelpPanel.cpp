@@ -916,7 +916,7 @@ void
 CDHelpPanel::
 lastPageSlot()
 {
-  if (help_dataset_data_->getPageNum() != (int) help_dataset_data_->getNumPages()) {
+  if (help_dataset_data_->getPageNum() != int(help_dataset_data_->getNumPages())) {
     /* Load Required Page Number */
     help_dataset_data_->setPageNum(help_dataset_data_->getNumPages());
 
@@ -931,7 +931,7 @@ void
 CDHelpPanel::
 nextPageSlot()
 {
-  if (help_dataset_data_->getPageNum() != (int) help_dataset_data_->getNumPages()) {
+  if (help_dataset_data_->getPageNum() != int(help_dataset_data_->getNumPages())) {
     /* Load Required Page Number */
     help_dataset_data_->setPageNum(help_dataset_data_->getPageNum() + 1);
 
@@ -1170,8 +1170,8 @@ mouseButtonEvent(bool press, QMouseEvent *e)
 
       if (help_dataset_data_->getSelectXMin() < help_dataset_data_->getSelectXMax() &&
           help_dataset_data_->getSelectYMin() < help_dataset_data_->getSelectYMax())
-        help_dataset_data_->setSelectPage((CDHelpDatasetPage *)
-          help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1));
+        help_dataset_data_->setSelectPage(reinterpret_cast<CDHelpDatasetPage *>(
+          help_dataset_data_->getPage(help_dataset_data_->getPageNum() - 1)));
       else
         help_dataset_data_->setSelectPage(nullptr);
 

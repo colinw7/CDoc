@@ -41,7 +41,7 @@ CDocScriptCreateFigure()
   CDFigure *figure = new CDFigure;
 
   figure->depth       = 0;
-  figure->frame       = (char *) FRAME_RULE;
+  figure->frame       = reinterpret_cast<char *>(FRAME_RULE);
   figure->ident       = "";
   figure->indent      = 2;
   figure->place       = PLACE_TOP;
@@ -202,7 +202,7 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
   else
     total_no_lines = figure_no_lines;
 
-  if (figure->frame != (char *) FRAME_NONE)
+  if (figure->frame != reinterpret_cast<char *>(FRAME_NONE))
     total_no_lines += 2;
 
   if (figure->caption != "" || figure->description != "")
@@ -255,11 +255,11 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 
   width = cdoc_right_margin - cdoc_left_margin - cdoc_indent;
 
-  if      (figure->frame == (char *) FRAME_RULE)
+  if      (figure->frame == reinterpret_cast<char *>(FRAME_RULE))
     CDocScriptDrawHLine(0, -2);
-  else if (figure->frame == (char *) FRAME_BOX)
+  else if (figure->frame == reinterpret_cast<char *>(FRAME_BOX))
     CDocScriptDrawHLine(0, -2);
-  else if (figure->frame != (char *) FRAME_NONE) {
+  else if (figure->frame != reinterpret_cast<char *>(FRAME_NONE)) {
     CDocScriptWriteIndent(cdoc_left_margin + cdoc_indent);
 
     length = strlen(figure->frame);
@@ -298,9 +298,9 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 
   width = cdoc_right_margin - cdoc_left_margin - cdoc_indent;
 
-  if      (figure->frame == (char *) FRAME_RULE)
+  if      (figure->frame == reinterpret_cast<char *>(FRAME_RULE))
     CDocScriptDrawHLine(0, -2);
-  else if (figure->frame == (char *) FRAME_BOX) {
+  else if (figure->frame == reinterpret_cast<char *>(FRAME_BOX)) {
     CDocScriptDrawHLine(0, -2);
 
     if (figure->depth > figure_no_lines) {
@@ -312,7 +312,7 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
       CDocScriptDrawVLine(-2, -figure_no_lines + cdoc_line_fiddle);
     }
   }
-  else if (figure->frame != (char *) FRAME_NONE) {
+  else if (figure->frame != reinterpret_cast<char *>(FRAME_NONE)) {
     CDocScriptWriteIndent(cdoc_left_margin + cdoc_indent);
 
     length = strlen(figure->frame);

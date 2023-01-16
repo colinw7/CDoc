@@ -61,14 +61,14 @@ static CDScriptTempFile *amendments_temp_file = NULL;
 
 static CDParameterData
 amd_parameter_data[] = {
-  { "issue"  , PARM_NEW_STR, NULL, AMD_OFFSET(issue  ), },
-  { "amend"  , PARM_NEW_STR, NULL, AMD_OFFSET(amend  ), },
-  { "detail" , PARM_NEW_STR, NULL, AMD_OFFSET(detail ), },
-  { "author" , PARM_NEW_STR, NULL, AMD_OFFSET(author ), },
-  { "date"   , PARM_NEW_STR, NULL, AMD_OFFSET(date   ), },
-  { "approve", PARM_NEW_STR, NULL, AMD_OFFSET(approve), },
-  { "agree"  , PARM_NEW_STR, NULL, AMD_OFFSET(agree  ), },
-  { NULL     , 0           , NULL, 0                  , },
+  { "issue"  , PARM_NEW_STR, nullptr, AMD_OFFSET(issue  ) },
+  { "amend"  , PARM_NEW_STR, nullptr, AMD_OFFSET(amend  ) },
+  { "detail" , PARM_NEW_STR, nullptr, AMD_OFFSET(detail ) },
+  { "author" , PARM_NEW_STR, nullptr, AMD_OFFSET(author ) },
+  { "date"   , PARM_NEW_STR, nullptr, AMD_OFFSET(date   ) },
+  { "approve", PARM_NEW_STR, nullptr, AMD_OFFSET(approve) },
+  { "agree"  , PARM_NEW_STR, nullptr, AMD_OFFSET(agree  ) },
+  { nullptr  , 0           , nullptr, 0                   },
 };
 
 /*----------------------------------------------------------------*/
@@ -112,13 +112,13 @@ CDocScriptProcessAmendmentsCommand(CDColonCommand *colon_command)
 
   char *text = CDocScriptAmendmentsGetText();
 
-  if (text != NULL) {
-    CDAmendment *amendment = NULL;
+  if (text != nullptr) {
+    CDAmendment *amendment = nullptr;
 
     if (! amendment_list.empty())
       amendment = amendment_list.back();
 
-    if (amendment == NULL || amendment->data.text != NULL) {
+    if (amendment == nullptr || amendment->data.text != nullptr) {
       amendment = new CDAmendment;
 
       amendment_list.push_back(amendment);
@@ -147,9 +147,9 @@ CDocScriptProcessAmendmentsCommand(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                amd_parameter_data,
-                               (char *) amendment);
+                               reinterpret_cast<char *>(amendment));
 
-    if (amendment->data.detail != NULL)
+    if (amendment->data.detail != nullptr)
       CStrUtil::toUpper(amendment->data.detail);
   }
 
@@ -186,10 +186,10 @@ CDocScriptTermAmendments()
 
   char *text = CDocScriptAmendmentsGetText();
 
-  if (text != NULL) {
+  if (text != nullptr) {
     CDAmendment *amendment = amendment_list.back();
 
-    if (amendment == NULL || amendment->data.text != NULL) {
+    if (amendment == nullptr || amendment->data.text != nullptr) {
       amendment = new CDAmendment;
 
       amendment_list.push_back(amendment);
@@ -336,35 +336,35 @@ CDocScriptAmendmentWriteLine(CDAmendment *amendment, int issue_no, int amend_no)
   if (CDocInst->getOutputFormat() == CDOC_OUTPUT_TROFF) {
     CDocScriptWriteText("\t");
 
-    if (amendment->data.issue != NULL)
+    if (amendment->data.issue != nullptr)
       CDocScriptWriteText("%s", amendment->data.issue);
     else
       CDocScriptWriteText("%s", issue_string);
 
     CDocScriptWriteText("\t");
 
-    if (amendment->data.detail != NULL)
+    if (amendment->data.detail != nullptr)
       CDocScriptWriteText("%s", amendment->data.detail);
     else
       CDocScriptWriteText("");
 
     CDocScriptWriteText("\t");
 
-    if (amendment->data.author != NULL)
+    if (amendment->data.author != nullptr)
       CDocScriptWriteText("%s", amendment->data.author);
     else
       CDocScriptWriteText("");
 
     CDocScriptWriteText("\t");
 
-    if (amendment->data.date != NULL)
+    if (amendment->data.date != nullptr)
       CDocScriptWriteText("%s", amendment->data.date);
     else
       CDocScriptWriteText("");
 
     CDocScriptWriteText("\t");
 
-    if (amendment->data.approve != NULL)
+    if (amendment->data.approve != nullptr)
       CDocScriptWriteText("%s", amendment->data.approve);
     else
       CDocScriptWriteText("");
@@ -375,54 +375,54 @@ CDocScriptAmendmentWriteLine(CDAmendment *amendment, int issue_no, int amend_no)
     CDocScriptWriteText(FILL_TMPL,  4,  4, ' ');
 
     CDocScriptWriteText("%-4s",
-      amendment->data.issue != NULL ? amendment->data.issue : issue_string);
+      amendment->data.issue != nullptr ? amendment->data.issue : issue_string);
 
     CDocScriptWriteText(FILL_TMPL,  9,  9, ' ');
 
     CDocScriptWriteText("%-30s",
-      amendment->data.detail != NULL ? amendment->data.detail : "");
+      amendment->data.detail != nullptr ? amendment->data.detail : "");
 
     CDocScriptWriteText(FILL_TMPL, 40, 40, ' ');
 
     CDocScriptWriteText("%-10s",
-      amendment->data.author != NULL ? amendment->data.author : "");
+      amendment->data.author != nullptr ? amendment->data.author : "");
 
     CDocScriptWriteText(FILL_TMPL, 51, 51, ' ');
 
     CDocScriptWriteText("%-10s",
-      amendment->data.date != NULL ? amendment->data.date : "");
+      amendment->data.date != nullptr ? amendment->data.date : "");
 
     CDocScriptWriteText(FILL_TMPL, 62, 62, ' ');
 
     CDocScriptWriteText("%-20s",
-      amendment->data.approve != NULL ? amendment->data.approve : "");
+      amendment->data.approve != nullptr ? amendment->data.approve : "");
 
     CDocScriptWriteText("\n");
   }
   else if (CDocInst->getOutputFormat() == CDOC_OUTPUT_HTML) {
     CDocScriptWriteCommand("<tr>\n");
     CDocScriptWriteCommand("<td>%s</td>\n",
-      amendment->data.issue   != NULL ? amendment->data.issue   : issue_string);
+      amendment->data.issue   != nullptr ? amendment->data.issue   : issue_string);
     CDocScriptWriteCommand("<td>%s</td>\n",
-      amendment->data.detail  != NULL ? amendment->data.detail  : "&nbsp;"    );
+      amendment->data.detail  != nullptr ? amendment->data.detail  : "&nbsp;"    );
     CDocScriptWriteCommand("<td>%s</td>\n",
-      amendment->data.author  != NULL ? amendment->data.author  : "&nbsp;"    );
+      amendment->data.author  != nullptr ? amendment->data.author  : "&nbsp;"    );
     CDocScriptWriteCommand("<td>%s</td>\n",
-      amendment->data.date    != NULL ? amendment->data.date    : "&nbsp;"    );
+      amendment->data.date    != nullptr ? amendment->data.date    : "&nbsp;"    );
     CDocScriptWriteCommand("<td>%s</td>\n",
-      amendment->data.approve != NULL ? amendment->data.approve : "&nbsp;"    );
+      amendment->data.approve != nullptr ? amendment->data.approve : "&nbsp;"    );
     CDocScriptWriteCommand("</tr>\n");
   }
   else {
     CDocScriptWriteLine("  %-4s %-30s %-10s %-10s %-20s",
-      amendment->data.issue   != NULL ? amendment->data.issue   : issue_string,
-      amendment->data.detail  != NULL ? amendment->data.detail  : "",
-      amendment->data.author  != NULL ? amendment->data.author  : "",
-      amendment->data.date    != NULL ? amendment->data.date    : "",
-      amendment->data.approve != NULL ? amendment->data.approve : "");
+      amendment->data.issue   != nullptr ? amendment->data.issue   : issue_string,
+      amendment->data.detail  != nullptr ? amendment->data.detail  : "",
+      amendment->data.author  != nullptr ? amendment->data.author  : "",
+      amendment->data.date    != nullptr ? amendment->data.date    : "",
+      amendment->data.approve != nullptr ? amendment->data.approve : "");
   }
 
-  if (amendment->data.text != NULL && amendment->data.text[0] != '\0')
+  if (amendment->data.text != nullptr && amendment->data.text[0] != '\0')
     CDocScriptAmendmentWriteText(amendment->data.text);
 }
 
@@ -434,7 +434,7 @@ CDocScriptAmendmentWriteText(char *text)
 
   char *p = text;
 
-  while ((p1 = strchr(p, '\n')) != NULL) {
+  while ((p1 = strchr(p, '\n')) != nullptr) {
     *p1 = '\0';
 
     if (CDocInst->getOutputFormat() == CDOC_OUTPUT_TROFF) {
@@ -478,7 +478,7 @@ CDocScriptAmendmentsGetText()
   long        no_read;
   struct stat file_stat;
 
-  char *text = NULL;
+  char *text = nullptr;
 
   /*-----------*/
 
@@ -495,7 +495,7 @@ CDocScriptAmendmentsGetText()
 
   amendments_temp_file->fp = fopen(amendments_temp_file->filename.c_str(), "r");
 
-  if (amendments_temp_file->fp == NULL)
+  if (amendments_temp_file->fp == nullptr)
     goto CDocScriptAmendmentsGetText_1;
 
   text = new char [file_stat.st_size + 1];

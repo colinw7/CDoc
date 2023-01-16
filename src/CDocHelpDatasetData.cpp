@@ -49,7 +49,7 @@ static int cdoc_fill_pad   = 0;
 static int cdoc_indent_char_width = 8;
 
 static std::string  select_file;
-static FILE        *select_fp = NULL;
+static FILE        *select_fp = nullptr;
 
 static CDHelpDatasetPage *last_page;
 
@@ -79,9 +79,9 @@ static int cdoc_current_font_type = 0;
 
 static CPrint ps_print;
 
-static CFontMetrics *ps_font_metrics = NULL;
+static CFontMetrics *ps_font_metrics = nullptr;
 
-static CDFontData *ps_current_font = NULL;
+static CDFontData *ps_current_font = nullptr;
 static double      ps_font_x_scale = 1.0;
 static double      ps_font_y_scale = 1.0;
 
@@ -111,7 +111,7 @@ static CRGBA highlight_save_fg;
 static CRGBA reference_save_fg;
 static CRGBA hook_save_fg;
 
-static CDDrawParagraph *paragraph = NULL;
+static CDDrawParagraph *paragraph = nullptr;
 
 //----------
 
@@ -131,8 +131,8 @@ CDHelpDatasetData(CDHelp *help, const std::string &dataset)
 
   help_             = help;
   dataset_          = dataset;
-  fp_               = NULL;
-  program_helps_    = (help != NULL ?  help->getProgramHelps() : NULL);
+  fp_               = nullptr;
+  program_helps_    = (help != nullptr ?  help->getProgramHelps() : nullptr);
   popup_on_display_ = cdoc_popup_on_display;
 
   show_header_ = CDocInst->getShowHeader();
@@ -149,12 +149,12 @@ CDHelpDatasetData(CDHelp *help, const std::string &dataset)
   right_margin_      = cdoc_right_margin;
   page_length_       = cdoc_lines_per_page;
 
-  text_list_      = NULL;
-  text_container_ = NULL;
-  default_font_   = NULL;
-  current_font_   = NULL;
+  text_list_      = nullptr;
+  text_container_ = nullptr;
+  default_font_   = nullptr;
+  current_font_   = nullptr;
 
-  select_page_ = NULL;
+  select_page_ = nullptr;
   select_x_    = -1;
   select_y_    = -1;
   select_xmin_ = -1;
@@ -164,11 +164,11 @@ CDHelpDatasetData(CDHelp *help, const std::string &dataset)
 
   printing_ = false;
 
-  help_panel_ = NULL;
+  help_panel_ = nullptr;
 
   /* Disable Footer and Header for Internal Helps */
 
-  if (help_== NULL || help_->getInternal()) {
+  if (help_== nullptr || help_->getInternal()) {
     show_header_= false;
     show_footer_= false;
   }
@@ -183,7 +183,7 @@ CDHelpDatasetData::
 
   //------
 
-  if (fp_ != NULL)
+  if (fp_ != nullptr)
     fclose(fp_);
 
   //------
@@ -368,7 +368,7 @@ FILE *
 CDHelpDatasetData::
 getFp() const
 {
-  if (fp_ == NULL) {
+  if (fp_ == nullptr) {
     CDHelpDatasetData *th = const_cast<CDHelpDatasetData *>(this);
 
     th->fp_ = fopen(dataset_.c_str(), "r");
@@ -411,7 +411,7 @@ setFontType(int font_type)
 {
   static int         last_font_type  = -1;
   static int         last_font_fixed = -1;
-  static CDFontData *last_font       = NULL;
+  static CDFontData *last_font       = nullptr;
 
   if (font_type != 0 && font_type != 1 && font_type != 3 && font_type != 4)
     font_type = 1;
@@ -458,7 +458,7 @@ setFontType(int font_type)
         else if (font_type == 4) fontName = "FontTBI";
         else                     fontName = "FontTB" ;
       }
-      else if (ps_current_font->normal == NULL) {
+      else if (ps_current_font->normal == nullptr) {
         if      (font_type == 0) fontName = "FontSN";
         else if (font_type == 1) fontName = "FontSN";
         else if (font_type == 3) fontName = "FontSN";
@@ -524,10 +524,10 @@ setPSTextScale()
 
   int width2, height2;
 
-  if (ps_current_font != NULL) {
+  if (ps_current_font != nullptr) {
     width2 = 0;
 
-    if (ps_current_font->current != NULL) {
+    if (ps_current_font->current != nullptr) {
       for (int i = 0; text1[i] != '\0'; i++) {
         uint c = text1[i];
 
@@ -537,7 +537,7 @@ setPSTextScale()
     else
       width2 = strlen(text1);
 
-    if (ps_current_font->current != NULL)
+    if (ps_current_font->current != nullptr)
       height2 = ps_current_font->current->getYMax() - ps_current_font->current->getYMin();
     else
       height2 = 1;
@@ -550,8 +550,8 @@ setPSTextScale()
     height2 = 10;
   }
 
-  ps_font_x_scale = fabs((double) width1 )/fabs( width2/1000.0);
-  ps_font_y_scale = fabs((double) height1)/fabs(height2/1000.0);
+  ps_font_x_scale = fabs(double(width1 ))/fabs( width2/1000.0);
+  ps_font_y_scale = fabs(double(height1))/fabs(height2/1000.0);
 
   if (ps_font_x_scale > ps_font_y_scale)
     ps_font_x_scale = ps_font_y_scale;
@@ -651,7 +651,7 @@ bool
 CDHelpDatasetData::
 initDrawPages()
 {
-  last_page = NULL;
+  last_page = nullptr;
 
   if (printing_) {
     if (! loadFontMetrics())
@@ -737,7 +737,7 @@ initDrawPages()
   std::string line;
 
   while (CDocReadLineFromFile(getFp(), line)) {
-    char *line1 = (char *) line.c_str();
+    char *line1 = const_cast<char *>(line.c_str());
 
     /* Initialise the Line Height */
 
@@ -769,12 +769,12 @@ initDrawPages()
 
     if (getHelp()->getFormat() == CDOC_FORMAT_CDOC &&
         strncmp(line1, CDOC_CMD_ID, CDOC_CMD_ID_LEN) == 0) {
-      /* Replace space after command name with NULL
+      /* Replace space after command name with nul
          so we can use 'strcmp' on the command name */
 
       char *p1 = strchr(&line1[8], ' ');
 
-      if (p1 != NULL) {
+      if (p1 != nullptr) {
         *p1 = '\0';
 
         p1++;
@@ -814,13 +814,13 @@ initDrawPages()
       /* Page Dimensions */
 
       else if (strcmp(&line1[8], "left_margin") == 0) {
-        if (p1 != NULL)
+        if (p1 != nullptr)
           setLeftMargin(CStrUtil::toInteger(p1));
         else
           CDocWriteError("Invalid Left Margin Command %s", line1);
       }
       else if (strcmp(&line1[8], "right_margin") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           setRightMargin(CStrUtil::toInteger(p1));
 
           if (getRightMargin() == 0)
@@ -830,7 +830,7 @@ initDrawPages()
           CDocWriteError("Invalid Right Margin Command %s", line1);
       }
       else if (strcmp(&line1[8], "page_length") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           setPageLength(CStrUtil::toInteger(p1));
 
           if (getPageLength() == 0)
@@ -843,10 +843,10 @@ initDrawPages()
       /* Define Font Mapping */
 
       else if (strcmp(&line1[8], "def_font") == 0) {
-        char *p2   = NULL;
-        char *name = NULL;
+        char *p2   = nullptr;
+        char *name = nullptr;
 
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           name = p1;
@@ -854,7 +854,7 @@ initDrawPages()
           p2 = strchr(p1, '=');
         }
 
-        if (p2 != NULL) {
+        if (p2 != nullptr) {
           *p2 = '\0';
 
           p2++;
@@ -868,7 +868,7 @@ initDrawPages()
       /* Start New Font */
 
       else if (strcmp(&line1[8], "start_font") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           startFont(p1);
@@ -886,7 +886,7 @@ initDrawPages()
 
       else if (strcmp(&line1[8], "section") == 0) {
         if (! printing_) {
-          if (p1 != NULL) {
+          if (p1 != nullptr) {
             CStrUtil::skipSpace(&p1);
 
             CDHelpSectionPanel *section_panel = getHelpPanel(true)->getSectionPanel(true);
@@ -902,7 +902,7 @@ initDrawPages()
 
       else if (strcmp(&line1[8], "sub_section") == 0) {
         if (! printing_) {
-          if (p1 != NULL) {
+          if (p1 != nullptr) {
             CStrUtil::skipSpace(&p1);
 
             CDHelpSectionPanel *section_panel = getHelpPanel(true)->getSectionPanel(true);
@@ -917,7 +917,7 @@ initDrawPages()
       /* Current Indentation */
 
       else if (strcmp(&line1[8], "indent") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           cdoc_tab_indent = CStrUtil::toInteger(p1);
@@ -932,7 +932,7 @@ initDrawPages()
                strcmp(&line1[8], "xwd.Z" ) == 0 ||
                strcmp(&line1[8], "bitmap") == 0 ||
                strcmp(&line1[8], "image" ) == 0) {
-        if (p1 == NULL) {
+        if (p1 == nullptr) {
           CDocWriteError("Invalid Image Command");
           goto next_line;
         }
@@ -1005,7 +1005,7 @@ initDrawPages()
             char *env = getenv("CDOC_IMAGE_DEBUG");
 
             if (rotate == 90 || rotate == 270) {
-              if ((int) image->getHeight() > *page_width1)
+              if (int(image->getHeight()) > *page_width1)
                 *page_width1 = image->getHeight();
 
               *page_height += image->getWidth();
@@ -1018,7 +1018,7 @@ initDrawPages()
                 size2 += 1;
             }
             else {
-              if ((int) image->getWidth() > *page_width1)
+              if (int(image->getWidth()) > *page_width1)
                 *page_width1 = image->getWidth();
 
               *page_height += image->getHeight();
@@ -1031,7 +1031,7 @@ initDrawPages()
                 size2 += 1;
             }
 
-            if (size2 != size && env != NULL)
+            if (size2 != size && env != nullptr)
               CDocWriteError("%s '%s': Actual %d, Supplied %d",
                              "Image Lines MisMatch for", p1, size2, size);
           }
@@ -1039,7 +1039,7 @@ initDrawPages()
             double scale;
 
             if (rotate == 90 || rotate == 270) {
-              scale = ((double) size1)/image->getWidth();
+              scale = double(size1)/image->getWidth();
 
               if (image->getHeight()*scale > *page_width1)
                 *page_width1 = int(image->getHeight()*scale);
@@ -1049,7 +1049,7 @@ initDrawPages()
               page->line_heights[page->line_no - 1] = size1;
             }
             else {
-              scale = ((double) size1)/image->getHeight();
+              scale = double(size1)/image->getHeight();
 
               if (image->getWidth()*scale > *page_width1)
                 *page_width1 = int(image->getWidth()*scale);
@@ -1075,14 +1075,14 @@ initDrawPages()
       /* Add Command Button and add to Command panel */
 
       else if (strcmp(&line1[8], "command") == 0) {
-        /* Replace tab after command title with NULL so it can be extracted */
+        /* Replace tab after command title with nul so it can be extracted */
 
-        char *p2 = NULL;
+        char *p2 = nullptr;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           p2 = strchr(p1, '\t');
 
-        if (p2 != NULL) {
+        if (p2 != nullptr) {
           *p2 = '\0';
 
           p2++;
@@ -1127,7 +1127,7 @@ initDrawPages()
         char temp_string3[32];
         char temp_string4[32];
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", temp_string1, temp_string2, temp_string3, temp_string4);
 
         if (no != 4) {
@@ -1152,7 +1152,7 @@ initDrawPages()
         char temp_string3[32];
         char temp_string4[32];
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", temp_string1, temp_string2, temp_string3, temp_string4);
 
         if (no != 4) {
@@ -1177,7 +1177,7 @@ initDrawPages()
         char temp_string3[32];
         char temp_string4[32];
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", temp_string1, temp_string2, temp_string3, temp_string4);
 
         if (no != 4) {
@@ -1201,7 +1201,7 @@ initDrawPages()
         char temp_string1[32];
         char temp_string2[32];
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %n", temp_string1, temp_string2, &pos);
 
         if (no != 2 || p1[pos] == '\0') {
@@ -1249,7 +1249,7 @@ initDrawPages()
       else if (strcmp(&line1[8], "paragraph_begin") == 0) {
         int right_margin = getRightMargin();
 
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           int no = sscanf(p1, "%d", &right_margin);
 
           if (no != 1)
@@ -1272,7 +1272,7 @@ initDrawPages()
       else if (strcmp(&line1[8], "paragraph_start") == 0) {
         int right_margin = getRightMargin();
 
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           int no = sscanf(p1, "%d", &right_margin);
 
           if (no != 1)
@@ -1319,7 +1319,7 @@ initDrawPages()
       /* Set Line */
 
       else if (strcmp(&line1[8], "set_line") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           int no_lines = CStrUtil::toInteger(p1);
@@ -1362,9 +1362,9 @@ initDrawPages()
       /* Formatting On/Off */
 
       else if (strcmp(&line1[8], "format") == 0) {
-        if      (p1 != NULL && strcmp(p1, "on") == 0)
+        if      (p1 != nullptr && strcmp(p1, "on") == 0)
           page_width = save_page_width;
-        else if (p1 != NULL && strcmp(p1, "off") == 0) {
+        else if (p1 != nullptr && strcmp(p1, "off") == 0) {
           save_page_width = page_width;
           page_width      = page_width1;
         }
@@ -1712,7 +1712,7 @@ loadFontMetrics()
 
   char dir[256];
 
-  if (ps_dir != NULL) {
+  if (ps_dir != nullptr) {
     strcpy(dir, ps_dir);
     strcat(dir, "/");
   }
@@ -1744,7 +1744,7 @@ writePSHeader()
 
   /* Calculate Aspect Ratio of Page */
 
-  double aspect = ((double) max_page_width)/((double) ps_max_page_height);
+  double aspect = double(max_page_width)/double(ps_max_page_height);
 
   /*------------------------------------*/
 
@@ -2007,7 +2007,7 @@ endFont()
 
     ps_current_font = ps_current_font_list.back();
 
-    if (ps_current_font != NULL)
+    if (ps_current_font != nullptr)
       setFontType(0);
     else
       startFont("");
@@ -2023,7 +2023,7 @@ endFont()
 
     setCurrentFont(font);
 
-    if (font == NULL)
+    if (font == nullptr)
       startFont("");
   }
 }
@@ -2054,7 +2054,7 @@ void
 CDHelpDatasetData::
 loadPage(CDHelpDatasetPage *page)
 {
-  CDHelpPrintPanel *print_panel = NULL;
+  CDHelpPrintPanel *print_panel = nullptr;
 
   if (getHelpPanel())
     print_panel = getHelpPanel()->getPrintPanel();
@@ -2078,7 +2078,7 @@ loadPage(CDHelpDatasetPage *page)
   /* Move to the required position in the file for the page
      number specified. If the page number is invalid then fail */
 
-  if (getFp() == NULL)
+  if (getFp() == nullptr)
     return;
 
   fseek(getFp(), page->position, SEEK_SET);
@@ -2089,12 +2089,12 @@ loadPage(CDHelpDatasetPage *page)
 
   /* Update Page Selection Panel */
 
-  CDHelpPageNoPanel *page_no_panel = NULL;
+  CDHelpPageNoPanel *page_no_panel = nullptr;
 
   if (getHelpPanel())
     page_no_panel = getHelpPanel()->getPageNoPanel();
 
-  if (page_no_panel != NULL)
+  if (page_no_panel != nullptr)
     page_no_panel->setPage(getPageNum());
 
   /*********/
@@ -2172,7 +2172,7 @@ drawPage(CDHelpDatasetPage *page)
   int x = 0;
 
   while (CDocReadLineFromFile(getFp(), line)) {
-    char *line1 = (char *) line.c_str();
+    char *line1 = const_cast<char *>(line.c_str());
 
     x = 0;
 
@@ -2201,12 +2201,12 @@ drawPage(CDHelpDatasetPage *page)
 
     if (getHelp()->getFormat() == CDOC_FORMAT_CDOC &&
         strncmp(line1, CDOC_CMD_ID, CDOC_CMD_ID_LEN) == 0) {
-      /* Replace space after command name with NULL
+      /* Replace space after command name with nul
          so we can use 'strcmp' on the command name */
 
       char *p1 = strchr(&line1[8], ' ');
 
-      if (p1 != NULL) {
+      if (p1 != nullptr) {
         *p1 = '\0';
 
         p1++;
@@ -2254,7 +2254,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Start New Font */
 
       else if (strcmp(&line1[8], "start_font") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           startFont(p1);
@@ -2279,13 +2279,13 @@ drawPage(CDHelpDatasetPage *page)
       /* Current Indentation */
 
       else if (strcmp(&line1[8], "indent") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           cdoc_tab_indent = CStrUtil::toInteger(p1);
         }
 
-        if (paragraph != NULL) {
+        if (paragraph != nullptr) {
           if (paragraph->getNumLines() == 0)
             paragraph->setIndent1(cdoc_tab_indent);
           else {
@@ -2304,7 +2304,7 @@ drawPage(CDHelpDatasetPage *page)
                strcmp(&line1[8], "xwd.Z" ) == 0 ||
                strcmp(&line1[8], "bitmap") == 0 ||
                strcmp(&line1[8], "image" ) == 0) {
-        if (p1 == NULL)
+        if (p1 == nullptr)
           goto drawPage_1;
 
         CStrUtil::skipSpace(&p1);
@@ -2378,14 +2378,14 @@ drawPage(CDHelpDatasetPage *page)
       /* Add Command Button */
 
       else if (strcmp(&line1[8], "command") == 0) {
-        /* Replace tab after command title with NULL so it can be extracted */
+        /* Replace tab after command title with nul so it can be extracted */
 
-        char *p2 = NULL;
+        char *p2 = nullptr;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           p2 = strchr(p1, '\t');
 
-        if (p2 == NULL)
+        if (p2 == nullptr)
           goto drawPage_1;
 
         *p2 = '\0';
@@ -2431,7 +2431,7 @@ drawPage(CDHelpDatasetPage *page)
 
         int no = 0;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", x1, y1, x2, y2);
 
         if (no != 4)
@@ -2455,7 +2455,7 @@ drawPage(CDHelpDatasetPage *page)
 
         int no = 0;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", x1, y1, x2, y2);
 
         if (no != 4)
@@ -2479,7 +2479,7 @@ drawPage(CDHelpDatasetPage *page)
 
         int no = 0;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %s %s", x1, y1, x2, y2);
 
         if (no != 4)
@@ -2502,7 +2502,7 @@ drawPage(CDHelpDatasetPage *page)
 
         int no = 0;
 
-        if (p1 != NULL)
+        if (p1 != nullptr)
           no = sscanf(p1, "%s %s %n", x1, y1, &pos1);
 
         if (no != 2 || p1[pos1] == '\0')
@@ -2518,7 +2518,7 @@ drawPage(CDHelpDatasetPage *page)
 
       else if (strcmp(&line1[8], "set_color") == 0 ||
                strcmp(&line1[8], "set_colour") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           setDrawColor(p1);
@@ -2528,7 +2528,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Set Draw String Font Name */
 
       else if (strcmp(&line1[8], "set_font_name") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           setDrawFontName(p1);
@@ -2538,7 +2538,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Set Draw String Font Style */
 
       else if (strcmp(&line1[8], "set_font_style") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           setDrawFontStyle(p1);
@@ -2548,7 +2548,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Set Draw Line/Box Thickness */
 
       else if (strcmp(&line1[8], "set_thickness") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           setDrawLineThickness(p1);
@@ -2558,7 +2558,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Set Fill Pixmap Name */
 
       else if (strcmp(&line1[8], "set_fill_pixmap") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           setDrawFillPixmap(p1);
@@ -2570,7 +2570,7 @@ drawPage(CDHelpDatasetPage *page)
       else if (strcmp(&line1[8], "paragraph_begin") == 0) {
         int right_margin = getRightMargin();
 
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           int no = sscanf(p1, "%d", &right_margin);
 
           if (no != 1)
@@ -2590,7 +2590,7 @@ drawPage(CDHelpDatasetPage *page)
       else if (strcmp(&line1[8], "paragraph_start") == 0) {
         int right_margin = getRightMargin();
 
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           int no = sscanf(p1, "%d", &right_margin);
 
           if (no != 1)
@@ -2608,7 +2608,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Start Goto */
 
       else if (strcmp(&line1[8], "goto_start") == 0) {
-        if (p1 != NULL)
+        if (p1 != nullptr)
           startReference(page, p1, x, *y);
       }
 
@@ -2621,14 +2621,14 @@ drawPage(CDHelpDatasetPage *page)
 
       else if (strcmp(&line1[8], "color_start") == 0 ||
                strcmp(&line1[8], "colour_start") == 0) {
-        if (p1 != NULL)
+        if (p1 != nullptr)
           setColor(CStrUtil::toInteger(p1));
       }
 
       /* Start Font Type */
 
       else if (strcmp(&line1[8], "font_start") == 0) {
-        if (p1 != NULL)
+        if (p1 != nullptr)
           setFontType(CStrUtil::toInteger(p1));
       }
 
@@ -2642,7 +2642,7 @@ drawPage(CDHelpDatasetPage *page)
         rc[0] = *p1;
         rc[1] = '\0';
 
-        if (paragraph != NULL) {
+        if (paragraph != nullptr) {
           in_paragraph = true;
           right_margin = paragraph->getRightMargin();
 
@@ -2663,7 +2663,7 @@ drawPage(CDHelpDatasetPage *page)
       /* Set Line */
 
       else if (strcmp(&line1[8], "set_line") == 0) {
-        if (p1 != NULL) {
+        if (p1 != nullptr) {
           CStrUtil::skipSpace(&p1);
 
           int no_lines = CStrUtil::toInteger(p1);
@@ -2708,7 +2708,7 @@ drawPage(CDHelpDatasetPage *page)
 
     /* Add Line to Paragraph */
 
-    else if (paragraph != NULL)
+    else if (paragraph != nullptr)
       addParagraphLine(page, pos, line1, &x, y);
 
     /* Process Normal Text Line */
@@ -2733,7 +2733,7 @@ drawPage(CDHelpDatasetPage *page)
     page->line_no++;
   }
 
-  if (paragraph != NULL) {
+  if (paragraph != nullptr) {
     fprintf(stderr, "Line %d : Paragraph not Terminated at End of Page\n", page->line_no);
 
     endParagraph(page, align, x, *y, false);
@@ -2776,7 +2776,7 @@ initPSPage()
 
   /* Calculate Aspect Ratio of Page */
 
-  double aspect = ((double) max_page_width)/((double) ps_max_page_height);
+  double aspect = double(max_page_width)/double(ps_max_page_height);
 
   /*------------------------------------*/
 
@@ -3148,7 +3148,7 @@ addParagraphLine(CDHelpDatasetPage *page, long pos, const char *line, int *, int
       str = str1;
     }
 
-    if (! printing_ && search_panel != NULL) {
+    if (! printing_ && search_panel != nullptr) {
       long start_pos = search_panel->getStartPos();
       long end_pos   = search_panel->getEndPos  ();
 
@@ -3204,7 +3204,7 @@ addParagraphLine(CDHelpDatasetPage *page, long pos, const char *line, int *, int
 
   /* Terminate Highlighting if Still on */
 
-  if (! printing_ && search_panel != NULL) {
+  if (! printing_ && search_panel != nullptr) {
     long end_pos = search_panel->getEndPos();
 
     if (end_pos != -1 && end_pos == pos + i - 1) {
@@ -3244,7 +3244,7 @@ beginParagraph(CDHelpDatasetPage *page, int x, int y, int right_margin, int cont
   /* No paragraph should be currently active (if it is issue an error message and generate
      a 'paragraph_end' to try to recover) */
 
-  if (paragraph != NULL) {
+  if (paragraph != nullptr) {
     fprintf(stderr, "Line %d : Start Paragraph when already in Paragraph\n", page->line_no);
 
     endParagraph(page, CHALIGN_TYPE_LEFT, x, y, false);
@@ -3261,16 +3261,16 @@ void
 CDHelpDatasetData::
 endParagraph(CDHelpDatasetPage *page, int /*align*/, int x, int y, int align_last)
 {
-  if (paragraph == NULL) {
+  if (paragraph == nullptr) {
     fprintf(stderr, "Line No %d, End Paragraph when not in Paragraph\n", page->line_no);
 
     beginParagraph(page, x, y, getRightMargin(), true);
   }
 
-  if (paragraph == NULL || paragraph->getNumLines() == 0) {
+  if (paragraph == nullptr || paragraph->getNumLines() == 0) {
     delete paragraph;
 
-    paragraph = NULL;
+    paragraph = nullptr;
 
     return;
   }
@@ -3331,7 +3331,7 @@ endParagraph(CDHelpDatasetPage *page, int /*align*/, int x, int y, int align_las
 
   delete paragraph;
 
-  paragraph = NULL;
+  paragraph = nullptr;
 }
 
 // Justify the supplied line so that the text is aligned with the left and right margins.
@@ -3709,7 +3709,7 @@ drawPageLine(CDHelpDatasetPage *page, long pos, const std::string &line,
 
   CStrUtil::skipSpace(line, &i);
 
-  if (i >= (int) line.size()) {
+  if (i >= int(line.size())) {
     *y += page->line_heights[page->line_no - 1];
     return;
   }
@@ -3767,13 +3767,13 @@ drawPageLine(CDHelpDatasetPage *page, long pos, const std::string &line,
     j = 0;
   }
 
-  CDHelpSearchPanel *search_panel = NULL;
+  CDHelpSearchPanel *search_panel = nullptr;
 
   if (! printing_)
     search_panel = getHelpPanel()->getSearchPanel();
 
-  while (i < (int) line.size()) {
-    if (! printing_ && search_panel != NULL) {
+  while (i < int(line.size())) {
+    if (! printing_ && search_panel != nullptr) {
       long start_pos = search_panel->getStartPos();
       long end_pos   = search_panel->getEndPos  ();
 
@@ -3972,7 +3972,7 @@ drawPageLine(CDHelpDatasetPage *page, long pos, const std::string &line,
 
   /* Terminate Highlighting if Still on */
 
-  if (! printing_ && search_panel != NULL) {
+  if (! printing_ && search_panel != nullptr) {
     long end_pos = search_panel->getEndPos();
 
     if (end_pos != -1 && end_pos == pos + i - 1)
@@ -4055,7 +4055,7 @@ drawString(int *x, int *y, const std::string &str)
         //double y1 = ps_max_page_height - *y - ps_current_font->size*ps_font_y_scale;
         double y1 = ps_max_page_height - *y - ps_current_font->size;
 
-        if (ps_current_font->current != NULL)
+        if (ps_current_font->current != nullptr)
           //y1 -= ps_current_font->current->getDescender()*ps_current_font->size*ps_font_y_scale;
           y1 -= (ps_current_font->current->getDescender()/1000.0)*ps_current_font->size;
 
@@ -4066,12 +4066,12 @@ drawString(int *x, int *y, const std::string &str)
   else {
     CPixelRenderer *renderer = getRenderer();
 
-    if (getCurrentFontStruct().isValid())
+    if (getCurrentFontStruct())
       renderer->setFont(getCurrentFontStruct());
 
     int char_ascent = 10;
 
-    if (getCurrentFontStruct().isValid())
+    if (getCurrentFontStruct())
       char_ascent = getCurrentFontStruct()->getCharAscent();
 
     renderer->drawString(CIPoint2D(*x, *y + char_ascent), str);
@@ -4197,13 +4197,13 @@ drawImage(const std::string &id, const std::string &filename, int size, int resi
       }
 
       if (image.isValid() && resize) {
-        double scale = ((double) height1)/image->getHeight();
+        double scale = double(height1)/image->getHeight();
 
         CImagePtr image1 = image->resize(int(image->getWidth()*scale), height1);
 
         char *env = getenv("CDOC_IMAGE_DEBUG");
 
-        if (scale != 1.0 && env != NULL)
+        if (scale != 1.0 && env != nullptr)
           CDocWriteError("Image '%s' Rescaled - Factor %lf", filename.c_str(), scale);
 
         image = image1;
@@ -4218,7 +4218,7 @@ drawImage(const std::string &id, const std::string &filename, int size, int resi
     if (image.isValid()) {
       int x1 = indent + (getMaxPageWidth1() - indent - image->getWidth())/2;
 
-      if (x1 + (int) image->getWidth() > getMaxPageWidth1())
+      if (x1 + int(image->getWidth()) > getMaxPageWidth1())
         x1 = getMaxPageWidth1() - image->getWidth();
 
       if (x1 < 0)
@@ -4380,7 +4380,7 @@ drawText(int x, int y, const std::string &str)
         //double y1 = ps_max_page_height - y - ps_current_font->size*ps_font_y_scale;
         double y1 = ps_max_page_height - y - ps_current_font->size;
 
-        if (ps_current_font->current != NULL)
+        if (ps_current_font->current != nullptr)
           //y1 -= ps_current_font->current->getDescender()*ps_current_font->size*ps_font_y_scale;
           y1 -= (ps_current_font->current->getDescender()/1000.0)*ps_current_font->size;
 
@@ -4391,7 +4391,7 @@ drawText(int x, int y, const std::string &str)
   else {
     int char_ascent = 10;
 
-    if (getCurrentFontStruct().isValid())
+    if (getCurrentFontStruct())
       char_ascent = getCurrentFontStruct()->getCharAscent();
 
     CPixelRenderer *renderer = getRenderer();
@@ -4487,14 +4487,14 @@ void
 CDHelpDatasetData::
 endSelect()
 {
-  if (select_fp == NULL)
+  if (select_fp == nullptr)
     return;
 
   /********/
 
   fclose(select_fp);
 
-  select_fp = NULL;
+  select_fp = nullptr;
 
   /********/
 
@@ -4509,7 +4509,7 @@ endSelect()
 
   select_fp = fopen(select_file.c_str(), "r");
 
-  if (select_fp == NULL)
+  if (select_fp == nullptr)
     return;
 
   int no = fread(buffer, sizeof(char), file_stat.st_size, select_fp);
@@ -4518,7 +4518,7 @@ endSelect()
 
   fclose(select_fp);
 
-  select_fp = NULL;
+  select_fp = nullptr;
 
   remove(select_file.c_str());
 
@@ -4535,7 +4535,7 @@ bool
 CDHelpDatasetData::
 isSelect() const
 {
-  return (select_fp != NULL);
+  return (select_fp != nullptr);
 }
 
 // Add any characters in the supplied str to the selection text if they lie within the
@@ -4548,7 +4548,7 @@ selectText(int x, int y, const std::string &str)
 {
   int char_ascent = 10;
 
-  if (getCurrentFontStruct().isValid())
+  if (getCurrentFontStruct())
     char_ascent = getCurrentFontStruct()->getCharAscent();
 
   CRGBA bg, fg;
@@ -4735,7 +4735,7 @@ CDHelpDatasetData::
 setTextGC()
 {
   if (printing_) {
-    CDFontData *font = NULL;
+    CDFontData *font = nullptr;
 
     if (current_draw_font_name != "") {
       int no = ps_defined_font_list.size();
@@ -4750,12 +4750,12 @@ setTextGC()
       }
 
       if (i > no)
-        font = NULL;
+        font = nullptr;
     }
 
-    CFontMetric *font_metric = NULL;
+    CFontMetric *font_metric = nullptr;
 
-    if (font != NULL) {
+    if (font != nullptr) {
       if (current_draw_font_style != "") {
         if      (CStrUtil::casecmp(current_draw_font_style, "normal"        ) == 0)
           font_metric = font->normal;
@@ -4782,7 +4782,7 @@ setTextGC()
       setFontType(4);
   }
   else {
-    CDHelpDatasetFont *font = NULL;
+    CDHelpDatasetFont *font = nullptr;
 
     if (current_draw_font_name != "") {
       int no = getNumDefinedFonts();
@@ -4797,12 +4797,12 @@ setTextGC()
       }
 
       if (no == 0 || i >= no)
-        font = NULL;
+        font = nullptr;
     }
 
     CFontPtr fontptr;
 
-    if (font != NULL) {
+    if (font != nullptr) {
       if (current_draw_font_style != "") {
         if      (CStrUtil::casecmp(current_draw_font_style, "normal"        ) == 0)
           fontptr = font->normal;
@@ -4821,7 +4821,7 @@ setTextGC()
 
     CPixelRenderer *renderer = getRenderer();
 
-    if (fontptr.isValid())
+    if (fontptr)
       renderer->setFont(fontptr);
 
     if (current_draw_color != "") {
@@ -4876,7 +4876,7 @@ CDHelpDatasetData::
 resetTextGC()
 {
   if (printing_) {
-    if (ps_current_font != NULL) {
+    if (ps_current_font != nullptr) {
       if      (ps_current_font->current == ps_current_font->normal)
         setFontType(0);
       else if (ps_current_font->current == ps_current_font->bold)
@@ -4890,7 +4890,7 @@ resetTextGC()
   else {
     CPixelRenderer *renderer = getRenderer();
 
-    if (getCurrentFontStruct().isValid())
+    if (getCurrentFontStruct())
       renderer->setFont(getCurrentFontStruct());
 
     renderer->setForeground(cdoc_fg_normal);
@@ -4970,7 +4970,7 @@ stringExtent(const std::string &str, int *width, int *height)
 {
   CFontPtr fontptr = getCurrentFontStruct();
 
-  if (fontptr.isValid()) {
+  if (fontptr) {
     *width  = fontptr->getStringWidth(str);
     *height = fontptr->getCharHeight();
   }
@@ -4987,7 +4987,7 @@ charExtent(uint c, int *width, int *height)
 {
   CFontPtr fontptr = getCurrentFontStruct();
 
-  if (fontptr.isValid()) {
+  if (fontptr) {
     char str[2];
 
     str[0] = c;

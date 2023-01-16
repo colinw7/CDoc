@@ -77,7 +77,7 @@ CDocScriptCreateGeneralList(int type)
 extern void
 CDocScriptStartDefinitionList(CDDefinitionList *definition_list)
 {
-  CDocScriptStartCurrentList(DEFINITION_LIST, (char *) definition_list,
+  CDocScriptStartCurrentList(DEFINITION_LIST, reinterpret_cast<char *>(definition_list),
                              definition_list->compact);
 }
 
@@ -85,7 +85,7 @@ CDocScriptStartDefinitionList(CDDefinitionList *definition_list)
 extern void
 CDocScriptStartGlossaryList(CDGlossaryList *glossary_list)
 {
-  CDocScriptStartCurrentList(GLOSSARY_LIST, (char *) glossary_list,
+  CDocScriptStartCurrentList(GLOSSARY_LIST, reinterpret_cast<char *>(glossary_list),
                              glossary_list->compact);
 }
 
@@ -93,7 +93,7 @@ CDocScriptStartGlossaryList(CDGlossaryList *glossary_list)
 extern void
 CDocScriptStartGeneralList(CDGeneralList *general_list)
 {
-  CDocScriptStartCurrentList(general_list->type, (char *) general_list,
+  CDocScriptStartCurrentList(general_list->type, reinterpret_cast<char *>(general_list),
                              general_list->compact);
 }
 
@@ -104,7 +104,7 @@ CDocScriptStartCurrentList(int type, char *list, int compact)
   CDCurrentList *current_list = new CDCurrentList;
 
   current_list->type        = type;
-  current_list->list        = (char *) list;
+  current_list->list        = reinterpret_cast<char *>(list);
   current_list->left_margin = cdoc_left_margin;
   current_list->compact     = compact;
 

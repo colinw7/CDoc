@@ -113,39 +113,39 @@ struct CDScriptOptions {
 
 static CDParameterChoiceData
 number_headers_data[] = {
-  {"yes", (char *) NUMBER_HEADERS_YES,},
-  {"no" , (char *) NUMBER_HEADERS_NO ,},
-  {""   , (char *) PARM_NEW_STR      ,},
-  {NULL , (char *) 0                 ,},
+  {"yes", reinterpret_cast<char *>(NUMBER_HEADERS_YES),},
+  {"no" , reinterpret_cast<char *>(NUMBER_HEADERS_NO ),},
+  {""   , reinterpret_cast<char *>(PARM_NEW_STR      ),},
+  {NULL , reinterpret_cast<char *>(0                 ),},
 };
 
 static CDParameterChoiceData
 title_page_data[] = {
-  {"left"  , (char *) TITLE_PAGE_JUSTIFY_LEFT  ,},
-  {"right" , (char *) TITLE_PAGE_JUSTIFY_RIGHT ,},
-  {"centre", (char *) TITLE_PAGE_JUSTIFY_CENTRE,},
-  {"center", (char *) TITLE_PAGE_JUSTIFY_CENTRE,},
-  {"yes"   , (char *) TITLE_PAGE_JUSTIFY_RIGHT ,},
-  {"no"    , (char *) TITLE_PAGE_NO            ,},
-  {NULL    , (char *) 0                        ,},
+  {"left"  , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_LEFT  ),},
+  {"right" , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ),},
+  {"centre", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE),},
+  {"center", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE),},
+  {"yes"   , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ),},
+  {"no"    , reinterpret_cast<char *>(TITLE_PAGE_NO            ),},
+  {NULL    , reinterpret_cast<char *>(0                        ),},
 };
 
 static CDParameterChoiceData
 on_warning_data[] = {
-  {"continue", (char *) CDOC_ON_WARNING_CONTINUE,},
-  {"ignore"  , (char *) CDOC_ON_WARNING_IGNORE  ,},
-  {"prompt"  , (char *) CDOC_ON_WARNING_PROMPT  ,},
-  {"exit"    , (char *) CDOC_ON_WARNING_EXIT    ,},
-  {NULL      , (char *) 0                       ,},
+  {"continue", reinterpret_cast<char *>(CDOC_ON_WARNING_CONTINUE),},
+  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_WARNING_IGNORE  ),},
+  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_WARNING_PROMPT  ),},
+  {"exit"    , reinterpret_cast<char *>(CDOC_ON_WARNING_EXIT    ),},
+  {NULL      , reinterpret_cast<char *>(0                       ),},
 };
 
 static CDParameterChoiceData
 on_error_data[] = {
-  {"continue", (char *) CDOC_ON_ERROR_CONTINUE,},
-  {"ignore"  , (char *) CDOC_ON_ERROR_IGNORE  ,},
-  {"prompt"  , (char *) CDOC_ON_ERROR_PROMPT  ,},
-  {"exit"    , (char *) CDOC_ON_ERROR_EXIT    ,},
-  {NULL      , (char *) 0                     ,},
+  {"continue", reinterpret_cast<char *>(CDOC_ON_ERROR_CONTINUE),},
+  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_ERROR_IGNORE  ),},
+  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_ERROR_PROMPT  ),},
+  {"exit"    , reinterpret_cast<char *>(CDOC_ON_ERROR_EXIT    ),},
+  {NULL      , reinterpret_cast<char *>(0                     ),},
 };
 
 static CDOptionData
@@ -182,28 +182,28 @@ script_option_data[] = {
     "number_headers",
     "numhead",
     PARM_CHOICE,
-    (char *) number_headers_data,
+    reinterpret_cast<char *>(number_headers_data),
     OPT_OFF(number_headers),
   },
   {
     "title_page",
     "titlep",
     PARM_CHOICE,
-    (char *) title_page_data,
+    reinterpret_cast<char *>(title_page_data),
     OPT_OFF(title_page),
   },
   {
     "index",
     "indx",
     PARM_BOOLEAN,
-    (char *) NULL,
+    reinterpret_cast<char *>(NULL),
     OPT_OFF(index),
   },
   {
     "page_numbers",
     "pg",
     PARM_BOOLEAN,
-    (char *) NULL,
+    reinterpret_cast<char *>(NULL),
     OPT_OFF(page_numbering),
   },
   {
@@ -224,28 +224,28 @@ script_option_data[] = {
     "on_warning",
     "onwarn",
     PARM_CHOICE,
-    (char *) on_warning_data,
+    reinterpret_cast<char *>(on_warning_data),
     OPT_OFF(on_warning),
   },
   {
     "on_error",
     "onerr",
     PARM_CHOICE,
-    (char *) on_error_data,
+    reinterpret_cast<char *>(on_error_data),
     OPT_OFF(on_error),
   },
   {
     "spell_check",
     "spell",
     PARM_BOOLEAN,
-    (char *) NULL,
+    reinterpret_cast<char *>(NULL),
     OPT_OFF(spell_check),
   },
   {
     NULL,
     NULL,
     0,
-    (char *) NULL,
+    reinterpret_cast<char *>(NULL),
     0,
   },
 };
@@ -328,9 +328,9 @@ CDocScriptProcessOptions(const char **options, int *no_options)
   script_options.spell_check      = cdoc_spell_check;
 
   if (cdoc_number_headers)
-    script_options.number_headers = (char *) NUMBER_HEADERS_YES;
+    script_options.number_headers = reinterpret_cast<char *>(NUMBER_HEADERS_YES);
   else
-    script_options.number_headers = (char *) NUMBER_HEADERS_NO;
+    script_options.number_headers = reinterpret_cast<char *>(NUMBER_HEADERS_NO);
 
   if (cdoc_title_page) {
     if      (cdoc_title_page_align == CHALIGN_TYPE_LEFT)
@@ -343,10 +343,10 @@ CDocScriptProcessOptions(const char **options, int *no_options)
   else
     script_options.title_page = TITLE_PAGE_NO;
 
-  CDocExtractOptions((char **) options,
+  CDocExtractOptions(const_cast<char **>(options),
                      no_options,
                      script_option_data,
-                     (char *) &script_options);
+                     reinterpret_cast<char *>(&script_options));
 
   if (script_options.left_margin < script_options.right_margin - 2) {
     if (script_options.left_margin >= 0 &&
@@ -381,9 +381,9 @@ CDocScriptProcessOptions(const char **options, int *no_options)
     CDocScriptWarning("Invalid Paragraph Indent %d",
                       script_options.paragraph_indent);
 
-  if      (script_options.number_headers == (char *) NUMBER_HEADERS_NO)
+  if      (script_options.number_headers == reinterpret_cast<char *>(NUMBER_HEADERS_NO))
     cdoc_number_headers = false;
-  else if (script_options.number_headers == (char *) NUMBER_HEADERS_YES)
+  else if (script_options.number_headers == reinterpret_cast<char *>(NUMBER_HEADERS_YES))
     cdoc_number_headers = true;
   else if (script_options.number_headers != NULL) {
     int temp_header_number[CDOC_MAX_HEADERS];

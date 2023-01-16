@@ -57,7 +57,7 @@ CDocScriptGetMacroLine(CDMacro *macro, int line_no)
 {
   CDScriptLine *script_line = NULL;
 
-  if (line_no <= (int) macro->line_list.size())
+  if (line_no <= static_cast<int>(macro->line_list.size()))
     script_line = macro->line_list[line_no - 1];
 
   return script_line;

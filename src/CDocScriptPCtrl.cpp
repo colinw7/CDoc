@@ -44,7 +44,7 @@ CDocScriptStartPCtrl(CDColonCommand *colon_command)
     CDocExtractParameterValues(colon_command->getParameters(),
                                colon_command->getValues(),
                                psc_parameter_data,
-                               (char *) &process_ctrl);
+                               reinterpret_cast<char *>(&process_ctrl));
 
     if (process_ctrl.procs != NULL) {
       processing = false;

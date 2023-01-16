@@ -181,7 +181,7 @@
 
 #define CDOC_MAX_HEADERS 20
 
-#define CDocOffset(t,f) ((ulong)&(((t)NULL)->f))
+#define CDocOffset(t,f) (ulong(&((static_cast<t>(nullptr))->f)))
 
 #define CDOC_SHELL_WIDGET_CLASS1 vendorShellWidgetClass
 #define CDOC_SHELL_WIDGET_CLASS2 transientShellWidgetClass

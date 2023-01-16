@@ -464,7 +464,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
 
     /**********/
 
-    line = (char *) lline.c_str();
+    line = const_cast<char *>(lline.c_str());
 
     /**********/
 
@@ -524,7 +524,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
           break;
 
         p   = &line1[regmatch.rm_so];
-        len = (int) (regmatch.rm_eo - regmatch.rm_so);
+        len = int(regmatch.rm_eo - regmatch.rm_so);
 
         if (p != NULL)
           in_escape = CDocInEscapeCode(line1, p);
@@ -550,7 +550,7 @@ findPrevString(const std::string &str, int case_sensitive, int match_word, int r
             break;
 
           p   = &line1[regmatch.rm_so];
-          len = (int) (regmatch.rm_eo - regmatch.rm_so);
+          len = int(regmatch.rm_eo - regmatch.rm_so);
 
           if (p != NULL)
             in_escape = CDocInEscapeCode(line1, p);
@@ -748,7 +748,7 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
   /********/
 
   while (CDocReadLineFromFile(help_dataset_data_->getFp(), lline)) {
-    char *line = (char *) lline.c_str();
+    char *line = const_cast<char *>(lline.c_str());
 
     /* New Page */
 
@@ -811,7 +811,7 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
         goto findNextString_1;
 
       p   = &line1[regmatch.rm_so];
-      len = (int) (regmatch.rm_eo - regmatch.rm_so);
+      len = int(regmatch.rm_eo - regmatch.rm_so);
 
       if (p != NULL)
         in_escape = CDocInEscapeCode(line1, p);
@@ -837,7 +837,7 @@ findNextString(const std::string &str, int case_sensitive, int match_word, int r
           goto findNextString_1;
 
         p   = &line1[regmatch.rm_so];
-        len = (int) (regmatch.rm_eo - regmatch.rm_so);
+        len = int(regmatch.rm_eo - regmatch.rm_so);
 
         if (p != NULL)
           in_escape = CDocInEscapeCode(line1, p);

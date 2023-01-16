@@ -41,16 +41,16 @@ CDListAllData(CDProgramHelps *program_helps) :
 
   const CDProgramHelps::HelpList &help_list = program_helps->getHelpList();
 
-  CDProgramHelps::HelpList::const_iterator ph1 = help_list.begin();
-  CDProgramHelps::HelpList::const_iterator ph2 = help_list.end  ();
+  auto ph1 = help_list.begin();
+  auto ph2 = help_list.end  ();
 
   for ( ; ph1 != ph2; ++ph1)
     addHelp(*ph1);
 
   const CDProgramHelps::HelpSectionList &help_section_list = program_helps->getHelpSectionList();
 
-  CDProgramHelps::HelpSectionList::const_iterator ps1 = help_section_list.begin();
-  CDProgramHelps::HelpSectionList::const_iterator ps2 = help_section_list.end  ();
+  auto ps1 = help_section_list.begin();
+  auto ps2 = help_section_list.end  ();
 
   for ( ; ps1 != ps2; ++ps1)
     addHelpSection(*ps1);
@@ -79,7 +79,7 @@ addHelp(CDHelp *help)
   CDListAllHelpData *list_all_help_data = new CDListAllHelpData;
 
   list_all_help_data->type = LIST_ALL_HELP;
-  list_all_help_data->data = (char *) help;
+  list_all_help_data->data = reinterpret_cast<char *>(help);
 
   help_data_list_.push_back(list_all_help_data);
 }
@@ -107,7 +107,7 @@ addHelpSection(CDHelpSection *help_section)
   CDListAllHelpData *list_all_help_data = new CDListAllHelpData;
 
   list_all_help_data->type = LIST_ALL_HELP_SECTION;
-  list_all_help_data->data = (char *) help_section;
+  list_all_help_data->data = reinterpret_cast<char *>(help_section);
 
   help_data_list_.push_back(list_all_help_data);
 }
@@ -131,8 +131,8 @@ listSelectionSlot()
 
   if (list_all_help_data != NULL) {
     if      (list_all_help_data->type == LIST_ALL_HELP)
-      CDocWidgetHelpSelect((CDHelp *) list_all_help_data->data, true);
+      CDocWidgetHelpSelect(reinterpret_cast<CDHelp *>(list_all_help_data->data), true);
     else if (list_all_help_data->type == LIST_ALL_HELP_SECTION)
-      CDocWidgetHelpSectionSelect((CDHelpSection *) list_all_help_data->data);
+      CDocWidgetHelpSectionSelect(reinterpret_cast<CDHelpSection *>(list_all_help_data->data));
   }
 }

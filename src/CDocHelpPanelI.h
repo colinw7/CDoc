@@ -145,14 +145,14 @@ class CDocHelpCanvas : public QWidget {
   CQWidgetPixelRenderer *getRenderer();
 
  private:
-  void paintEvent(QPaintEvent *);
-  void resizeEvent(QResizeEvent *);
+  void paintEvent(QPaintEvent *) override;
+  void resizeEvent(QResizeEvent *) override;
 
-  void mousePressEvent(QMouseEvent *e);
-  void mouseReleaseEvent(QMouseEvent *e);
+  void mousePressEvent(QMouseEvent *e) override;
+  void mouseReleaseEvent(QMouseEvent *e) override;
 
   void mouseEvent(bool press, QMouseEvent *e);
-  void mouseMoveEvent(QMouseEvent *e);
+  void mouseMoveEvent(QMouseEvent *e) override;
 
  private slots:
   void scrolledSlot();
@@ -192,7 +192,7 @@ class CDHelpPanel : public QMainWindow {
   void draw();
 
   void mouseButtonEvent(bool press, QMouseEvent *e);
-  void mouseMoveEvent(QMouseEvent *e);
+  void mouseMoveEvent(QMouseEvent *e) override;
 
   void updatePage();
 

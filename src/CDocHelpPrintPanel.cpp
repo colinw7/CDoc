@@ -344,7 +344,7 @@ printSlot()
       return;
     }
 
-    if (page_start < 1 || page_start > (int) help_dataset_data_->getNumPages()) {
+    if (page_start < 1 || page_start > int(help_dataset_data_->getNumPages())) {
       CDocError::warn("CDoc Help Print", "Invalid Value for Page Start");
       return;
     }
@@ -354,7 +354,7 @@ printSlot()
       return;
     }
 
-    if (page_end < page_start || page_end > (int) help_dataset_data_->getNumPages()) {
+    if (page_end < page_start || page_end > int(help_dataset_data_->getNumPages())) {
       CDocError::warn("CDoc Help Print", "Invalid Value for Page End");
       return;
     }

@@ -135,15 +135,15 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
   char *address1 = address   + sizeof(char *);
 
   if      (parameter_data->type == PARM_STR)
-    *((char **) address) = (char *) value.c_str();
+    *(reinterpret_cast<char **>(address)) = const_cast<char *>(value.c_str());
   else if (parameter_data->type == PARM_NEW_STR)
-    *((char **) address) = CStrUtil::strdup(value.c_str());
+    *(reinterpret_cast<char **>(address)) = CStrUtil::strdup(value.c_str());
   else if (parameter_data->type == PARM_INT)
-    *((int *) address) = CStrUtil::toInteger(value);
+    *(reinterpret_cast<int *>(address)) = CStrUtil::toInteger(value);
   else if (parameter_data->type == PARM_REAL)
-    *((double *) address) = CStrUtil::toReal(value);
+    *(reinterpret_cast<double *>(address)) = CStrUtil::toReal(value);
   else if (parameter_data->type == PARM_CHOICE) {
-    CDParameterChoiceData *parameter_choice_data = (CDParameterChoiceData *) parameter_data->data;
+    auto *parameter_choice_data = reinterpret_cast<CDParameterChoiceData *>(parameter_data->data);
 
     CStrUtil::toLower(value);
 
@@ -157,22 +157,23 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
     }
 
     if (parameter_choice_data[i].name != NULL && parameter_choice_data[i].name[0] != '\0')
-      *((char **) address) = (char *) parameter_choice_data[i].data;
+      *(reinterpret_cast<char **>(address)) =
+        reinterpret_cast<char *>(parameter_choice_data[i].data);
     else if (parameter_choice_data[i].name != NULL) {
-      int type = (long) parameter_choice_data[i].data;
+      int type = long(parameter_choice_data[i].data);
 
       if      (type == PARM_STR)
-        *((char **) address) = (char *) value.c_str();
+        *(reinterpret_cast<char **>(address)) = const_cast<char *>(value.c_str());
       else if (type == PARM_NEW_STR)
-        *((char **) address) = CStrUtil::strdup(value.c_str());
+        *(reinterpret_cast<char **>(address)) = CStrUtil::strdup(value.c_str());
       else if (type == PARM_INT)
-        *((int *) address) = CStrUtil::toInteger(value);
+        *(reinterpret_cast<int *>(address)) = CStrUtil::toInteger(value);
       else if (type == PARM_REAL)
-        *((double *) address) = CStrUtil::toReal(value);
+        *(reinterpret_cast<double *>(address)) = CStrUtil::toReal(value);
       else if (type == PARM_CLENSTR)
-        *((int *) address) = CDocLengthStringToChars(value);
+        *(reinterpret_cast<int *>(address)) = CDocLengthStringToChars(value);
       else if (type == PARM_LLENSTR)
-        *((int *) address) = CDocLengthStringToLines(value);
+        *(reinterpret_cast<int *>(address)) = CDocLengthStringToLines(value);
       else
         CDocScriptError("Parameter Type Invalid");
     }
@@ -180,31 +181,31 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
       CDocScriptError("Invalid Parameter Value '%s'", value.c_str());
   }
   else if (parameter_data->type == PARM_CLENSTR)
-    *((int *) address) = CDocLengthStringToChars(value);
+    *(reinterpret_cast<int *>(address)) = CDocLengthStringToChars(value);
   else if (parameter_data->type == PARM_LLENSTR)
-    *((int *) address) = CDocLengthStringToLines(value);
+    *(reinterpret_cast<int *>(address)) = CDocLengthStringToLines(value);
   else if (parameter_data->type == PARM_BOOLEAN) {
     CStrUtil::toLower(value);
 
     if      (value == "yes")
-      *((int *) address) = true;
+      *(reinterpret_cast<int *>(address)) = true;
     else if (value == "no")
-      *((int *) address) = false;
+      *(reinterpret_cast<int *>(address)) = false;
     else
       CDocScriptError("String '%s' is not Yes or No", value.c_str());
   }
   else if (parameter_data->type == PARM_FLAG)
-    *((int *) address) = true;
+    *(reinterpret_cast<int *>(address)) = true;
   else if (parameter_data->type == PARM_NFLAG)
-    *((int *) address) = false;
+    *(reinterpret_cast<int *>(address)) = false;
   else if (parameter_data->type == PARM_VALUE)
-    *((char **) address) = (char *) parameter_data->data;
+    *(reinterpret_cast<char **>(address)) = reinterpret_cast<char *>(parameter_data->data);
   else if (parameter_data->type == PARM_USER_PROC) {
     std::vector<std::string> words;
 
     CDocStringToWords(value, words);
 
-    (*(CDocExtractParmProc *) address)(words);
+    (*reinterpret_cast<CDocExtractParmProc *>(address))(words);
   }
   else if (parameter_data->type == PARM_STR_ARRAY) {
     std::vector<std::string> words;
@@ -222,8 +223,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         words1[i] = CStrUtil::strdup(words[i]);
     }
 
-    *((char ***) address ) = words1;
-    *((int  *  ) address1) = no_words;
+    *(reinterpret_cast<char ***>(address )) = words1;
+    *(reinterpret_cast<int  *  >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_INT_ARRAY) {
     std::vector<std::string> words;
@@ -241,8 +242,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         integers[i] = CStrUtil::toInteger(words[i]);
     }
 
-    *((int **) address ) = integers;
-    *((int * ) address1) = no_words;
+    *(reinterpret_cast<int **>(address )) = integers;
+    *(reinterpret_cast<int * >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_REAL_ARRAY) {
     std::vector<std::string> words;
@@ -260,11 +261,11 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         reals[i] = CStrUtil::toReal(words[i]);
     }
 
-    *((double **) address ) = reals;
-    *((int    * ) address1) = no_words;
+    *(reinterpret_cast<double **>(address )) = reals;
+    *(reinterpret_cast<int    * >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_CHOICE_ARRAY) {
-    CDParameterChoiceData *parameter_choice_data = (CDParameterChoiceData *) parameter_data->data;
+    auto *parameter_choice_data = reinterpret_cast<CDParameterChoiceData *>(parameter_data->data);
 
     std::vector<std::string> words;
 
@@ -290,20 +291,21 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
       }
 
       if (parameter_choice_data[i].name != NULL && parameter_choice_data[i].name[0] != '\0')
-        *((char **) values[i]) = (char *) parameter_choice_data[i].data;
+        *(reinterpret_cast<char **>(values[i])) =
+          reinterpret_cast<char *>(parameter_choice_data[i].data);
       else if (parameter_choice_data[i].name != NULL) {
-        int type = (long) parameter_choice_data[i].data;
+        int type = long(parameter_choice_data[i].data);
 
         if      (type == PARM_STR)
-          *((char **) values[i]) = CStrUtil::strdup(words[i]);
+          *(reinterpret_cast<char **>(values[i])) = CStrUtil::strdup(words[i]);
         else if (type == PARM_INT)
-          *((int *) values[i]) = CStrUtil::toInteger(words[i]);
+          *(reinterpret_cast<int *>(values[i])) = CStrUtil::toInteger(words[i]);
         else if (type == PARM_REAL)
-          *((double *) values[i]) = CStrUtil::toReal(words[i]);
+          *(reinterpret_cast<double *>(values[i])) = CStrUtil::toReal(words[i]);
         else if (type == PARM_CLENSTR)
-          *((int *) values[i]) = CDocLengthStringToChars(words[i]);
+          *(reinterpret_cast<int *>(values[i])) = CDocLengthStringToChars(words[i]);
         else if (type == PARM_LLENSTR)
-          *((int *) values[i]) = CDocLengthStringToLines(words[i]);
+          *(reinterpret_cast<int *>(values[i])) = CDocLengthStringToLines(words[i]);
         else
           CDocScriptError("Parameter Type Invalid");
       }
@@ -311,8 +313,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         CDocScriptError("Invalid Parameter Value '%s'", words[i].c_str());
     }
 
-    *((char ***) address ) = values;
-    *((int  *  ) address1) = no_words;
+    *(reinterpret_cast<char ***>(address )) = values;
+    *(reinterpret_cast<int  *  >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_CLENSTR_ARRAY) {
     std::vector<std::string> words;
@@ -330,8 +332,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         integers[i] = CDocLengthStringToChars(words[i]);
     }
 
-    *((int **) address ) = integers;
-    *((int * ) address1) = no_words;
+    *(reinterpret_cast<int **>(address )) = integers;
+    *(reinterpret_cast<int * >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_LLENSTR_ARRAY) {
     std::vector<std::string> words;
@@ -349,8 +351,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
         integers[i] = CDocLengthStringToLines(words[i]);
     }
 
-    *((int **) address ) = integers;
-    *((int * ) address1) = no_words;
+    *(reinterpret_cast<int **>(address )) = integers;
+    *(reinterpret_cast<int * >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_BOOL_ARRAY) {
     std::vector<std::string> words;
@@ -376,8 +378,8 @@ CDocExtractParameterValue(const std::string &value, CDParameterData *parameter_d
       }
     }
 
-    *((int **) address ) = integers;
-    *((int * ) address1) = no_words;
+    *(reinterpret_cast<int **>(address )) = integers;
+    *(reinterpret_cast<int * >(address1)) = no_words;
   }
   else if (parameter_data->type == PARM_IGNORE)
     ;

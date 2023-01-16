@@ -1028,8 +1028,8 @@ CDocScriptReadLine()
 
     /* Check for Continuation Character */
 
-    if (cdoc_continuation_char != (int) '\0') {
-      if (l > 0 && (int) line1[l - 1] == cdoc_continuation_char) {
+    if (cdoc_continuation_char != int('\0')) {
+      if (l > 0 && int(line1[l - 1]) == cdoc_continuation_char) {
         line1 = line1.substr(0, l - 1);
 
         continued = true;
@@ -1232,21 +1232,21 @@ CDScriptLine(CDocLineType type, const std::string &data)
   assert(type != CDOC_DOT_COMMAND && type != CDOC_COLON_COMMAND);
 
   type_ = type;
-  data_ = (void *) CStrUtil::strdup(data);
+  data_ = reinterpret_cast<void *>(CStrUtil::strdup(data));
 }
 
 CDScriptLine::
 CDScriptLine(CDDotCommand *dot_command)
 {
   type_ = CDOC_DOT_COMMAND;
-  data_ = (void *) dot_command;
+  data_ = reinterpret_cast<void *>(dot_command);
 }
 
 CDScriptLine::
 CDScriptLine(CDColonCommand *colon_command)
 {
   type_ = CDOC_COLON_COMMAND;
-  data_ = (void *) colon_command;
+  data_ = reinterpret_cast<void *>(colon_command);
 }
 
 CDScriptLine::
@@ -1261,17 +1261,17 @@ CDScriptLine(const CDScriptLine &script_line)
   type_ = script_line.type_;
 
   if      (type_ == CDOC_DOT_COMMAND) {
-    CDDotCommand *dot_command = (CDDotCommand *) script_line.data_;
+    CDDotCommand *dot_command = reinterpret_cast<CDDotCommand *>(script_line.data_);
 
-    data_ = (void *) dot_command->dup();
+    data_ = reinterpret_cast<void *>(dot_command->dup());
   }
   else if (type_ == CDOC_COLON_COMMAND) {
-    CDColonCommand *colon_command = (CDColonCommand *) script_line.data_;
+    CDColonCommand *colon_command = reinterpret_cast<CDColonCommand *>(script_line.data_);
 
-    data_ = (void *) colon_command->dup();
+    data_ = reinterpret_cast<void *>(colon_command->dup());
   }
   else
-    data_ = CStrUtil::strdup((char *) script_line.data_);
+    data_ = CStrUtil::strdup(reinterpret_cast<char *>(script_line.data_));
 }
 
 CDScriptLine *
@@ -1287,17 +1287,17 @@ setData(CDocLineType type, const std::string &data)
 {
   if (type == type_) {
     if      (type == CDOC_DOT_COMMAND) {
-      CDDotCommand *dot_command = (CDDotCommand *) data_;
+      CDDotCommand *dot_command = reinterpret_cast<CDDotCommand *>(data_);
 
       dot_command->setText(data);
     }
     else if (type_ == CDOC_COLON_COMMAND) {
-      CDColonCommand *colon_command = (CDColonCommand *) data_;
+      CDColonCommand *colon_command = reinterpret_cast<CDColonCommand *>(data_);
 
       colon_command->setText(data);
     }
     else {
-      delete [] (char *) data_;
+      delete [] reinterpret_cast<char *>(data_);
 
       data_ = CStrUtil::strdup(data.c_str());
     }
@@ -1319,7 +1319,7 @@ setData(CDDotCommand *dot_command)
   reset();
 
   type_ = CDOC_DOT_COMMAND;
-  data_ = (char *) dot_command;
+  data_ = reinterpret_cast<char *>(dot_command);
 }
 
 void
@@ -1329,28 +1329,28 @@ setData(CDColonCommand *colon_command)
   reset();
 
   type_ = CDOC_COLON_COMMAND;
-  data_ = (char *) colon_command;
+  data_ = reinterpret_cast<char *>(colon_command);
 }
 
 std::string
 CDScriptLine::
 getData()
 {
-  return std::string((char *) data_);
+  return std::string(reinterpret_cast<char *>(data_));
 }
 
 CDDotCommand *
 CDScriptLine::
 getDotCommand()
 {
-  return (CDDotCommand *) data_;
+  return reinterpret_cast<CDDotCommand *>(data_);
 }
 
 CDColonCommand *
 CDScriptLine::
 getColonCommand()
 {
-  return (CDColonCommand *) data_;
+  return reinterpret_cast<CDColonCommand *>(data_);
 }
 
 void
@@ -1358,11 +1358,11 @@ CDScriptLine::
 reset()
 {
   if      (type_ == CDOC_DOT_COMMAND)
-    delete (CDDotCommand *) data_;
+    delete reinterpret_cast<CDDotCommand *>(data_);
   else if (type_ == CDOC_COLON_COMMAND)
-    delete (CDColonCommand *) data_;
+    delete reinterpret_cast<CDColonCommand *>(data_);
   else
-    delete [] (char *) data_;
+    delete [] reinterpret_cast<char *>(data_);
 
   data_ = NULL;
 }
@@ -1372,17 +1372,17 @@ CDScriptLine::
 print() const
 {
   if      (type_ == CDOC_DOT_COMMAND) {
-    CDDotCommand *dot_command = (CDDotCommand *) data_;
+    CDDotCommand *dot_command = reinterpret_cast<CDDotCommand *>(data_);
 
     dot_command->print();
   }
   else if (type_ == CDOC_COLON_COMMAND) {
-    CDColonCommand *colon_command = (CDColonCommand *) data_;
+    CDColonCommand *colon_command = reinterpret_cast<CDColonCommand *>(data_);
 
     colon_command->print();
   }
   else
-    printf("%3d> %s\n", cdoc_input_line_no, (char *) data_);
+    printf("%3d> %s\n", cdoc_input_line_no, reinterpret_cast<char *>(data_));
 }
 
 //------------
