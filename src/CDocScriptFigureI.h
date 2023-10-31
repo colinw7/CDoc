@@ -3,9 +3,9 @@
 
 /*---------------------------------------------------------------------*/
 
-#define FRAME_NONE 0
-#define FRAME_RULE 1
-#define FRAME_BOX  2
+constexpr ulong FRAME_NONE = 0;
+constexpr ulong FRAME_RULE = 1;
+constexpr ulong FRAME_BOX  = 2;
 
 #define PLACE_TOP     1
 #define PLACE_BOTTOM  2

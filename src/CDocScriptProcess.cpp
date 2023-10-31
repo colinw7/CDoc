@@ -106,27 +106,27 @@ struct CDFigureData {
 
 static CDParameterChoiceData
 fig_frame_data[] = {
-  {"rule", reinterpret_cast<char *>(FRAME_RULE  ),},
-  {"box" , reinterpret_cast<char *>(FRAME_BOX   ),},
-  {"none", reinterpret_cast<char *>(FRAME_NONE  ),},
-  {""    , reinterpret_cast<char *>(PARM_NEW_STR),},
-  {NULL  , reinterpret_cast<char *>(0           ),},
+  {"rule", reinterpret_cast<char *>(FRAME_RULE  ) },
+  {"box" , reinterpret_cast<char *>(FRAME_BOX   ) },
+  {"none", reinterpret_cast<char *>(FRAME_NONE  ) },
+  {""    , reinterpret_cast<char *>(PARM_NEW_STR) },
+  {NULL  , nullptr                                },
 };
 
 static CDParameterChoiceData
 fig_place_data[] = {
-  {"top"   , reinterpret_cast<char *>(PLACE_TOP   ),},
-  {"bottom", reinterpret_cast<char *>(PLACE_BOTTOM),},
-  {"inline", reinterpret_cast<char *>(PLACE_INLINE),},
-  {NULL    , reinterpret_cast<char *>(0           ),},
+  {"top"   , reinterpret_cast<char *>(PLACE_TOP   ) },
+  {"bottom", reinterpret_cast<char *>(PLACE_BOTTOM) },
+  {"inline", reinterpret_cast<char *>(PLACE_INLINE) },
+  {NULL    , nullptr                                },
 };
 
 static CDParameterChoiceData
 fig_width_data[] = {
-  {"page"  , reinterpret_cast<char *>(WIDTH_PAGE  ),},
-  {"column", reinterpret_cast<char *>(WIDTH_COLUMN),},
-  {""      , reinterpret_cast<char *>(PARM_CLENSTR),},
-  {NULL    , reinterpret_cast<char *>(0           ),},
+  {"page"  , reinterpret_cast<char *>(WIDTH_PAGE  ) },
+  {"column", reinterpret_cast<char *>(WIDTH_COLUMN) },
+  {""      , reinterpret_cast<char *>(PARM_CLENSTR) },
+  {NULL    , nullptr                                },
 };
 
 static CDParameterData
@@ -262,11 +262,11 @@ struct CDIndexRef {
 
 static CDParameterChoiceData
 index_pg_data[] = {
-  {"start", reinterpret_cast<char *>(PG_START    ),},
-  {"end"  , reinterpret_cast<char *>(PG_END      ),},
-  {"major", reinterpret_cast<char *>(PG_MAJOR    ),},
-  {""     , reinterpret_cast<char *>(PARM_NEW_STR),},
-  {NULL   , reinterpret_cast<char *>(0           ),},
+  {"start", reinterpret_cast<char *>(PG_START    ) },
+  {"end"  , reinterpret_cast<char *>(PG_END      ) },
+  {"major", reinterpret_cast<char *>(PG_MAJOR    ) },
+  {""     , reinterpret_cast<char *>(PARM_NEW_STR) },
+  {NULL   , nullptr                                },
 };
 
 static CDParameterData

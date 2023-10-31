@@ -15,7 +15,7 @@ typedef std::deque<CDFigurePlace *> CDFigurePlaceList;
 
 static CDFigureList       figure_list;
 static int                figure_number   = 0;
-static CDFigure          *current_figure  = NULL;
+static CDFigure          *current_figure  = nullptr;
 static CDFigurePlaceList  figure_top_list;
 
 /*------------------------------------------------------------------------*/
@@ -27,7 +27,7 @@ static void CDocScriptOutputFigure
 //
 // The figure structure is saved internally so that it can be later referenced
 // (by position in the input file).
-extern CDFigure *
+CDFigure *
 CDocScriptCreateFigure()
 {
   /* Initialise Figure Globals */
@@ -64,7 +64,7 @@ CDocScriptCreateFigure()
 // of the figure i.e. the first figure is 1, the second is 2 etc.
 //
 // If the figure is not found NULL is returned.
-extern CDFigure *
+CDFigure *
 CDocScriptGetFigure(int no)
 {
   CDFigure *figure;
@@ -78,7 +78,7 @@ CDocScriptGetFigure(int no)
 }
 
 // Start Figure Processing.
-extern void
+void
 CDocScriptFigureBegin(CDFigure *figure)
 {
   /* Start Outputting Text to Temporary File */
@@ -101,7 +101,7 @@ CDocScriptFigureBegin(CDFigure *figure)
 }
 
 // End Figure Processing and Output Figure.
-extern void
+void
 CDocScriptFigureEnd(CDFigure *figure)
 {
   /* Turn Formatting back on Switch back to Previous Font */
@@ -128,7 +128,7 @@ CDocScriptFigureEnd(CDFigure *figure)
 }
 
 // Check if there are any figures waiting to be output at the top of the next page.
-extern int
+int
 CDocScriptIsTopFigure()
 {
   if (! figure_top_list.empty())
@@ -139,7 +139,7 @@ CDocScriptIsTopFigure()
 
 // Output the first figure waiting to be output at the top of the next page at
 // the current position in the document.
-extern void
+void
 CDocScriptOutputTopFigure()
 {
   if (figure_top_list.empty())
@@ -172,12 +172,6 @@ CDocScriptOutputTopFigure()
 static void
 CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 {
-  int    i;
-  int    width;
-  int    length;
-  char  *temp_string;
-  int    total_no_lines;
-
   if (figure->place == PLACE_TOP && CDocIsPagedOutput()) {
     if (cdoc_paragraph_done) {
       CDFigurePlace *figure_top = new CDFigurePlace;
@@ -193,9 +187,11 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
       figure->place = PLACE_TOP_NOW;
   }
 
-  /*****************/
+  //---
 
   /* Calculate Total Number of Lines */
+
+  int total_no_lines;
 
   if (figure->depth > figure_no_lines)
     total_no_lines = figure->depth;
@@ -208,7 +204,7 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
   if (figure->caption != "" || figure->description != "")
     total_no_lines += 3;
 
-  /*****************/
+  //---
 
   /* Find space for figure if not forcing output of top figure */
 
@@ -223,6 +219,8 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
   /* Start Sub-Section for Figure */
 
   if (figure->count != -1) {
+    char *temp_string;
+
     if (figure->caption != "") {
       temp_string = new char [figure->caption.size() + 128];
 
@@ -253,7 +251,7 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 
   /* Output Initial Frame Line */
 
-  width = cdoc_right_margin - cdoc_left_margin - cdoc_indent;
+  int width = cdoc_right_margin - cdoc_left_margin - cdoc_indent;
 
   if      (figure->frame == reinterpret_cast<char *>(FRAME_RULE))
     CDocScriptDrawHLine(0, -2);
@@ -262,9 +260,9 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
   else if (figure->frame != reinterpret_cast<char *>(FRAME_NONE)) {
     CDocScriptWriteIndent(cdoc_left_margin + cdoc_indent);
 
-    length = strlen(figure->frame);
+    int length = strlen(figure->frame);
 
-    i = 0;
+    int i = 0;
 
     while (length > 0 && i + length <= width) {
       CDocScriptWriteText("%s", figure->frame);
@@ -315,9 +313,9 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
   else if (figure->frame != reinterpret_cast<char *>(FRAME_NONE)) {
     CDocScriptWriteIndent(cdoc_left_margin + cdoc_indent);
 
-    length = strlen(figure->frame);
+    int length = strlen(figure->frame);
 
-    i = 0;
+    int i = 0;
 
     while (i + length <= width) {
       CDocScriptWriteText("%s", figure->frame);
@@ -338,6 +336,8 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 
   if (figure->caption != "" || figure->description != "") {
     CDocScriptSkipLine();
+
+    char *temp_string = nullptr;
 
     if      (figure->caption != "" && figure->description != "") {
       temp_string = new char [figure->caption.size() + figure->description.size() + 128];
@@ -373,11 +373,11 @@ CDocScriptOutputFigure(CDFigure *figure, int figure_no_lines)
 
   delete figure->temp_file;
 
-  figure->temp_file = NULL;
+  figure->temp_file = nullptr;
 }
 
 // Output the List of Figures in the Document.
-extern void
+void
 CDocScriptOutputFigureList()
 {
   int       i;
@@ -499,7 +499,7 @@ CDocScriptOutputFigureList()
 
 // Store the current page number in the figure structure for later output in
 // the Figure List and Figure References.
-extern void
+void
 CDocScriptSetFigurePage(CDFigure *figure)
 {
   if (cdoc_page_no != -1)
@@ -509,14 +509,14 @@ CDocScriptSetFigurePage(CDFigure *figure)
 }
 
 // Get the Page Number String of the Figure which was the Nth to appear in the document.
-extern std::string
+std::string
 CDocScriptGetFigurePage(int no)
 {
   std::string page_string;
 
-  CDFigure *figure = CDocScriptGetFigure(no);
+  auto *figure = CDocScriptGetFigure(no);
 
-  if (figure != NULL)
+  if (figure)
     page_string = CStrUtil::toString(figure->page_no);
   else
     page_string = "??";
@@ -528,7 +528,7 @@ CDocScriptGetFigurePage(int no)
 //
 // Used to free of all Figure resources when processing of the input IBM
 // Script File has finished.
-extern void
+void
 CDocScriptDeleteFigures()
 {
   for_each(figure_list.begin(), figure_list.end(), CDeletePointer());
@@ -540,10 +540,10 @@ CDocScriptDeleteFigures()
 //
 // This is used to override the depth of a figure when it contains a X Image
 // or X Bitmap.
-extern void
+void
 CDocScriptSetCurrentFigureDepth(int depth)
 {
-  if (current_figure != NULL)
+  if (current_figure)
     current_figure->depth = depth;
 }
 

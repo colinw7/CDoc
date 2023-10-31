@@ -3,15 +3,15 @@
 
 /*------------------------------------------------------------------*/
 
-#define CDOC_ON_WARNING_CONTINUE 0
-#define CDOC_ON_WARNING_IGNORE   1
-#define CDOC_ON_WARNING_PROMPT   2
-#define CDOC_ON_WARNING_EXIT     3
+constexpr ulong CDOC_ON_WARNING_CONTINUE = 0;
+constexpr ulong CDOC_ON_WARNING_IGNORE   = 1;
+constexpr ulong CDOC_ON_WARNING_PROMPT   = 2;
+constexpr ulong CDOC_ON_WARNING_EXIT     = 3;
 
-#define CDOC_ON_ERROR_CONTINUE 0
-#define CDOC_ON_ERROR_IGNORE   1
-#define CDOC_ON_ERROR_PROMPT   2
-#define CDOC_ON_ERROR_EXIT     3
+constexpr ulong CDOC_ON_ERROR_CONTINUE = 0;
+constexpr ulong CDOC_ON_ERROR_IGNORE   = 1;
+constexpr ulong CDOC_ON_ERROR_PROMPT   = 2;
+constexpr ulong CDOC_ON_ERROR_EXIT     = 3;
 
 /*------------------------------------------------------------------*/
 

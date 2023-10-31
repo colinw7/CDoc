@@ -5,25 +5,25 @@
 
 /*--------------------------------------------------------------------*/
 
-#define MAX_LEFT_MARGIN      252
-#define MAX_RIGHT_MARGIN     255
-#define MIN_LINES_PER_PAGE   8
-#define MAX_PARAGRAPH_INDENT 16
+constexpr int MAX_LEFT_MARGIN      = 252;
+constexpr int MAX_RIGHT_MARGIN     = 255;
+constexpr int MIN_LINES_PER_PAGE   = 8;
+constexpr int MAX_PARAGRAPH_INDENT = 16;
 
-#define CDOC_DEFAULT_LEFT_MARGIN      5
-#define CDOC_DEFAULT_RIGHT_MARGIN     67
-#define CDOC_DEFAULT_LINES_PER_PAGE   60
-#define CDOC_DEFAULT_NUMBER_HEADERS   true
-#define CDOC_DEFAULT_PARAGRAPH_INDENT 0
-#define CDOC_DEFAULT_TITLE_PAGE       true
-#define CDOC_DEFAULT_TITLE_PAGE_ALIGN CHALIGN_TYPE_RIGHT
-#define CDOC_DEFAULT_INDEX            true
-#define CDOC_DEFAULT_PAGE_NUMBERING   0
-#define CDOC_DEFAULT_PROCESS_NAME     ""
-#define CDOC_DEFAULT_REFERENCE_FILE   ""
-#define CDOC_DEFAULT_ON_WARNING       CDOC_ON_WARNING_CONTINUE
-#define CDOC_DEFAULT_ON_ERROR         CDOC_ON_ERROR_CONTINUE
-#define CDOC_DEFAULT_SPELL_CHECK      false
+constexpr int         CDOC_DEFAULT_LEFT_MARGIN      = 5;
+constexpr int         CDOC_DEFAULT_RIGHT_MARGIN     = 67;
+constexpr int         CDOC_DEFAULT_LINES_PER_PAGE   = 60;
+constexpr int         CDOC_DEFAULT_NUMBER_HEADERS   = true;
+constexpr int         CDOC_DEFAULT_PARAGRAPH_INDENT = 0;
+constexpr int         CDOC_DEFAULT_TITLE_PAGE       = true;
+constexpr int         CDOC_DEFAULT_TITLE_PAGE_ALIGN = CHALIGN_TYPE_RIGHT;
+constexpr bool        CDOC_DEFAULT_INDEX            = true;
+constexpr int         CDOC_DEFAULT_PAGE_NUMBERING   = 0;
+constexpr const char* CDOC_DEFAULT_PROCESS_NAME     = "";
+constexpr const char* CDOC_DEFAULT_REFERENCE_FILE   = "";
+constexpr int         CDOC_DEFAULT_ON_WARNING       = CDOC_ON_WARNING_CONTINUE;
+constexpr int         CDOC_DEFAULT_ON_ERROR         = CDOC_ON_ERROR_CONTINUE;
+constexpr bool        CDOC_DEFAULT_SPELL_CHECK      = false;
 
 /*--------------------------------------------------------------------*/
 
@@ -67,13 +67,13 @@ int         cdoc_save_header_number[CDOC_MAX_HEADERS];
 
 /*--------------------------------------------------------------------*/
 
-#define NUMBER_HEADERS_NO  0
-#define NUMBER_HEADERS_YES 1
+constexpr ulong NUMBER_HEADERS_NO  = 0;
+constexpr ulong NUMBER_HEADERS_YES = 1;
 
-#define TITLE_PAGE_NO             0
-#define TITLE_PAGE_JUSTIFY_LEFT   1
-#define TITLE_PAGE_JUSTIFY_RIGHT  2
-#define TITLE_PAGE_JUSTIFY_CENTRE 3
+constexpr ulong TITLE_PAGE_NO             = 0;
+constexpr ulong TITLE_PAGE_JUSTIFY_LEFT   = 1;
+constexpr ulong TITLE_PAGE_JUSTIFY_RIGHT  = 2;
+constexpr ulong TITLE_PAGE_JUSTIFY_CENTRE = 3;
 
 struct CDScriptOptionsData {
   int    left_margin;
@@ -113,39 +113,39 @@ struct CDScriptOptions {
 
 static CDParameterChoiceData
 number_headers_data[] = {
-  {"yes", reinterpret_cast<char *>(NUMBER_HEADERS_YES),},
-  {"no" , reinterpret_cast<char *>(NUMBER_HEADERS_NO ),},
-  {""   , reinterpret_cast<char *>(PARM_NEW_STR      ),},
-  {NULL , reinterpret_cast<char *>(0                 ),},
+  {"yes"  , reinterpret_cast<char *>(NUMBER_HEADERS_YES) },
+  {"no"   , reinterpret_cast<char *>(NUMBER_HEADERS_NO ) },
+  {""     , reinterpret_cast<char *>(PARM_NEW_STR      ) },
+  {nullptr, nullptr                                      },
 };
 
 static CDParameterChoiceData
 title_page_data[] = {
-  {"left"  , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_LEFT  ),},
-  {"right" , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ),},
-  {"centre", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE),},
-  {"center", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE),},
-  {"yes"   , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ),},
-  {"no"    , reinterpret_cast<char *>(TITLE_PAGE_NO            ),},
-  {NULL    , reinterpret_cast<char *>(0                        ),},
+  {"left"  , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_LEFT  ) },
+  {"right" , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ) },
+  {"centre", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE) },
+  {"center", reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_CENTRE) },
+  {"yes"   , reinterpret_cast<char *>(TITLE_PAGE_JUSTIFY_RIGHT ) },
+  {"no"    , reinterpret_cast<char *>(TITLE_PAGE_NO            ) },
+  {nullptr , nullptr                                             },
 };
 
 static CDParameterChoiceData
 on_warning_data[] = {
-  {"continue", reinterpret_cast<char *>(CDOC_ON_WARNING_CONTINUE),},
-  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_WARNING_IGNORE  ),},
-  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_WARNING_PROMPT  ),},
-  {"exit"    , reinterpret_cast<char *>(CDOC_ON_WARNING_EXIT    ),},
-  {NULL      , reinterpret_cast<char *>(0                       ),},
+  {"continue", reinterpret_cast<char *>(CDOC_ON_WARNING_CONTINUE) },
+  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_WARNING_IGNORE  ) },
+  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_WARNING_PROMPT  ) },
+  {"exit"    , reinterpret_cast<char *>(CDOC_ON_WARNING_EXIT    ) },
+  {nullptr   , nullptr                                            },
 };
 
 static CDParameterChoiceData
 on_error_data[] = {
-  {"continue", reinterpret_cast<char *>(CDOC_ON_ERROR_CONTINUE),},
-  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_ERROR_IGNORE  ),},
-  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_ERROR_PROMPT  ),},
-  {"exit"    , reinterpret_cast<char *>(CDOC_ON_ERROR_EXIT    ),},
-  {NULL      , reinterpret_cast<char *>(0                     ),},
+  {"continue", reinterpret_cast<char *>(CDOC_ON_ERROR_CONTINUE) },
+  {"ignore"  , reinterpret_cast<char *>(CDOC_ON_ERROR_IGNORE  ) },
+  {"prompt"  , reinterpret_cast<char *>(CDOC_ON_ERROR_PROMPT  ) },
+  {"exit"    , reinterpret_cast<char *>(CDOC_ON_ERROR_EXIT    ) },
+  {nullptr   , nullptr                                          }
 };
 
 static CDOptionData
@@ -154,28 +154,28 @@ script_option_data[] = {
     "left_margin",
     "l",
     PARM_CLENSTR,
-    NULL,
+    nullptr,
     OPT_OFF(left_margin),
   },
   {
     "right_margin",
     "r",
     PARM_CLENSTR,
-    NULL,
+    nullptr,
     OPT_OFF(right_margin),
   },
   {
     "page_length",
     "pagelen",
     PARM_LLENSTR,
-    NULL,
+    nullptr,
     OPT_OFF(lines_per_page),
   },
   {
     "paragraph_indent",
     "pi",
     PARM_CLENSTR,
-    NULL,
+    nullptr,
     OPT_OFF(paragraph_indent),
   },
   {
@@ -196,28 +196,28 @@ script_option_data[] = {
     "index",
     "indx",
     PARM_BOOLEAN,
-    reinterpret_cast<char *>(NULL),
+    nullptr,
     OPT_OFF(index),
   },
   {
     "page_numbers",
     "pg",
     PARM_BOOLEAN,
-    reinterpret_cast<char *>(NULL),
+    nullptr,
     OPT_OFF(page_numbering),
   },
   {
     "process",
     "proc",
     PARM_STR,
-    NULL,
+    nullptr,
     OPT_OFF(process_name),
   },
   {
     "reference_file",
     "ref_file",
     PARM_STR,
-    NULL,
+    nullptr,
     OPT_OFF(reference_file),
   },
   {
@@ -238,21 +238,21 @@ script_option_data[] = {
     "spell_check",
     "spell",
     PARM_BOOLEAN,
-    reinterpret_cast<char *>(NULL),
+    nullptr,
     OPT_OFF(spell_check),
   },
   {
-    NULL,
-    NULL,
+    nullptr,
+    nullptr,
     0,
-    reinterpret_cast<char *>(NULL),
+    nullptr,
     0,
   },
 };
 
 // Saves the current script options so they can be restored to their
 // original values.
-extern void
+void
 CDocScriptSaveOptions()
 {
   cdoc_save_left_margin      = cdoc_left_margin;
@@ -277,7 +277,7 @@ CDocScriptSaveOptions()
 
 // Restore the current script options to the values they had when
 // CDocScriptSaveOptions() was called.
-extern void
+void
 CDocScriptRestoreOptions()
 {
   cdoc_left_margin      = cdoc_save_left_margin;
@@ -310,7 +310,7 @@ CDocScriptRestoreOptions()
 //
 // This routine is also used to parse an embedded CDoc option str in IBM
 // Script source.
-extern void
+void
 CDocScriptProcessOptions(const char **options, int *no_options)
 {
   CDScriptOptionsData script_options;
@@ -321,8 +321,8 @@ CDocScriptProcessOptions(const char **options, int *no_options)
   script_options.paragraph_indent = cdoc_paragraph_indent;
   script_options.index            = cdoc_index;
   script_options.page_numbering   = cdoc_page_numbering;
-  script_options.process_name     = NULL;
-  script_options.reference_file   = NULL;
+  script_options.process_name     = nullptr;
+  script_options.reference_file   = nullptr;
   script_options.on_warning       = cdoc_on_warning;
   script_options.on_error         = cdoc_on_error;
   script_options.spell_check      = cdoc_spell_check;
@@ -349,15 +349,13 @@ CDocScriptProcessOptions(const char **options, int *no_options)
                      reinterpret_cast<char *>(&script_options));
 
   if (script_options.left_margin < script_options.right_margin - 2) {
-    if (script_options.left_margin >= 0 &&
-        script_options.left_margin <= MAX_LEFT_MARGIN)
+    if (script_options.left_margin >= 0 && script_options.left_margin <= MAX_LEFT_MARGIN)
       cdoc_left_margin = script_options.left_margin;
     else
       CDocScriptWarning("Invalid Left Margin %d",
                         script_options.left_margin);
 
-    if (script_options.right_margin >= 0 &&
-        script_options.right_margin <= MAX_RIGHT_MARGIN)
+    if (script_options.right_margin >= 0 && script_options.right_margin <= MAX_RIGHT_MARGIN)
       cdoc_right_margin = script_options.right_margin;
     else
       CDocScriptWarning("Invalid Right Margin %d",
@@ -385,7 +383,7 @@ CDocScriptProcessOptions(const char **options, int *no_options)
     cdoc_number_headers = false;
   else if (script_options.number_headers == reinterpret_cast<char *>(NUMBER_HEADERS_YES))
     cdoc_number_headers = true;
-  else if (script_options.number_headers != NULL) {
+  else if (script_options.number_headers) {
     int temp_header_number[CDOC_MAX_HEADERS];
 
     int i = 0;
@@ -466,7 +464,7 @@ CDocScriptProcessOptions(const char **options, int *no_options)
 }
 
 // Set the left and right margins of the text which will be output.
-extern int
+int
 CDocScriptSetMargins(int left_margin, int right_margin)
 {
   if (left_margin == -1)
@@ -494,7 +492,7 @@ CDocScriptSetMargins(int left_margin, int right_margin)
 //
 // The routine only affects conversion from IBM Script to CDoc, Raw with
 // Control Codes or Raw output formats.
-extern int
+int
 CDocScriptSetLinesPerPage(int lines_per_page)
 {
   if (lines_per_page >= MIN_LINES_PER_PAGE) {
@@ -511,9 +509,9 @@ CDocScriptSetLinesPerPage(int lines_per_page)
 // If the 'flag' variable is false (0) then the 'init_values' and
 // 'no_init_values' are ignored.
 //
-// If no initial header values are required then pass 'init_values' as NULL
+// If no initial header values are required then pass 'init_values' as null
 // and 'no_init_values' as 0.
-extern void
+void
 CDocScriptSetHeaderNumbering(int flag, int *init_values, int no_init_values)
 {
   if (flag) {
@@ -538,7 +536,7 @@ CDocScriptSetHeaderNumbering(int flag, int *init_values, int no_init_values)
 //
 // The IBM Script processor uses 0 (no indentation) but most documents will
 // look better if indentation is used.
-extern int
+int
 CDocScriptSetParagraphIndent(int indent)
 {
   if (indent >= 0 && indent <= MAX_PARAGRAPH_INDENT) {
@@ -554,7 +552,7 @@ CDocScriptSetParagraphIndent(int indent)
 // text is aligned to the left, centre or right of the page.
 //
 // The default is to produce a right aligned title page.
-extern void
+void
 CDocScriptSetTitlePage(int flag, int align)
 {
 
@@ -579,7 +577,7 @@ CDocScriptSetTitlePage(int flag, int align)
 // index to the document.
 //
 // The default is not to compile an index.
-extern void
+void
 CDocScriptSetIndex(int flag)
 {
   if (flag)
@@ -592,7 +590,7 @@ CDocScriptSetIndex(int flag)
 // List of Illustrations, List of Figures, Index and Cross References.
 //
 // The default is for Page Numbers not be to used.
-extern void
+void
 CDocScriptSetPageNumbering(int flag)
 {
   if (flag)
@@ -608,7 +606,7 @@ CDocScriptSetPageNumbering(int flag)
 // The process name is normally not set and the IBM Script File is processed
 // using a name of 'CDoc' followed by the output format e.g. CDOCHTML for
 // HTML output.
-extern void
+void
 CDocScriptSetProcessName(const std::string &process_name)
 {
   cdoc_process_name = process_name;
@@ -616,7 +614,7 @@ CDocScriptSetProcessName(const std::string &process_name)
 
 // Specify the dataset which contains information for references which
 // are not resolved in the IBM Script input file.
-extern void
+void
 CDocScriptSetReferenceFile(const std::string &filename)
 {
   cdoc_reference_file = filename;
@@ -629,7 +627,7 @@ CDocScriptSetReferenceFile(const std::string &filename)
 // doesn't wish to see these warning when using this file as a help dataset.
 //
 // Any unrecognised values for 'action' will be ignored.
-extern void
+void
 CDocScriptSetOnWarning(int action)
 {
   if (action == CDOC_ON_WARNING_CONTINUE ||
@@ -646,7 +644,7 @@ CDocScriptSetOnWarning(int action)
 // doesn't wish to see these warning when using this file as a help dataset.
 //
 // Any unrecognised values for 'action' will be ignored.
-extern void
+void
 CDocScriptSetOnError(int action)
 {
   if (action == CDOC_ON_ERROR_CONTINUE ||
@@ -658,7 +656,7 @@ CDocScriptSetOnError(int action)
 
 // Specify whether Spell Checking should be performed on the words in
 // the document.
-extern void
+void
 CDocScriptSetSpellCheck(int flag)
 {
   if (flag)
@@ -672,10 +670,10 @@ CDocScriptSetSpellCheck(int flag)
 //
 // This routine is meant to be used in a program that uses the
 // CDocScriptProcessOptions() routine and wants to output a usage message.
-extern void
+void
 CDocScriptListOptions(FILE *fp)
 {
-  if (fp == NULL)
+  if (! fp)
     fp = stderr;
 
   OUT1("  Extra Options for Script Processing :-\n");

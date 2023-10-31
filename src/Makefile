@@ -172,6 +172,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
@@ -366,6 +367,7 @@ Makefile: CDoc.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /u
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri \
@@ -457,6 +459,7 @@ Makefile: CDoc.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /u
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_charts.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri:
@@ -619,10 +622,10 @@ compiler_moc_header_clean:
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		.moc/moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/colinw/git/CDoc/src/.moc/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/colinw/git/CDoc/src -I/home/colinw/git/CDoc/src -I/home/colinw/git/CDoc/src/Expr -I/home/colinw/git/CDoc/include -I/home/colinw/git/CQUtil/include -I/home/colinw/git/CRenderer/qinclude -I/home/colinw/git/CRenderer/include -I/home/colinw/git/CSpell/include -I/home/colinw/git/CFont/include -I/home/colinw/git/CImageLib/include -I/home/colinw/git/CConfig/include -I/home/colinw/git/CFile/include -I/home/colinw/git/COS/include -I/home/colinw/git/CUtil/include -I/home/colinw/git/CMath/include -I/home/colinw/git/CStrUtil/include -I/home/colinw/git/CRGBName/include -I/usr/include/freetype2 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include CDocHelpPanelI.h -o .moc/moc_CDocHelpPanelI.cpp
@@ -678,10 +681,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -742,10 +745,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -802,10 +805,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -863,10 +866,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -924,10 +927,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1031,10 +1034,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1091,10 +1094,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1131,25 +1134,6 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		CDocScriptDatasetI.h \
 		CDocHelpListAllI.h \
 		../../CQUtil/include/CQUtil.h \
-		../../CUtil/include/CEvent.h \
-		../../CMath/include/CIPoint2D.h \
-		../../CUtil/include/CKeyType.h \
-		../../CUtil/include/CLineDash.h \
-		../../CUtil/include/CILineDash.h \
-		../../CMath/include/CAngle.h \
-		../../CUtil/include/CLineCapType.h \
-		../../CUtil/include/CLineJoinType.h \
-		../../CMath/include/CIBBox2D.h \
-		../../CMath/include/CISize2D.h \
-		../../CMath/include/CIVector2D.h \
-		../../CMath/include/CMathGen.h \
-		../../CMath/include/CPoint2D.h \
-		../../CMath/include/CBBox2D.h \
-		../../CMath/include/CVector2D.h \
-		../../CMath/include/CMathUtil.h \
-		../../COS/include/COSNaN.h \
-		../../CMath/include/CSize2D.h \
-		../../CMath/include/CMatrix2D.h \
 		../../CQUtil/include/CQUtilMeta.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../obj/CDocHelpListAll.o CDocHelpListAll.cpp
 
@@ -1173,10 +1157,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1214,25 +1198,6 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		CDocHelpListWidgetI.h \
 		CDocHelpListAllI.h \
 		../../CQUtil/include/CQUtil.h \
-		../../CUtil/include/CEvent.h \
-		../../CMath/include/CIPoint2D.h \
-		../../CUtil/include/CKeyType.h \
-		../../CUtil/include/CLineDash.h \
-		../../CUtil/include/CILineDash.h \
-		../../CMath/include/CAngle.h \
-		../../CUtil/include/CLineCapType.h \
-		../../CUtil/include/CLineJoinType.h \
-		../../CMath/include/CIBBox2D.h \
-		../../CMath/include/CISize2D.h \
-		../../CMath/include/CIVector2D.h \
-		../../CMath/include/CMathGen.h \
-		../../CMath/include/CPoint2D.h \
-		../../CMath/include/CBBox2D.h \
-		../../CMath/include/CVector2D.h \
-		../../CMath/include/CMathUtil.h \
-		../../COS/include/COSNaN.h \
-		../../CMath/include/CSize2D.h \
-		../../CMath/include/CMatrix2D.h \
 		../../CQUtil/include/CQUtilMeta.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../obj/CDocHelpListWidget.o CDocHelpListWidget.cpp
 
@@ -1256,10 +1221,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1318,10 +1283,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1364,31 +1329,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		CDocHelpCommandPanelI.h \
 		CDocHelpSearchPanelI.h \
 		../../CQUtil/include/CQUtil.h \
-		../../CUtil/include/CEvent.h \
-		../../CMath/include/CIPoint2D.h \
-		../../CUtil/include/CKeyType.h \
-		../../CUtil/include/CLineDash.h \
-		../../CUtil/include/CILineDash.h \
-		../../CMath/include/CAngle.h \
-		../../CUtil/include/CLineCapType.h \
-		../../CUtil/include/CLineJoinType.h \
-		../../CMath/include/CIBBox2D.h \
-		../../CMath/include/CISize2D.h \
-		../../CMath/include/CIVector2D.h \
-		../../CMath/include/CMathGen.h \
-		../../CMath/include/CPoint2D.h \
-		../../CMath/include/CBBox2D.h \
-		../../CMath/include/CVector2D.h \
-		../../CMath/include/CMathUtil.h \
-		../../COS/include/COSNaN.h \
-		../../CMath/include/CSize2D.h \
-		../../CMath/include/CMatrix2D.h \
 		../../CQUtil/include/CQUtilMeta.h \
 		../../CQUtil/include/CQImageButton.h \
 		../../CImageLib/include/CImageLib.h \
 		../../CImageLib/include/CImageState.h \
 		../../CImageLib/include/CImage.h \
 		../../CUtil/include/CRGBACombineDef.h \
+		../../CMath/include/CISize2D.h \
+		../../CMath/include/CIBBox2D.h \
+		../../CMath/include/CIPoint2D.h \
+		../../CMath/include/CIVector2D.h \
+		../../CMath/include/CMathGen.h \
 		../../CFile/include/CFileType.h \
 		../../CUtil/include/COptVal.h \
 		../../CImageLib/include/CImageResizeType.h \
@@ -1407,11 +1358,16 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CRenderer/include/CSymbol2D.h \
 		../../CUtil/include/CThrow.h \
 		../../CUtil/include/CPen.h \
+		../../CUtil/include/CLineDash.h \
+		../../CUtil/include/CILineDash.h \
+		../../CUtil/include/CLineCapType.h \
+		../../CUtil/include/CLineJoinType.h \
 		../../CUtil/include/CBrush.h \
 		../../CUtil/include/CBrushStyle.h \
 		../../CUtil/include/CFillType.h \
 		../../CMath/include/CGenGradient.h \
 		../../CFont/include/CFontMgr.h \
+		../../CMath/include/CPoint2D.h \
 		../../CMath/include/CBresenham.h \
 		../../CUtil/include/CSingleton.h \
 		../../CRenderer/include/CPixelClip.h \
@@ -1438,10 +1394,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1478,25 +1434,6 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		CDocScriptDatasetI.h \
 		CDocHelpPrintPanelI.h \
 		../../CQUtil/include/CQUtil.h \
-		../../CUtil/include/CEvent.h \
-		../../CMath/include/CIPoint2D.h \
-		../../CUtil/include/CKeyType.h \
-		../../CUtil/include/CLineDash.h \
-		../../CUtil/include/CILineDash.h \
-		../../CMath/include/CAngle.h \
-		../../CUtil/include/CLineCapType.h \
-		../../CUtil/include/CLineJoinType.h \
-		../../CMath/include/CIBBox2D.h \
-		../../CMath/include/CISize2D.h \
-		../../CMath/include/CIVector2D.h \
-		../../CMath/include/CMathGen.h \
-		../../CMath/include/CPoint2D.h \
-		../../CMath/include/CBBox2D.h \
-		../../CMath/include/CVector2D.h \
-		../../CMath/include/CMathUtil.h \
-		../../COS/include/COSNaN.h \
-		../../CMath/include/CSize2D.h \
-		../../CMath/include/CMatrix2D.h \
 		../../CQUtil/include/CQUtilMeta.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ../obj/CDocHelpPrintPanel.o CDocHelpPrintPanel.cpp
 
@@ -1520,10 +1457,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1581,10 +1518,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1657,10 +1594,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1717,10 +1654,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1777,10 +1714,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1837,10 +1774,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1897,10 +1834,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -1957,10 +1894,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2017,10 +1954,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2077,10 +2014,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2137,10 +2074,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2197,10 +2134,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2257,10 +2194,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2317,10 +2254,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2377,10 +2314,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2437,10 +2374,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2497,10 +2434,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2557,10 +2494,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2617,10 +2554,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2677,10 +2614,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2737,10 +2674,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2797,10 +2734,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2859,10 +2796,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2919,10 +2856,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -2979,10 +2916,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3039,10 +2976,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3099,10 +3036,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3159,10 +3096,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3219,10 +3156,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3279,10 +3216,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3339,10 +3276,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3399,10 +3336,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CRGBName.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		CDocHelpDatasetDataI.h \
 		CDocStringI.h \
 		CDocString.h \
@@ -3455,10 +3392,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 		../../CUtil/include/CILineDash.h \
 		../../CFont/include/CFont.h \
 		../../CFont/include/CFontPtr.h \
-		../../CUtil/include/CRefPtr.h \
 		../../CFont/include/CFontStyle.h \
 		../../CUtil/include/CFlags.h \
 		../../CImageLib/include/CImagePtr.h \
+		../../CUtil/include/CRefPtr.h \
 		../../CImageLib/include/CImage.h \
 		../../CUtil/include/CRGBACombineDef.h \
 		../../CUtil/include/CAlignType.h \
